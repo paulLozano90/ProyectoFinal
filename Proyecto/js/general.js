@@ -4,9 +4,7 @@ $(document).ready(function () {
         $("#footer").css("position", "absolute");
     }
     $("#abrir").click(function () {
-
         $("#formulario").slideDown("slow");
-
     });
 });
 
