@@ -1,25 +1,53 @@
 @font-face{
     font-family: "Metropolian";
-    src: url(MixCarpathia.ttf);
+    src: url(../css/MixCarpathia.ttf);
 }
-
 #change{
     background-color: #FFFFFF;
 }
+.principal{
+    margin: 0px 0 0 100px;
+}
+.color{
+    color: #FFFFFF;
+    font-size: 14px; 
+}
+.titulo{
+    font-size: 100px;
+    margin-left: 5px;
+    margin-top: 50px;
+}
 .descripcion{
+    margin: -50px 0 30px 45px;
     font-size: 18px; 
+}
+.eslogan{
+    font-size: 33px; 
+}
+.btn-inicio{
+    width: 80px;
+    height: 80px;
+}
+.logo{
+    margin: 25px 0 0 75px;
 }
 body{
     background-image: url(../images/fondoPrincipal.jpg);
     width: auto;
     height: auto;
+    margin-bottom: 60px;
+    margin: 0;
+    display: block;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: calc;
-    background-repeat: no-repeat;
+    background-size: 100%;
     font-family: "Metropolian";
     z-index: 0;
+}
+.container{
+    width: auto;
+    padding: 0 15px;
 }
 .form-horizontal{
     color: #FFFFFF;
@@ -50,33 +78,29 @@ a{
     height: auto;
     background: none;
     margin-top: 30px;
-    border-color: #FFFFFF;
-    border-width: 1px;
+    border: none;
     opacity: 0.95;
 }
-h1{
-    color: #FFFFFF;
-    text-align: center;
-    margin-top: 30px;
-    font-size: 45px;
-}
+
 h4, h2{
     color: #FFFFFF;
 }
-#ident{
-    margin-top: 120px;
-}
-#bienv{
+.bienv{
     margin: 20px;
     margin-top: 100px;
-}
-.btn-default{
-    height: auto;
-    background-image: none;
-    border-color: #FFFFFF;
-    font-size: 25px;
-    color: black;
 }
 #inicio, #registro{
     font-size: 13px;
 }
+.btn-default{
+    margin: 1px;
+    width: 200px;
+    font-size: 20px;
+}
+.footer{
+    position: absolute;
+    bottom: 0;
+    height: 60px;
+}
+
+

@@ -1,17 +1,6 @@
-
-
-//
-//$( document ).ready(function() {
-//    
-//    //$('.prueba').hide(duracion,callback);
-//  $(".btn-prueba").click(function () {
-//    $('.prueba').show(5,0);
-//    });
-//    
-//});
-
+//Aplica slideDown al formulario de registro cuando se hace clic sobre el enlace #abrir
 $(document).ready(function(){
-    $("#bprueba").click(function(){
-        $("#prueba").slideDown("slow");
+    $("#abrir").click(function(){
+        $("#formulario").slideDown("slow");
     });
 });
