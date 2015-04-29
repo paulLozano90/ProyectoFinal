@@ -1,6 +1,15 @@
-//Aplica slideDown al formulario de registro cuando se hace clic sobre el enlace #abrir
-$(document).ready(function(){
-    $("#abrir").click(function(){
+$(document).ready(function () {
+    if ($(document).height() > 991 || $(document).width() < 991)
+    {
+        $("#footer").css("position", "absolute");
+    }
+    $("#abrir").click(function () {
+
         $("#formulario").slideDown("slow");
+
     });
 });
+
+
+
+
