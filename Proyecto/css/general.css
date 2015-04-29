@@ -1,83 +1,26 @@
+
+/*Fuentes importadas*/
 @font-face{
     font-family: "Metropolian";
     src: url(../css/MixCarpathia.ttf);
 }
-#change{
-    background-color: #FFFFFF;
-}
-.principal{
-    margin: 0px 0 0 100px;
-}
-.color{
-    color: #FFFFFF;
-    font-size: 14px; 
-}
-.titulo{
-    font-size: 100px;
-    margin-left: 5px;
-    margin-top: 50px;
-    color: #FFFFFF;
-}
-.descripcion{
-    margin: -50px 0 30px 45px;
-    font-size: 18px; 
-}
-.eslogan{
-    font-size: 33px; 
-}
-.btn-inicio{
-    width: 80px;
-    height: 80px;
-}
-.logo{
-    margin: 25px 0 0 75px;
-}
+/*Cuerpo de la pagina*/
 body{
-    background-image: url(../images/fondoPrincipal.jpg);
     width: auto;
     height: auto;
+    font-family: "Metropolian";
+    color: #FFFFFF;
+    font-size: 14px; 
+    background-image: url(../images/fondoPrincipal.jpg);    
+    background-size: 100%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: 100%;
-    font-family: "Metropolian";
-    z-index: 0;
+    -o-background-size: cover;  
+    z-index: 0;    
 }
-
-.navbar, .navbar-default{
-    background: none;
-}
-
 .container{
     width: auto;
     padding: 0 15px;
-}
-.form-horizontal{
-    color: #FFFFFF;
-}
-.form-control{
-    background-color: #E6E6E6;
-    width: 300px; 
-}
-.primera{
-    color: #ffffff;
-}
-
-#navFooter{
-    width: auto;
-    height: 50px;   
-}
-.navbar-default{
-    background-color: #E6E6E6;
-}
-a{
-    color: aqua;
-}
-a:hover, a:focus{
-    color: #FFFFFF;
-}
-#navFooter a{
-    color: #FFFFFF;
 }
 .well{
     height: auto;
@@ -86,29 +29,87 @@ a:hover, a:focus{
     border: none;
     opacity: 0.95;
 }
-
-h4, h2{
-    color: #FFFFFF;
+.principal{
+    margin: 0px 0 0 100px;
 }
-.bienv{
-    margin: 20px;
-    margin-top: 100px;
+/*Barra navegacion idioma*/
+.navbar, .navbar-default{
+    background: none;
 }
-#inicio, #registro{
-    font-size: 13px;
+.navbar-default{
+    background-color: #E6E6E6;
+}
+/*Titulo,descripcion,logo...*/
+.titulo{
+    font-size: 100px;
+    margin-left: 18px;
+    margin-top: 50px;
+}
+.descripcion{
+    margin: -35px 0 30px 123px;
+    font-size: 18px; 
+}
+.eslogan{
+    font-size: 40px; 
+}
+#logoPrincipal{
+    width: 180px;
+    height: 155px;
+}
+/*Registro*/
+.definicion{
+    padding: 10px 0 10px 0;
+    font-size: 15px;
+}
+/*Botones para el registro*/
+.btn-inicio{
+    width: 80px;
+    height: 80px;
+    border-radius: 10px 10px;
+    padding-top: 5px;
 }
 .btn-default{
     margin: 1px;
     width: 200px;
-    font-size: 20px;
+    font-size: 22px;
+    
 }
+/*Enlaces de las paginas*/
+a{
+    color: aqua;
+}
+a:hover, a:focus{
+    color: #FFFFFF;
+}
+/*Footer*/
 #footer{
     position: relative;
-    bottom: 0;
+    bottom: 0;    
+}
+#navFooter{
+    width: auto;
+    height: 50px; 
+}
+#navFooter a{
+    color: #FFFFFF;
+    font-size: 15px;
+    margin-left: 50px;
 }
 hr{
     background-color: #FFFFFF;
     background-size: 2px;
 }
 
-
+/*Paul: ELIAS COMENTA DE QUE ES CADA ID Y CADA CLASE*/
+/*Paul: ELIAS COMENTA DE QUE ES CADA ID Y CADA CLASE*/
+/*Paul: ELIAS COMENTA DE QUE ES CADA ID Y CADA CLASE*/
+#change{
+    background-color: #FFFFFF;
+}
+.form-control{
+    background-color: #E6E6E6;
+    width: 300px; 
+}
+#inicio, #registro{
+    font-size: 13px;
+}
