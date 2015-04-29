@@ -16,6 +16,7 @@
     font-size: 100px;
     margin-left: 5px;
     margin-top: 50px;
+    color: #FFFFFF;
 }
 .descripcion{
     margin: -50px 0 30px 45px;
@@ -71,6 +72,9 @@ body{
 }
 a{
     color: aqua;
+}
+a:hover, a:focus{
+    color: #FFFFFF;
 }
 #navFooter a{
     color: #FFFFFF;
