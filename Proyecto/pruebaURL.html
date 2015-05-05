@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<!--
+Autor=Paul Lozano Cruzado 
+Fecha=05-may-2015
+Licencia=default
+Version=1.0
+Descripcion=
+-->
+
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html>
+<head>
+<title>Como obtener parámetros get con Javascript</title>
+ 
+<script>
+function $_GET(param)
+{
+/* Obtener la url completa */
+url = document.URL;
+/* Buscar a partir del signo de interrogación ? */
+url = String(url.match(/\?+.+/));
+/* limpiar la cadena quitándole el signo ? */
+url = url.replace("?", "");
+/* Crear un array con parametro=valor */
+url = url.split("&");
+ 
+/* 
+Recorrer el array url
+obtener el valor y dividirlo en dos partes a través del signo = 
+0 = parametro
+1 = valor
+Si el parámetro existe devolver su valor
+*/
+x = 0;
+while (x < url.length)
+{
+p = url[x].split("=");
+if (p[0] == param)
+{
+return decodeURIComponent(p[1]);
+}
+x++;
+}
+}
+ 
+ 
+alert($_GET("id"));
+alert($_GET("lenguaje"));
+</script>
+ 
+</head>
+<body>
+<h1><a href="http://jquery-manual.blogspot.com" target="_blank">Jquery Manual</a></h1>
+<p>Introduce parámetros GET a la url y captura su valor, por ejemplo ... ?id=1&lenguaje=Javascript</p>
+</body>
+</html>
