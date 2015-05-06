@@ -1,0 +1,26 @@
+body{
+    
+    background-image: url("../FOTOS/fondo.jpg");
+    background-repeat: no-repeat;
+   background-size: 1300px 800px;
+   color:white;
+    
+    
+}
+
+  .form-group {
+    
+    margin-top: 30px;
+    margin-left: 520px;
+    font-size: 15px;
+    color:white;
+    
+}
+
+.panel-body {
+    
+    color:black;
+    
+}
+
+
