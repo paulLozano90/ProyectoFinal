@@ -18,6 +18,9 @@ body{
     width: auto;
     padding: 0 15px;
 }
+.jumbotron{
+    background: none;
+}
 .well{
     height: auto;
     background: none;
@@ -29,8 +32,9 @@ body{
     margin: 0px 0 0 100px;
 }
 /*Barra navegacion idioma*/
-.navbar, .navbar-default{
+.nav, .navbar-default{
     background: none;
+    opacity: 0;
 }
 .navbar-default{
     background-color: #E6E6E6;
