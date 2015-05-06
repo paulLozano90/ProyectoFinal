@@ -12,11 +12,7 @@ body{
     color: #FFFFFF;
     font-size: 14px; 
     background-image: url(../images/fondoPrincipal.jpg);    
-    background-size: 100%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;  
-    z-index: 0;    
+    background-size: 100%; 
 }
 .container{
     width: auto;
