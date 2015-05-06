@@ -113,3 +113,17 @@ hr{
 #inicio, #registro{
     font-size: 13px;
 }
+  .form-group {
+    
+    margin-top: 30px;
+    margin-left: 520px;
+    font-size: 15px;
+    color:white;
+    
+}
+
+.panel-body {
+    
+    color:black;
+    
+}
