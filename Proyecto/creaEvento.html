@@ -15,47 +15,39 @@
         <link rel="stylesheet" href="css/general.css" />
     </head>
     <body>
-             <!-- bootstrap nav -->
-<div class="container">
-  <div class="navbar navbar-default">
-  <ul class="nav nav-justified">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Restaurantes</a></li>
-    <li><a href="#">Ocio</a></li>
-    <li><a href="#">Salud y Belleza</a></li>
-    
-  </ul>
-  </div>
-</div>
-<!-- /bootstrap nav -->
-        <div class="row">
-        <form role="form">
-            <div class="form-group">
-                <label for="text">Tipo de evento</label>
-                <select class="checkbox" style="color:black">
-                    <option>Deportes</option>
-                    <option>Restaurantes</option>
-                    <option>Ocio</option>
-                </select>
-            
-            <label for="text">Nombre de la empresa</label><br>
+ <body>
+        <h2 align="center">Registra tu evento</h2>
+        <div class="row" style="margin-top:100px">
+    <div class="col-md-3"></div>
+    <div class="col-md-4">
+      
+         <label for="text">Nombre de la empresa</label><br><br>
             <input type="text" id="nombreEmpresa" placeholder="Nombre de la empresa"><br><br>
-             <label for="text">Nombre del evento</label><br>
+             <label for="text">Nombre del evento</label><br><br>
             <input type="text" id="nombreEvento" placeholder="Nombre del evento"><br><br>
-            <label for="text">Descripcion del evento</label><br>
+            <label for="text">Descripcion del evento</label><br><br>
             <textarea id="descripcion" height="" placeholder="Explicanos tu evento aquí....." maxlength="200" rows="5" cols="40"></textarea><br><br>
-            <label for="text">Fecha caducidad del evento</label><br>
+    </div>
+    <div class="col-md-4">
+        
+        <label for="text">Fecha caducidad del evento</label><br><br>
             <input type="date" id="fechaEvento" style="color:black"><br><br>
-            <label for="text">Subir foto del evento</label><br>
-            <input type="file" id="fotoEvento" placeholder="Suba su foto aqui"><br>
+            <label for="text">Subir foto del evento</label><br><br>
+            <input type="file" id="fotoEvento" placeholder="Suba su foto aqui"><br><br>
+             <label for="text">Localizate!</label><br><br>
+            <input type="text" id="googlemaps" placeholder="Mapa Google Maps"><br><br>
+            
             <div class="checkbox">
                 <label>
                     <input type="checkbox" id="aceptar"> Aceptar las condiciones de uso
                 </label>
-            </div>
+                
+        </div>
             <button type="submit" class="btn btn-primary" id="crear">Crear el evento</button>
-            </div>
-        </form>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+    </body>
   
     </body>
 </html>
