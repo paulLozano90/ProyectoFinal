@@ -31,11 +31,7 @@ body{
 .principal{
     margin: 0px 0 0 100px;
 }
-/*Barra navegacion idioma*/
-.nav, .navbar-default{
-    background: none;
-    opacity: 0;
-}
+
 .navbar-default{
     background-color: #E6E6E6;
 }
