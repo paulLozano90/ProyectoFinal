@@ -40,17 +40,10 @@ body{
     background-color: #E6E6E6;
 }
 /*Titulos,descripciones...*/
-.titulo{
+.titulo_incio{
     font-size: 100px;
     margin-left: 18px;
     margin-top: 50px;
-}
-.descripcion{
-    margin: -35px 0 30px 123px;
-    font-size: 18px; 
-}
-.eslogan{
-    font-size: 40px; 
 }
 .titulos{
     font-size: 22px; 
@@ -61,6 +54,9 @@ body{
 }
 .descripciones{
     font-size: 18px; 
+}
+.eslogan{
+    font-size: 40px; 
 }
 
 /*Logotipos*/
