@@ -19,7 +19,7 @@ body{
     padding: 0 15px;
 }
 .jumbotron{
-    background: none;
+    background: none;    
 }
 .well{
     height: auto;
@@ -30,13 +30,31 @@ body{
 }
 .principal{
     margin: 0px 0 0 100px;
+}/*Cabezera*/
+#cabecera{
+    width: 85%;    
+}
+#cabecera > .jumbotron{
+    margin-bottom: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#cabecera > .navbar-default{
+    margin-bottom: 50px;
+}
+.container > hr{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#logoCabecera{
+    width: 130px;
+    height: 105px;
+    margin-top: 10px;
+    float: left;
 }
 /*Barra navegacion*/
 .nav, .navbar-default{
-    background: none;
-}
-.navbar-default{
-    background-color: #E6E6E6;
+    background: none;    
 }
 /*Titulos,descripciones...*/
 .titulo_incio{
