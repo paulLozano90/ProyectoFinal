@@ -48,27 +48,27 @@ and open the template in the editor.
                         </div>
                     </div>
                     <div class="col-md-5">
-                        <h3 style="margin-top: 75px;">Identificate como usuario</h3>
+                        <h3 style="margin-top: 75px;">Identificate como empresa</h3>
                         <form class="form-horizontal" role="form">
                             <div class="form-group">
-                                <label for="inputEmail1" class="col-lg-2 control-label">Email</label>
+                                <label for="CIF" class="col-lg-2 control-label">CIF</label>
                                 <div class="col-lg-10">
-                                    <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
+                                    <input type="CIF" class="form-control" id="CIF" placeholder="CIF">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputPassword1" class="col-lg-2 control-label">Contraseña</label>
+                                <label for="contraseña" class="col-lg-2 control-label">Contraseña</label>
                                 <div class="col-lg-10">
-                                    <input type="password" class="form-control" id="inputPassword1" placeholder="Contraseña">
+                                    <input type="password" class="form-control" id="contraseña" placeholder="Contraseña">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-lg-offset-2 col-lg-10">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox"> Recuerda mi nombre de usuario
+                                            <input type="checkbox"> Recuerda mi nombre de empresa
                                             <a href="#">¿Has olvidado tu contraseña?</a>
-                                            <a href="#">¿No recuerdas tu usuario?</a>
+                                            <a href="#">¿No recuerdas tu email?</a>
                                         </label>
                                     </div>
                                 </div>
@@ -86,25 +86,42 @@ and open the template in the editor.
                     <div class="col-md-5">
                         <h4>¿Eres nuevo en Uneté! ? <a href="#" id="abrir">Aquí</a>puedes registrarte</h4>
                         <form id="formulario" style="margin-bottom: 30px; display: none;" class="form-horizontal" role="form">
+                            
+                            <div class="form-group">
+                                <label for="inputCIF" class="col-lg-2 control-label">CIF</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="inputCIF" placeholder="Ejemplo: 4243242424C">
+                                </div>
+                            </div>
+                            
                             <div class="form-group">
                                 <label for="inputName" class="col-lg-2 control-label">Nombre</label>
                                 <div class="col-lg-10">
                                     <input type="text" class="form-control" id="inputName" placeholder="Ejemplo: Pepe">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="inputLastName" class="col-lg-2 control-label">Apellidos</label>
-                                <div class="col-lg-10">
-                                    <input type="text" class="form-control" id="inputLastName" placeholder="Ejemplo: Sánchez García">
-                                </div>
-                            </div>
-                            <div class="form-group">
+                           <div class="form-group">
                                 <label for="inputEmail1" class="col-lg-2 control-label">Email</label>
                                 <div class="col-lg-10">
                                     <input type="email" class="form-control" id="inputEmail1" placeholder="Ejemplo: psanchezgar@email.com">
+                                     <small>Solo caracteres alfanuméricos y caracteres especiales.</small>
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label for="inputTelefono" class="col-lg-2 control-label">Teléfono</label>
+                                <div class="col-lg-10">
+                                    <input type="telefono" class="form-control" id="inputTelefono" placeholder="Telefono">
+                                    <small>Solo caracteres numéricos.</small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputDescripcion" class="col-lg-2 control-label">Descripción</label>
+                                <div class="col-lg-10">
+                                    <textarea class="form-control" id="inputDescripcion" placeholder="¿A que te dedicas? Cuentanos...." maxlength="200" ></textarea>
+                                    <small>Máximo 200 caracteres</small>
+                                </div>
+                            </div>
+                             <div class="form-group">
                                 <label for="inputPassword1" class="col-lg-2 control-label">Contraseña</label>
                                 <div class="col-lg-10">
                                     <input type="password" class="form-control" id="inputPassword1" placeholder="Contraseña">
