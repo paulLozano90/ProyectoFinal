@@ -31,10 +31,9 @@ body{
 .principal{
     margin: 0px 0 0 100px;
 }
-/*Barra navegacion idioma*/
+/*Barra navegacion*/
 .nav, .navbar-default{
     background: none;
-    opacity: 0;
 }
 .navbar-default{
     background-color: #E6E6E6;
@@ -43,7 +42,7 @@ body{
 .titulo_incio{
     font-size: 100px;
     margin-left: 18px;
-    margin-top: 50px;
+    margin-top: 15px;
 }
 .titulos{
     font-size: 22px; 
@@ -57,6 +56,9 @@ body{
 }
 .eslogan{
     font-size: 40px; 
+}
+input, textArea{
+    color: #1D2323;
 }
 
 /*Logotipos*/
@@ -80,8 +82,7 @@ body{
 .btn-default{
     margin: 1px;
     width: 200px;
-    font-size: 22px;
-    
+    font-size: 22px;    
 }
 /*Enlaces de las paginas*/
 a{
@@ -104,12 +105,11 @@ a:hover, a:focus{
     font-size: 15px;
     margin-left: 50px;
 }
+
 hr{
     background-color: #FFFFFF;
     background-size: 2px;
 }
-
-
 #change{
     background-color: #FFFFFF;
 }
@@ -129,25 +129,14 @@ hr{
 .panel-body {    
     color:black;    
 }
-#desBienvenida{
-    font-size: 18px;
-    margin-top: 10px;
-}
 h1{
-    color: #FFFFFF;
     text-align: center;
     margin-top: 30px;
     font-size: 45px;
 }
-h4, h2{
-    color: #FFFFFF;
-}
-#ident{
-    margin-top: 120px;
-}
 #bienvenida{
-    margin: 20px;
     margin-top: 120px;
+    text-align: left;
 }
 .btn-default{
     height: auto;
@@ -156,3 +145,7 @@ h4, h2{
     font-size: 25px;
     color: black;
 }
+.ofertas{
+    padding: 0 70px 0 70px;
+}
+
