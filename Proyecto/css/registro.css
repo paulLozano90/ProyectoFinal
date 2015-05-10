@@ -1,28 +1,2 @@
-#desBienvenida{
-    font-size: 18px;
-    margin-top: 10px;
-}
-h1{
-    color: #FFFFFF;
-    text-align: center;
-    margin-top: 30px;
-    font-size: 45px;
-}
-h4, h2{
-    color: #FFFFFF;
-}
-#ident{
-    margin-top: 120px;
-}
-#bienvenida{
-    margin: 20px;
-    margin-top: 120px;
-}
-.btn-default{
-    height: auto;
-    background-image: none;
-    border-color: #FFFFFF;
-    font-size: 25px;
-    color: black;
-}
+
 
