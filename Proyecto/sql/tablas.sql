@@ -19,13 +19,13 @@ ciudad VARCHAR(20))
 
 CREATE TABLE Usuarios 
 
-(id_usuario INT NOT NULL AUTO_INCREMENT,
-nombre VARCHAR(20),
-apellido1 VARCHAR(10),
-apellido2 VARCHAR(10),
-email VARCHAR(10),
-telefono INT(10),
-contraseña VARCHAR(10))
+(id_usuario INT (3) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+nombre VARCHAR(30),
+apellido1 VARCHAR(30),
+apellido2 VARCHAR(30),
+email VARCHAR(40),
+telefono INT(9),
+contraseña VARCHAR(20))
 
 
 CREATE TABLE Eventos
