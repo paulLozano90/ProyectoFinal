@@ -1,40 +1,70 @@
 
-create database unete
+create database unete;
 
-CREATE TABLE Empresa
+use unete;
 
-(id_empresa INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE empresas(
+id_empresa INT (3) PRIMARY KEY NOT NULL AUTO_INCREMENT,
 cif VARCHAR(20),
-nombre_empresa VARCHAR(20),
+nombre VARCHAR(20),
 descripcion VARCHAR(50),
 email VARCHAR(10),
 telefono INT(10),
 direccion VARCHAR(30),
 localidad VARCHAR(30),
-codigo_postal INT(5),
-ciudad VARCHAR(20))
+codPostal INT(5),
+ciudad VARCHAR(20)
+);
 
+drop table empresas;
 
+insert into empresas (cif,nombre,descripcion,email,telefono,direccion,localidad,codPostal,ciudad) values 
+('12345678S','Pepes','Empresa de deporte','pps@email.es',914125468,'Calle Emilio','Madrid',28702,'Madrid');
 
-
-CREATE TABLE Usuarios 
-
-(id_usuario INT (3) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+CREATE TABLE usuarios(
+id_usuario INT (3) PRIMARY KEY NOT NULL AUTO_INCREMENT,
 nombre VARCHAR(30),
 apellido1 VARCHAR(30),
 apellido2 VARCHAR(30),
 email VARCHAR(40),
 telefono INT(9),
-contraseña VARCHAR(20))
+contraseña VARCHAR(20)
+);
 
+drop table usuarios;
 
-CREATE TABLE Eventos
- 
-(id_evento INT NOT NULL AUTO_INCREMENT
-id_empresa 
+insert into usuarios (nombre,apellido1,apellido2,email,telefono,contraseña) values 
+('Paul','Lozano','Cruzado','plc@email.es',914125468,'77/77');
 
+CREATE TABLE tipoEvento(
+idTipo INT (3) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+nombre VARCHAR(20)
+);
 
-)
+CREATE TABLE eventos
+(id_evento INT (3) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+id_empresa INT (3) NOT NULL,
+idTipo INT (3) NOT NULL,
+nombre VARCHAR(20),
+descripcion VARCHAR(50),
+precioNormal FLOAT (4),
+precioReducido FLOAT (4),
+fechaCreacion date,
+fechaCaducidad date,
+CONSTRAINT fk_empresas FOREIGN KEY (id_empresa) REFERENCES empresas(id_empresa),
+CONSTRAINT fk_tipo FOREIGN KEY (idTipo) REFERENCES tipoEvento(idTipo)
+);
 
+drop table evento;
 
+CREATE TABLE usuariosEventos
+(id_evento INT (3) NOT NULL,
+id_usuario INT (3) NOT NULL,
+localizador VARCHAR(20),
+fechaSolicitud date,
+PRIMARY KEY (id_evento,id_usuario),
+CONSTRAINT fk_eventos FOREIGN KEY (id_evento) REFERENCES eventos(id_evento),
+CONSTRAINT fk_usuarios FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
+);
 
+drop table usuariosEventos;
