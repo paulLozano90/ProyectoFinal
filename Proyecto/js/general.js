@@ -9,7 +9,7 @@ $(document).ready(function() {
     }
     $("#abrir").click(function() {
         $("#formulario").slideDown();
-        $("#registro").hide(1500);
+        $("#registro").hide();
     });
 
     mostrarDatos();
