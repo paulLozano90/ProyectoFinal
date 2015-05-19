@@ -8,7 +8,8 @@ $(document).ready(function() {
         $("#footer").css("position", "absolute");
     }
     $("#abrir").click(function() {
-        $("#formulario").slideDown("slow");
+        $("#formulario").slideDown();
+        $("#registro").hide(1500);
     });
 
     mostrarDatos();
