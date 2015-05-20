@@ -33,8 +33,9 @@
                         </div>
                     </div>
                     <div class="col-md-5">
-                        <h3 style="margin-top: 75px;">Identificate como usuario</h3>
                         <form class="form-horizontal" role="form">
+                            <h3 style="margin-top: 75px;">Identificate como usuario</h3>
+
                             <div class="form-group">
                                 <label for="inputEmail1" class="col-lg-2 control-label">Email</label>
                                 <div class="col-lg-10">
@@ -70,49 +71,51 @@
                     <div class="col-md-7"></div>
                     <div class="col-md-5">
                         <h4>¿Eres nuevo en Uneté! ? <a href="#" id="abrir">Aquí</a> puedes registrarte</h4>
-                        <form id="formulario" style="margin-bottom: 30px; display: none;" class="form-horizontal" role="form">
+                        
+                        <form method="post" id="formulario" style="margin-bottom: 30px; display: none;" class="form-horizontal" role="form">
+                            <div id="error" style="display: none; color: red;">Por favor, rellene correctamente los campos marcados</div>
                             <div class="form-group">
                                 <label for="nombreUsuario" class="col-lg-2 control-label">Nombre</label>
-                                <div class="col-lg-10">
-                                    <input type="text" class="form-control" id="nombreUsuario" placeholder="Ejemplo: Pepe">
+                                <div id="Nombre" class="col-lg-10">
+                                    <input type="text" class="form-control" id="nombreUsuario" placeholder="Ejemplo: Pepe" oninput="activaCondiciones();">
+                                </div>
+                            </div>
+                            <div  class="form-group">
+                                <label for="apellido1" class="col-lg-2 control-label">1ºApellido</label>
+                                <div id="Apellido1" class="col-lg-10">
+                                    <input type="text" class="form-control" id="apellido1" placeholder="Ejemplo: Sánchez" oninput="activaCondiciones();">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="apellido1" class="col-lg-2 control-label">1ºApellido</label>
-                                <div class="col-lg-10">
-                                    <input type="text" class="form-control" id="apellido1" placeholder="Ejemplo: Sánchez">
-                                </div>
-                            </div>
-                              <div class="form-group">
                                 <label for="apellido2" class="col-lg-2 control-label">2ºApellido</label>
-                                <div class="col-lg-10">
-                                    <input type="text" class="form-control" id="apellido2" placeholder="Ejemplo: García">
+                                <div id="Apellido2" class="col-lg-10">
+                                    <input type="text" class="form-control" id="apellido2" placeholder="Ejemplo: García" oninput="activaCondiciones();">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="emailUsuario" class="col-lg-2 control-label">Email</label>
-                                <div class="col-lg-10">
-                                    <input type="email" class="form-control" id="emailUsuario" placeholder="Ejemplo: psanchezgar@email.com">
+                                <div id="Email" class="col-lg-10">
+                                    <input type="email" class="form-control" id="emailUsuario" placeholder="Ejemplo: psanchezgar@email.com" oninput="activaCondiciones();">
                                 </div>
                             </div>
-                             <div class="form-group">
+                            <div class="form-group">
                                 <label for="telfUsuario" class="col-lg-2 control-label">Telefono</label>
-                                <div class="col-lg-10">
-                                    <input type="text" class="form-control" id="telfUsuario" placeholder="Ejemplo: 916545343">
+                                <div id="Teléfono" class="col-lg-10">
+                                    <input type="text" class="form-control" id="telfUsuario" placeholder="Ejemplo: 916545343" oninput="activaCondiciones();">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="passUsuario" class="col-lg-2 control-label">Contraseña</label>
-                                <div class="col-lg-10">
-                                    <input type="password" class="form-control" id="passUsuario" placeholder="Contraseña">
-                                    <small>Solo caracteres alfanuméricos y caracteres especiales.</small>
+                                <div id="Contraseña" class="col-lg-10">
+                                    <input type="password" class="form-control" id="passUsuario" placeholder="Contraseña" oninput="activaCondiciones();">
+                                    <small>Cadena de entre 6-12 caracteres con al menos una letra mayúscula, una minúscula y un número.</small>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-lg-offset-2 col-lg-10">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox"> He leído y acepto las condiciones de registro
+                                            <input type="checkbox" id="condiciones" onselect="activaSubmit();" disabled> He leído y acepto las condiciones de registro
                                             <a href="#">Condiciones de registro</a>
                                         </label>
                                     </div>
@@ -120,7 +123,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-lg-offset-2 col-lg-10">
-                                    <button type="submit" id="registro" class="btn btn-primary">Regístrate en Únete</button>
+                                    <button type="submit" id="registro" class="btn btn-primary" disabled onclick="clickSubmit();">Regístrate en Únete</button>
                                 </div>
                             </div>
                         </form>
@@ -151,6 +154,8 @@
         </div>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-        <script src="js/general.js"></script>
+        <!--script src="js/general.js"></script-->
+        <script src="js/validacionUsuario.js"></script>
+        <script type="text/javascript"></script>
     </body>
 </html>
