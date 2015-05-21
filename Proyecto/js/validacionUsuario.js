@@ -4,16 +4,16 @@
  
  
  
- *---------------------------------- Variables públicas ------------------------------------------------/*/
+*---------------------------------- Variables públicas ------------------------------------------------/*/
 /**/                                                                                                   /*/
- /*/                                                                                                    /*/
-  /*/   var nom, ap1, ap2, em, tel, pas;                                                                 /*/
-   /*/
-var publicValidaciones = new Array(nom, ap1, ap2, em, tel, pas);                                 /*/
- /*/
-var campos = new Array("Nombre", "Apellido1", "Apellido2", "Email", "Teléfono", "Contraseña");   /*/
- /*/                                                                                                    /*/
-  /*-----------------------------------------------------------------------------------------------------/*/
+/*/                                                                                                    /*/
+/*/   var nom, ap1, ap2, em, tel, pas;                                                                 /*/
+/*/   var publicValidaciones = new Array(nom, ap1, ap2, em, tel, pas);  
+/*/
+/*/
+      var campos = new Array("Nombre", "Apellido1", "Apellido2", "Email", "Teléfono", "Contraseña");   /*/
+/*/                                                                                                    /*/
+/*-----------------------------------------------------------------------------------------------------/*/
 
 
 /*----------------------------------Main jQuery document-----------------------------------------------/*/
@@ -42,9 +42,9 @@ $(document).ready(function ()
  * @param {type} input
  * @returns {Boolean}
  */
-$.validaTexto = function (input)
+function validaTexto(input)
 {
-    var elemento = $('#' + input).attr("value");
+    var elemento = $('#' + input).val();
     var exp = /^([A-Za-zñáéíóú]{2,40})+$/;
 
     if (elemento !== '' && elemento !== null)
@@ -60,9 +60,9 @@ $.validaTexto = function (input)
 /*validaEmail: función que valida el campo email
  * @returns {undefined}
  */
-$.validaEmail = function ()
+function validaEmail()
 {
-    var email = $("#emailUsuario").attr("value");
+    var email = $("#emailUsuario").val();
     var exp = /^[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,3}$/;
 
     if (email !== '' && email !== null)
@@ -78,9 +78,9 @@ $.validaEmail = function ()
 /*validaTelefono: función que valida el campo teléfono
  * @returns {Boolean}
  */
-$.validaTelefono = function ()
+function validaTelefono()
 {
-    var telef = $("#telfUsuario").attr("value");
+    var telef = $("#telfUsuario").val();
     var exp = /^\+?\d{1,3}?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$/;
 
     if (telef !== '' && telef !== null)
@@ -96,9 +96,9 @@ $.validaTelefono = function ()
 /*validaContraseña: función que valida la contraseña (leer especificaciones en la expresión regular)
  * @returns {Boolean}
  */
-$.validaContraseña = function ()
+function validaContraseña()
 {
-    var pass = $("#passUsuario").attr("value");
+    var pass = $("#passUsuario").val();
     //valida contraseñas con al menos una letra mayúscula, una minúscula, un número y longitud entre 6 y 12 caracteres.
     var exp = /(^(?=.*[a-z])(?=.*[A-Z])(?=.*\d){6,12}.+$)/;
 
@@ -151,6 +151,7 @@ function activaSubmit()
 
 function validar()
 {
+    alert('entra en validar');
     var listaValidaciones = new Array
             (
                     validaTexto("nombreUsuario"),
@@ -174,19 +175,22 @@ function validar()
 
 function clickSubmit()
 {
-    if (validar())
+    alert('entra en click');
+    if (validar() === true)
     {
+        document.getElementById("error").style.display = 'none';
         alert("todo ok!");
         return true;
     }
     else
-    {
-        $("#error").show();
+    {    
+        document.getElementById("error").style.display = 'inline';
         for (var i = 0; i < publicValidaciones.length; i++)
-        {
+        {alert("no ok");
             if (publicValidaciones[i] === false)
             {
-                $("#" + campos[i]).css({"border": "2px", "border-color": "red"});
+                alert("ENTRA");
+                $("#"+campos[i]).css({"border": "2px", "border-color": "red"});
                 return false;
             }
         }

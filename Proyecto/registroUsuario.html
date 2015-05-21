@@ -73,22 +73,22 @@
                     <div class="col-md-5">
                         <h4>¿Eres nuevo en Uneté! ? <a href="#" id="abrir">Aquí</a> puedes registrarte</h4>
                         
-                        <form action="" id="formulario" style="margin-bottom: 30px; display: none;" class="form-horizontal">
-                            <div id="error" style="display: none; color: red;">Por favor, rellene correctamente los campos marcados</div>
+                        <form action="" id="formulario" style="margin-bottom: 30px; display: none;" class="form-horizontal" onsubmit="return clickSubmit();">
+                            <div id="error" style="display: none; color: red; font-weight: bold; font-size: 14px;">Por favor, rellene correctamente los campos marcados</div>
                             <div class="form-group">
-                                <label for="nombreUsuario" class="col-lg-2 control-label">Nombre</label>
+                                <label for="Nombre" class="col-lg-2 control-label">Nombre</label>
                                 <div id="Nombre" class="col-lg-10">
                                     <input type="text" class="form-control" id="nombreUsuario" placeholder="Ejemplo: Pepe" oninput="activaCondiciones();">
                                 </div>
                             </div>
                             <div  class="form-group">
-                                <label for="apellido1" class="col-lg-2 control-label">1ºApellido</label>
+                                <label for="Apellido1" class="col-lg-2 control-label">1ºApellido</label>
                                 <div id="Apellido1" class="col-lg-10">
                                     <input type="text" class="form-control" id="apellido1" placeholder="Ejemplo: Sánchez" oninput="activaCondiciones();">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="apellido2" class="col-lg-2 control-label">2ºApellido</label>
+                                <label for="Apellido2" class="col-lg-2 control-label">2ºApellido</label>
                                 <div id="Apellido2" class="col-lg-10">
                                     <input type="text" class="form-control" id="apellido2" placeholder="Ejemplo: García" oninput="activaCondiciones();">
                                 </div>
@@ -96,7 +96,7 @@
                             <div class="form-group">
                                 <label for="emailUsuario" class="col-lg-2 control-label">Email</label>
                                 <div id="Email" class="col-lg-10">
-                                    <input type="email" class="form-control" id="emailUsuario" placeholder="Ejemplo: psanchezgar@email.com" oninput="activaCondiciones();">
+                                    <input type="text" class="form-control" id="emailUsuario" placeholder="Ejemplo: psanchezgar@email.com" oninput="activaCondiciones();">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -124,7 +124,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-lg-offset-2 col-lg-10">
-                                    <button type="submit" id="registro" class="btn btn-primary" disabled onclick="clickSubmit();">Regístrate en Únete</button>
+                                    <button type="submit" id="registro" class="btn btn-primary" disabled>Regístrate en Únete</button>
                                 </div>
                             </div>
                         </form>
