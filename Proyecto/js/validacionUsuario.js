@@ -1,17 +1,19 @@
- /*Funciones de validación de campos, por parte del cliente, en el registro del formulario*\
-/-------------------------------------------------------------------------------------------\
+/*Funciones de validación de campos, por parte del cliente, en el registro del formulario*\
+ /-------------------------------------------------------------------------------------------\
  
  
  
  
-*---------------------------------- Variables públicas ------------------------------------------------/*/
+ *---------------------------------- Variables públicas ------------------------------------------------/*/
 /**/                                                                                                   /*/
-/*/                                                                                                    /*/
-/*/   var nom, ap1, ap2, em, tel, pas;                                                                 /*/
-/*/   var publicValidaciones = new Array(nom, ap1, ap2, em, tel, pas);                                 /*/
-/*/   var campos = new Array("Nombre", "Apellido1", "Apellido2", "Email", "Teléfono", "Contraseña");   /*/
-/*/                                                                                                    /*/
-/*-----------------------------------------------------------------------------------------------------/*/
+ /*/                                                                                                    /*/
+  /*/   var nom, ap1, ap2, em, tel, pas;                                                                 /*/
+   /*/
+var publicValidaciones = new Array(nom, ap1, ap2, em, tel, pas);                                 /*/
+ /*/
+var campos = new Array("Nombre", "Apellido1", "Apellido2", "Email", "Teléfono", "Contraseña");   /*/
+ /*/                                                                                                    /*/
+  /*-----------------------------------------------------------------------------------------------------/*/
 
 
 /*----------------------------------Main jQuery document-----------------------------------------------/*/
@@ -110,48 +112,44 @@ $.validaContraseña = function ()
     return false;
 };
 
-$.activaCondiciones = function ()
+function activaCondiciones()
 {
-    var check = $("#condiciones");
-    var nom = $("#nombreUsuario").attr("value");
-    var ap1 = $("#apellido1").attr("value");
-    var ap2 = $("#apellido2").attr("value");
-    var email = $("#emailUsuario").attr("value");
-    var telf = $("#telfUsuario").attr("value");
-    var pass = $("#passUsuario").attr("value");
+    var check = document.getElementById("condiciones");
+    var submit = document.getElementById("registro");
+    var nom = $("#nombreUsuario").val();
+    var ap1 = $("#apellido1").val();
+    var ap2 = $("#apellido2").val();
+    var email = $("#emailUsuario").val();
+    var telf = $("#telfUsuario").val();
+    var pass = $("#passUsuario").val();
 
-    if (nom === '' || ap1 === '' || ap2 === '' || email === '' || telf === '' || pass === '')
+    if (nom === "" || ap1 === "" || ap2 === "" || email === "" || telf === "" || pass === "")
     {
-        alert("entra");
         check.disabled = true;
-        return false;
+        check.checked = false;
+        submit.disabled = true;
     }
     else
     {
-        alert("no entra");
         check.disabled = false;
-        return true;
     }
 };
 
-$.activaSubmit = function ()
+function activaSubmit()
 {
-    var submit = $("#registro");
-    var check = $("#condiciones");
-
+    var submit = document.getElementById("registro");
+    var check = document.getElementById("condiciones");
+    
     if (check.checked === true)
     {
         submit.disabled = false;
-        return false;
     }
-    else
-    {
+    else{
         submit.disabled = true;
-        return true;
     }
 };
 
-$.validar = function ()
+function validar()
 {
     var listaValidaciones = new Array
             (
@@ -174,7 +172,7 @@ $.validar = function ()
     return true;
 };
 
-$.clickSubmit = function ()
+function clickSubmit()
 {
     if (validar())
     {
