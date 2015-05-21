@@ -15,7 +15,7 @@
 ?>
 <?php
 
-include ("./conexion.php");
+include ("conexion.php");
 
 $conexion = conectar();
 
@@ -27,6 +27,11 @@ if(isset($_POST['registro'])){
     $emailUsuario = $_POST['emailUsuario'];
     $telfUsuario = $_POST['telfUsuario'];
     $passUsuario = $_POST['passUsuario'];
+    
+    $insertar = "insert into usuarios (nombre,apellido1,apellido2,email,telefono,password) values 
+                ('$nombreUsuario','$apellido1','$apellido2','$emailUsuario',$telfUsuario,'$passUsuario')";
+    
+    $datos = mysql_query($insertar,$conexion);
 }
 
 ?>

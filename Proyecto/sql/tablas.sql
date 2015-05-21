@@ -28,7 +28,7 @@ apellido1 VARCHAR(30),
 apellido2 VARCHAR(30),
 email VARCHAR(40),
 telefono INT(9),
-contraseña VARCHAR(20)
+password VARCHAR(20)
 );
 
 drop table usuarios;
