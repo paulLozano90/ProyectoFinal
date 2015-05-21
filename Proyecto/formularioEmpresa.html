@@ -17,41 +17,72 @@ and open the template in the editor.
     </head>
   <body >
     
-<div class="row" style="margin-top:100px">
-    <div class="col-md-2"></div>
-    <div class="col-md-4">
-        <h4>CIF de la empresa</h4>
-        <input type="text" placeholder="Ej. 342432442U">
-        <br>
-        <h4>Email de la empresa</h4>
-         <input type="text" placeholder="Ej. empresa@ejemplo.com">
-        <br>
-        <h4>Direccion de la empresa</h4>
-         <textarea style="width:250px" placeholder="Dirección de su empresa"></textarea>
-        <br>
-        <h4>Codigo Postal</h4>
-        <input type="text" placeholder="Codigo Postal">
-        <br>
-        
-    </div>
-    <div class="col-md-1"></div>
-    <div class="col-md-4">
-        <h4>Actividad de la empresa</h4>
-        <textarea style="width:250px" placeholder="¿A que os dedicais?"></textarea>
-        <br>
-        <h4>Telefono</h4>
-        <input type="text" placeholder="Ej. 342432446">
-        <br>
-        <h4>Localidad</h4>
-        <input type="text" placeholder="Localidad">
-        <br>
-          <h4>Ciudad</h4>
-        <input type="text" placeholder="Ciudad">
-        <br>
-    </div>
-    
-</div>
-<br>
+<div class="row">
+                    <div class="col-md-7"></div>
+                    <div class="col-md-5">
+                        <h4>¿Eres nuevo en Uneté! ? <a href="#" id="abrir">Aquí</a>puedes registrarte</h4>
+                        <form id="formulario" style="margin-bottom: 30px; display: none;" class="form-horizontal" role="form">
+                            
+                            <div class="form-group">
+                                <label for="inputCIF" class="col-lg-2 control-label">CIF</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="inputCIF" placeholder="Ejemplo: 4243242424C">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="inputName" class="col-lg-2 control-label">Nombre</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="inputName" placeholder="Ejemplo: Pepe">
+                                </div>
+                            </div>
+                           <div class="form-group">
+                                <label for="inputEmail1" class="col-lg-2 control-label">Email</label>
+                                <div class="col-lg-10">
+                                    <input type="email" class="form-control" id="inputEmail1" placeholder="Ejemplo: psanchezgar@email.com">
+                                     <small>Solo caracteres alfanuméricos y caracteres especiales.</small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputTelefono" class="col-lg-2 control-label">Teléfono</label>
+                                <div class="col-lg-10">
+                                    <input type="telefono" class="form-control" id="inputTelefono" placeholder="Telefono">
+                                    <small>Solo caracteres numéricos.</small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputDescripcion" class="col-lg-2 control-label">Descripción</label>
+                                <div class="col-lg-10">
+                                    <textarea class="form-control" id="inputDescripcion" placeholder="¿A que te dedicas? Cuentanos...." maxlength="200" ></textarea>
+                                    <small>Máximo 200 caracteres</small>
+                                </div>
+                            </div>
+                             <div class="form-group">
+                                <label for="inputPassword1" class="col-lg-2 control-label">Contraseña</label>
+                                <div class="col-lg-10">
+                                    <input type="password" class="form-control" id="inputPassword1" placeholder="Contraseña">
+                                    <small>Solo caracteres alfanuméricos y caracteres especiales.</small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-offset-2 col-lg-10">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> He leído y acepto las condiciones de registro
+                                            <a href="#">Condiciones de registro</a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-offset-2 col-lg-10">
+                                    <button type="submit" id="registro" class="btn btn-primary">Regístrate en Únete</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            
 <button class="btn btn-primary" style="margin-left:550px">Únete</button>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
