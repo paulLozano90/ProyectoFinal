@@ -16,10 +16,9 @@
 <?php
 
 include ("conexion.php");
-
 $conexion = conectar();
 
-if(isset($_POST['registro'])){
+if(isset($_POST['registroUsuario'])){
     
     $nombreUsuario = $_POST['nombreUsuario'];
     $apellido1 = $_POST['apellido1'];
@@ -28,10 +27,36 @@ if(isset($_POST['registro'])){
     $telfUsuario = $_POST['telfUsuario'];
     $passUsuario = $_POST['passUsuario'];
     
-    $insertar = "insert into usuarios (nombre,apellido1,apellido2,email,telefono,password) values 
+    $insertarUsuario = "insert into usuarios (nombre,apellido1,apellido2,email,telefono,password) values 
                 ('$nombreUsuario','$apellido1','$apellido2','$emailUsuario',$telfUsuario,'$passUsuario')";
     
-    $datos = mysql_query($insertar,$conexion);
+    $datos = mysql_query($insertarUsuario,$conexion);
+    
+    if($datos){
+        header("Location: ../pruebaRegistro.html");
+    }
+}
+
+if(isset($_POST['registroEmpresa'])){
+    
+    $CIF = $_POST['CIF'];
+    $nombreEmpresa = $_POST['nombreEmpresa'];
+    $emailEmpresa = $_POST['emailEmpresa'];
+    $telfEmpresa = $_POST['telfEmpresa'];
+    $descripEmpresa = $_POST['descripEmpresa'];
+    $dirEmpresa = $_POST['dirEmpresa'];
+    $codEmpresa = $_POST['codEmpresa'];
+    $localEmpresa = $_POST['localEmpresa'];
+    $ciudadEmpresa = $_POST['ciudadEmpresa'];
+    
+    $insertarEmpresa = "insert into empresas (cif,nombre,descripcion,email,telefono,direccion,localidad,codPostal,ciudad) values 
+                ('$CIF','$nombreEmpresa','$descripEmpresa','$emailEmpresa',$telfEmpresa,'$dirEmpresa','$localEmpresa',$codEmpresa,'$ciudadEmpresa')";
+    
+    $datos = mysql_query($insertarEmpresa,$conexion);
+    
+    if($datos){
+        header("Location: ../registroEmpresa.html");
+    }
 }
 
 ?>

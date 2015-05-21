@@ -85,40 +85,62 @@ and open the template in the editor.
                         <h3 style="margin-top: 50px;">Registrate</h3>
                         <form style="margin-bottom: 30px;" class="form-horizontal" role="form" action="php/insertarRegistros.php" method="post">
                             <div class="form-group">
-                                <label for="nombreUsuario" class="col-lg-2 control-label">Nombre</label>
+                                <label for="CIF" class="col-lg-2 control-label">CIF</label>
                                 <div class="col-lg-10">
-                                    <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario" placeholder="Ejemplo: Pepe">
+                                    <input type="text" class="form-control" id="CIF" name="CIF" placeholder="Ejemplo: 4243242424C">
+                                </div>
+                            </div>                            
+                            <div class="form-group">
+                                <label for="nombreEmpresa" class="col-lg-2 control-label">Empresa</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="nombreEmpresa" name="nombreEmpresa" placeholder="Ejemplo: Pepe">
+                                </div>
+                            </div>
+                           <div class="form-group">
+                                <label for="emailEmpresa" class="col-lg-2 control-label">Email</label>
+                                <div class="col-lg-10">
+                                    <input type="email" class="form-control" id="emailEmpresa" name="emailEmpresa" placeholder="Ejemplo: psanchezgar@email.com">
+                                     <small>Solo caracteres alfanuméricos y caracteres especiales.</small>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="apellido1" class="col-lg-2 control-label">1ºApellido</label>
+                                <label for="telfEmpresa" class="col-lg-2 control-label">Teléfono</label>
                                 <div class="col-lg-10">
-                                    <input type="text" class="form-control" id="apellido1" name="apellido1" placeholder="Ejemplo: Sánchez">
+                                    <input type="text" class="form-control" id="telfEmpresa" name="telfEmpresa" placeholder="Ejemplo: 916544433">
+                                    <small>Solo caracteres numéricos.</small>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="apellido2" class="col-lg-2 control-label">2ºApellido</label>
+                                <label for="descripEmpresa" class="col-lg-2 control-label">Descripción</label>
                                 <div class="col-lg-10">
-                                    <input type="text" class="form-control" id="apellido2" name="apellido2" placeholder="Ejemplo: García">
+                                    <textarea class="form-control" id="descripEmpresa" name="descripEmpresa" placeholder="¿A que te dedicas? Cuentanos...." maxlength="200" ></textarea>
+                                    <small>Máximo 200 caracteres</small>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="emailUsuario" class="col-lg-2 control-label">Email</label>
+                             <div class="form-group">
+                                <label for="dirEmpresa" class="col-lg-2 control-label">Dirección</label>
                                 <div class="col-lg-10">
-                                    <input type="email" class="form-control" id="emailUsuario" name="emailUsuario" placeholder="Ejemplo: psanchezgar@email.com">
+                                    <input type="text" class="form-control" id="dirEmpresa" name="dirEmpresa" placeholder="Ejemplo: Paseo de la Castellana 169">
+                                    
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="telfUsuario" class="col-lg-2 control-label">Telefono</label>
+                              <div class="form-group">
+                                <label for="codEmpresa" class="col-lg-2 control-label">C.Postal</label>
                                 <div class="col-lg-10">
-                                    <input type="text" class="form-control" id="telfUsuario" name="telfUsuario" placeholder="Ejemplo: 916545343">
+                                    <input type="text" class="form-control" id="codEmpresa" name="codEmpresa" placeholder="Ejemplo: 28702">  
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="passUsuario" class="col-lg-2 control-label">Contraseña</label>
+                             <div class="form-group">
+                                <label for="localEmpresa" class="col-lg-2 control-label">Localidad</label>
                                 <div class="col-lg-10">
-                                    <input type="password" class="form-control" id="passUsuario" name="passUsuario" placeholder="Contraseña">
-                                    <small>Solo caracteres alfanuméricos y caracteres especiales.</small>
+                                    <input type="text" class="form-control" id="localEmpresa" name="localEmpresa" placeholder="Ejemplo: Alcobendas">
+                                  
+                                </div>
+                            </div>
+                             <div class="form-group">
+                                <label for="ciudadEmpresa" class="col-lg-2 control-label">Ciudad</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="ciudadEmpresa" name="ciudadEmpresa"placeholder="Ejemplo: Madrid">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -133,7 +155,7 @@ and open the template in the editor.
                             </div>
                             <div class="form-group">
                                 <div class="col-lg-offset-2 col-lg-10">
-                                    <button type="submit" name="registro" class="btn btn-primary">Regístrate en Únete</button>
+                                    <button type="submit" name="registroEmpresa" class="btn btn-primary">Regístrate en Únete</button>
                                 </div>
                             </div>
                         </form>
