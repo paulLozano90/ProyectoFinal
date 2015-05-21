@@ -19,6 +19,14 @@ include ("./conexion.php");
 
 $conexion = conectar();
 
-
+if(isset($_POST['registro'])){
+    
+    $nombreUsuario = $_POST['nombreUsuario'];
+    $apellido1 = $_POST['apellido1'];
+    $apellido2 = $_POST['apellido2'];
+    $emailUsuario = $_POST['emailUsuario'];
+    $telfUsuario = $_POST['telfUsuario'];
+    $passUsuario = $_POST['passUsuario'];
+}
 
 ?>
