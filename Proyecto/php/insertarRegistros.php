@@ -18,7 +18,7 @@
 include ("conexion.php");
 $conexion = conectar();
 
-if(isset($_POST['registroUsuario'])){
+if(isset($_POST['registro'])){
     
     $nombreUsuario = $_POST['nombreUsuario'];
     $apellido1 = $_POST['apellido1'];
@@ -30,10 +30,10 @@ if(isset($_POST['registroUsuario'])){
     $insertarUsuario = "insert into usuarios (nombre,apellido1,apellido2,email,telefono,password) values 
                 ('$nombreUsuario','$apellido1','$apellido2','$emailUsuario',$telfUsuario,'$passUsuario')";
     
-    $datos = mysql_query($insertarUsuario,$conexion);
+    $datos = mysqli_query($conexion,$insertarUsuario);
     
     if($datos){
-        header("Location: ../pruebaRegistro.html");
+        header("Location: ../registroUsuario.html");
     }
 }
 
@@ -52,7 +52,7 @@ if(isset($_POST['registroEmpresa'])){
     $insertarEmpresa = "insert into empresas (cif,nombre,descripcion,email,telefono,direccion,localidad,codPostal,ciudad) values 
                 ('$CIF','$nombreEmpresa','$descripEmpresa','$emailEmpresa',$telfEmpresa,'$dirEmpresa','$localEmpresa',$codEmpresa,'$ciudadEmpresa')";
     
-    $datos = mysql_query($insertarEmpresa,$conexion);
+    $datos = mysqli_query($insertarEmpresa,$conexion);
     
     if($datos){
         header("Location: ../registroEmpresa.html");

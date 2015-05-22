@@ -16,7 +16,7 @@ codPostal INT(5),
 ciudad VARCHAR(20)
 );
 
-drop table empresas;
+/*drop table empresas;*/
 
 insert into empresas (cif,nombre,descripcion,email,telefono,direccion,localidad,codPostal,ciudad) values 
 ('12345678S','Pepes','Empresa de deporte','pps@email.es',914125468,'Calle Emilio','Madrid',28702,'Madrid');
@@ -31,7 +31,7 @@ telefono INT(9),
 password VARCHAR(20)
 );
 
-drop table usuarios;
+
 
 insert into usuarios (nombre,apellido1,apellido2,email,telefono,contraseña) values 
 ('Paul','Lozano','Cruzado','plc@email.es',914125468,'77/77');
@@ -55,7 +55,7 @@ CONSTRAINT fk_empresas FOREIGN KEY (id_empresa) REFERENCES empresas(id_empresa),
 CONSTRAINT fk_tipo FOREIGN KEY (idTipo) REFERENCES tipoEvento(idTipo)
 );
 
-drop table evento;
+
 
 CREATE TABLE usuariosEventos
 (id_evento INT (3) NOT NULL,
@@ -67,4 +67,4 @@ CONSTRAINT fk_eventos FOREIGN KEY (id_evento) REFERENCES eventos(id_evento),
 CONSTRAINT fk_usuarios FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
 );
 
-drop table usuariosEventos;
+
