@@ -7,11 +7,9 @@
 *---------------------------------- Variables públicas ------------------------------------------------/*/
 /**/                                                                                                   /*/
 /*/                                                                                                    /*/
-/*/   var nom, ap1, ap2, em, tel, pas;                                                                 /*/
+/*/   var nom, ap1, ap2, em, tel, pas;                                                                /*/
 /*/   var publicValidaciones = new Array(nom, ap1, ap2, em, tel, pas);  
-/*/
-/*/
-      var campos = new Array("Nombre", "Apellido1", "Apellido2", "Email", "Teléfono", "Contraseña");   /*/
+      var campos = new Array("nombreUsuario", "apellido1", "apellido2", "emailUsuario", "telfUsuario", "passUsuario");   /*/
 /*/                                                                                                    /*/
 /*-----------------------------------------------------------------------------------------------------/*/
 
@@ -81,7 +79,7 @@ function validaEmail()
 function validaTelefono()
 {
     var telef = $("#telfUsuario").val();
-    var exp = /^\+?\d{1,3}?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$/;
+    var exp = /^[9|6|7][0-9]{8}$/;
 
     if (telef !== '' && telef !== null)
     {
@@ -151,7 +149,7 @@ function activaSubmit()
 
 function validar()
 {
-    alert('entra en validar');
+    var aux = true;
     var listaValidaciones = new Array
             (
                     validaTexto("nombreUsuario"),
@@ -161,21 +159,23 @@ function validar()
                     validaTelefono(),
                     validaContraseña()
                     );
-
+       
     for (var i = 0; i < listaValidaciones.length; i++)
-    {
+    {             
         if (listaValidaciones[i] === false)
         {
+            //alert('entra en validar');     
             publicValidaciones[i] = false;
-            return false;
+            aux = false;
         }
     }
-    return true;
+    return aux;
 };
 
 function clickSubmit()
 {
-    alert('entra en click');
+    var auxSub = true;
+    //alert('entra en click');
     if (validar() === true)
     {
         document.getElementById("error").style.display = 'none';
@@ -186,15 +186,31 @@ function clickSubmit()
     {    
         document.getElementById("error").style.display = 'inline';
         for (var i = 0; i < publicValidaciones.length; i++)
-        {alert("no ok");
-            if (publicValidaciones[i] === false)
+        {
+            //alert("no ok");
+            if(publicValidaciones[i] === false)
             {
-                alert("ENTRA");
-                $("#"+campos[i]).css({"border": "2px", "border-color": "red"});
-                return false;
+                //alert("ENTRA, campos[i]: "+campos[i]);
+                document.getElementById(campos[i]).setAttribute("style","border-color: red; border-width: 2px;");              
+                auxSub = false;
+                document.getElementById("condiciones").checked = false;
+                document.getElementById("condiciones").disabled = true;
+                document.getElementById("registro").disabled = true;
+            }
+            else
+            {
+                //alert("else");
+                document.getElementById(campos[i]).setAttribute("style","");
             }
         }
     }
+    
+    for (var i = 0; i < publicValidaciones.length; i++)
+    {                 
+        publicValidaciones[i] = true;
+    }
+    
+    return auxSub;
 };
 
 /*-----------------------------------------------------------------------------------------------------/*/
