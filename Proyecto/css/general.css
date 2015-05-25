@@ -18,9 +18,6 @@ body{
     width: auto;
     padding: 0 15px;
 }
-.jumbotron{
-    background: none;    
-}
 .well{
     height: auto;
     background: none;
@@ -41,6 +38,10 @@ body{
 }
 #cabecera > .navbar-default{
     margin-bottom: 50px;
+}
+
+.jumbotron{
+    background: none;    
 }
 #logoCabecera{
     width: 130px;
@@ -127,14 +128,14 @@ a:hover, a:focus{
     font-size: 15px;
     margin-left: 50px;
 }
-
+/*Tags HTML*/
 hr{
     background-color: #FFFFFF;
     background-size: 2px;
 }
-#change{
+/*#change{
     background-color: #FFFFFF;
-}
+}*/
 .form-control{
     background-color: #E6E6E6;
     width: 300px; 
