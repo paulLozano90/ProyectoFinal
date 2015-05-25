@@ -1,28 +1,4 @@
 <!DOCTYPE html>
-<!--
-Autor=Daniel Carrasco, Elias Sanchez Arroyo y Paul Lozano Cruzado 
-Fecha=25-may-2015
-Licencia=gpl30
-Version=1.0
-Descripcion=
--->
-
-<!--
-Copyright (C) 2015 Paul Lozano Cruzado 
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
--->
 <html>
     <head>
         <title>Unete | Bienvenido</title>
@@ -56,7 +32,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                             </div>
                         </div>
                     </div>
-                    <div id="login" class="col-md-5">
+                    <div id="registro" class="col-md-5">
                         <h3 style="margin-top: 75px;">Identificate como usuario</h3>
                         <form class="form-horizontal" role="form">
                             <div class="form-group">
@@ -84,58 +60,56 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                             </div>
                             <div class="form-group">
                                 <div class="col-lg-offset-2 col-lg-10">
-                                    <button type="submit" class="btn btn-default">Iniciar sesión</button>
+                                    <button type="submit" id="inicio" class="btn btn-default">Iniciar sesión</button>
                                 </div>
-                            </div>                                               
-                        <h4>¿Eres nuevo en Uneté! ? <a href="#" id="abrir">Aquí</a> puedes registrarte</h4>
+                            </div>
+                            <h4>¿Eres nuevo en Uneté! ? <a href="#" id="abrir">Aquí</a> puedes registrarte</h4>
                         </form>
                     </div>
-                    <div class="col-md-5">
-                        <form method="post" action="php/insertarRegistros.php" id="formulario" style="margin-top: 100px; display: none;" class="form-horizontal" onsubmit="return clickSubmit();">
-                            <h3>Registrate</h3>
-                            <div id="error" style="display: none; color: red; font-weight: bold; font-size: 14px;">Por favor, rellene correctamente los campos marcados</div>
+                    <div id="formulario" class="col-md-5" style="display: none;">
+                        <form style="margin-top: 50px; margin-bottom: 30px;" class="form-horizontal" role="form" action="php/insertarRegistros.php" method="post">
                             <div class="form-group">
                                 <label for="nombreUsuario" class="col-lg-2 control-label">Nombre</label>
-                                <div id="Nombre" class="col-lg-10">
-                                    <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario" placeholder="Ejemplo: Pepe" oninput="activaCondiciones();">
-                                </div>
-                            </div>
-                            <div  class="form-group">
-                                <label for="apellido1" class="col-lg-2 control-label">1ºApellido</label>
-                                <div id="Apellido1" class="col-lg-10">
-                                    <input type="text" class="form-control" id="apellido1" name="apellido1" placeholder="Ejemplo: Sánchez" oninput="activaCondiciones();">
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario" placeholder="Ejemplo: Pepe">
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label for="apellido1" class="col-lg-2 control-label">1ºApellido</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="apellido1" name="apellido1" placeholder="Ejemplo: Sánchez">
+                                </div>
+                            </div>
+                              <div class="form-group">
                                 <label for="apellido2" class="col-lg-2 control-label">2ºApellido</label>
-                                <div id="Apellido2" class="col-lg-10">
-                                    <input type="text" class="form-control" id="apellido2" name="apellido2" placeholder="Ejemplo: García" oninput="activaCondiciones();">
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="apellido2" name="apellido2" placeholder="Ejemplo: García">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="emailUsuario" class="col-lg-2 control-label">Email</label>
-                                <div id="Email" class="col-lg-10">
-                                    <input type="text" class="form-control" id="emailUsuario" name="emailUsuario" placeholder="Ejemplo: psanchezgar@email.com" oninput="activaCondiciones();">
+                                <div class="col-lg-10">
+                                    <input type="email" class="form-control" id="emailUsuario" name="emailUsuario" placeholder="Ejemplo: psanchezgar@email.com">
                                 </div>
                             </div>
-                            <div class="form-group">
+                             <div class="form-group">
                                 <label for="telfUsuario" class="col-lg-2 control-label">Telefono</label>
-                                <div id="Teléfono" class="col-lg-10">
-                                    <input type="text" class="form-control" id="telfUsuario" name="telfUsuario" placeholder="Ejemplo: 916545343" oninput="activaCondiciones();">
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="telfUsuario" name="telfUsuario" placeholder="Ejemplo: 916545343">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="passUsuario" class="col-lg-2 control-label">Contraseña</label>
-                                <div id="Contraseña" class="col-lg-10">
-                                    <input type="password" class="form-control" id="passUsuario" name="passUsuario" placeholder="Contraseña" oninput="activaCondiciones();">
-                                    <small>Cadena de entre 6-12 caracteres con al menos una letra mayúscula, una minúscula y un número.</small>
+                                <div class="col-lg-10">
+                                    <input type="password" class="form-control" id="passUsuario" name="passUsuario" placeholder="Contraseña">
+                                    <small>Solo caracteres alfanuméricos y caracteres especiales.</small>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-lg-offset-2 col-lg-10">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" id="condiciones" onchange="activaSubmit();" > He leído y acepto las condiciones de registro
+                                            <input type="checkbox"> He leído y acepto las condiciones de registro
                                             <a href="#">Condiciones de registro</a>
                                         </label>
                                     </div>
@@ -143,38 +117,37 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                             </div>
                             <div class="form-group">
                                 <div class="col-lg-offset-2 col-lg-10">
-                                    <button type="submit" name="registroUsuario" class="btn btn-default" disabled>Regístrate en Únete</button>
+                                    <button type="submit" name="registroUsuario" class="btn btn-primary">Regístrate en Únete</button>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
-        </div>
-        <footer id="footer" class="well">
-            <div class="row">
-                <hr>
-                <div class="col-md-12 col-sm-12">
-                    <!-- bootstrap nav -->
-                    <div id="navFooter" class="center-block">
-                        <div class="navbar">
-                            <ul class="nav-justified">
-                                <li><a href="#">Acerca de</a></li>
-                                <li><a href="#">Política de cookies</a></li>
-                                <li><a href="#">Bases legales</a></li>
-                                <li><a href="#">Redes sociales <i style="width: 15px; height: 15px; color: #FFFFFF;" class="fa fa-facebook-square"></i>
-                                        <i style="width: 15px; height: 15px; color: #FFFFFF;" class="fa fa-twitter"></i></a></li>
-                            </ul>
+            <footer id="footer" class="well">
+                <div class="row">
+                    <hr>
+                    <div class="col-md-12 col-sm-12">
+                        <!-- bootstrap nav -->
+                        <div id="navFooter" class="center-block">
+                            <div class="navbar">
+                                <ul class="nav-justified">
+                                    <li><a href="#">Acerca de</a></li>
+                                    <li><a href="#">Política de cookies</a></li>
+                                    <li><a href="#">Bases legales</a></li>
+                                    <li><a href="#">Redes sociales <i style="width: 15px; height: 15px; color: #FFFFFF;" class="fa fa-facebook-square"></i>
+                                            <i style="width: 15px; height: 15px; color: #FFFFFF;" class="fa fa-twitter"></i></a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
+                    <!-- /bootstrap nav -->
                 </div>
-                <!-- /bootstrap nav -->
-            </div>
-        </footer>
-        <!--scripts loaded here-->
+            </footer>
+            <!--scripts loaded here-->
+        </div>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/general.js"></script>
-        <script type="text/javascript" src="js/validacionesCliente.js"></script>
+        <script src="js/general.js"></script>
     </body>
 </html>

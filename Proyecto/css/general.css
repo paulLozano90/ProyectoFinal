@@ -57,9 +57,16 @@ body{
     background: #FFFFFF;
     color: black;
 }
+.nav-justified > li > a{
+    font-size: 18px;
+    color: black;
+}
 .nav-justified > li > a:link{
     color: black;
-    font-size: 18px;
+}
+.nav-justified > li > a:hover{
+    background: #43D3DE;
+    color: #FFFFFF;
 }
 /*Titulos,descripciones...*/
 .titulo_incio{
@@ -94,11 +101,12 @@ input, textArea{
     font-size: 14px;
 }
 .btn:hover{
-    background:aqua; 
+    background:#43D3DE;
+    color: #FFFFFF;
 }
 /*Enlaces de las paginas*/
 a{
-    color: aqua;
+    color: #43D3DE;
 }
 a:hover, a:focus{
     color: #FFFFFF;
