@@ -1,32 +1,40 @@
 ////////Funciones de validación de campos, por parte del cliente, en el registro del formulario/////////
- /////////////////////////////////////////////////////////////////////////////////////////////////
- 
- 
- 
- 
-/////////////////////////////// Variables públicas //////////////////////////////////////////////
-/**/                                                                                                   /*/
-/*/                                                                                                    /*/
-/*/   var nom, ap1, ap2, em, tel, pas;                                                                /*/
-/*/   var publicValidaciones = new Array(nom, ap1, ap2, em, tel, pas);  
-      var campos = new Array("nombreUsuario", "apellido1", "apellido2", "emailUsuario", "telfUsuario", "passUsuario");   /*/
-/*/                                                                                                    /*/
-/////////////////////////////////////////////////////////////////////////////////////////////////*/
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+/////////////////////////////// Variables públicas globales ////////////////////////////////////////////////////////////////////
+
+//public
+var url = location.pathname;
+
+//public Usuario
+var nom, ap1, ap2, em, tel, pas;
+var publicValidaciones = new Array(nom, ap1, ap2, em, tel, pas);
+var campos = new Array("nombreUsuario", "apellido1", "apellido2", "emailUsuario", "telfUsuario", "passUsuario");
+
+//public Empresa
+var cif, nom_emp, em_emp, tel_emp, desc, dir, zip_code, loc, cit;
+var publicValEmpresa = new Array(cif, nom_emp, em_emp, tel_emp, desc, dir, zip_code, loc, cit);
+var camposEmpresa = new Array("CIF", "nombreEmpresa", "emailEmpresa", "telfEmpresa", "descripEmpresa", "dirEmpresa", "localEmpresa", "ciudadEmpresa");
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 ///////////////////////////////Main jQuery document: EXPORTADO A GENERAL.JS, NO TOCAR DE MOMENTO////////////////////////
 /*$(document).ready(function ()
-{
-    if ($(document).height() > 991 || $(document).width() < 991) {
-        $("#footer").css("position", "absolute");
-    }
-    $("#abrir").click(function () {
-        $("#formulario").show();
-        //$("#registro").hide();
-    });
-
-
-});*/
+ {
+ if ($(document).height() > 991 || $(document).width() < 991) {
+ $("#footer").css("position", "absolute");
+ }
+ $("#abrir").click(function () {
+ $("#formulario").show();
+ //$("#registro").hide();
+ });
+ 
+ 
+ });*/
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -54,46 +62,76 @@ function activaCondiciones()
     {
         check.disabled = false;
     }
-};
+}
+;
 
 function activaSubmit()
 {
     var submit = document.getElementById("registro");
     var check = document.getElementById("condiciones");
-    
+
     if (check.checked === true)
     {
         submit.disabled = false;
     }
-    else{
+    else {
         submit.disabled = true;
     }
-};
+}
+;
 
 function validar()
 {
     var aux = true;
-    var listaValidaciones = new Array
-            (
-                    validaTexto("nombreUsuario"),
-                    validaTexto("apellido1"),
-                    validaTexto("apellido2"),
-                    validaEmail(),
-                    validaTelefono(),
-                    validaContraseña()
-                    );
-       
+    alert(url);
+    if (url === "/registroUsuario.html")
+    {
+        var listaValidaciones = new Array
+                (
+                        validaTexto("nombreUsuario"),
+                        validaTexto("apellido1"),
+                        validaTexto("apellido2"),
+                        validaEmail(),
+                        validaTelefono(),
+                        validaContraseña()
+                        );
+    }
+    else
+    {
+        var listaValidaciones = new Array
+                (
+                        validaCIF(),
+                        validaTexto("nombreEmpresa"),
+                        validaEmail(),
+                        validaTelefono(),
+                        validaDesc(),
+                        validaZip(),
+                        validaDir(),
+                        validaTexto("localEmpresa"),
+                        validaTexto("ciudadEmpresa")
+                        );
+    }
+
     for (var i = 0; i < listaValidaciones.length; i++)
-    {             
+    {
         if (listaValidaciones[i] === false)
         {
-            //alert('entra en validar');     
-            publicValidaciones[i] = false;
+            //alert('entra en validar');
+            if (url === "/registroUsuario.html")
+            {
+                publicValidaciones[i] = false;
+
+            }
+            else
+            {
+                publicValEmpresa[i] = false;
+            }
             aux = false;
         }
     }
     return aux;
-};
+}
+;
 
 function clickSubmit()
 {
@@ -105,35 +143,42 @@ function clickSubmit()
         return true;
     }
     else
-    {    
+    {
         document.getElementById("error").style.display = 'inline';
         for (var i = 0; i < publicValidaciones.length; i++)
         {
             //alert("no ok");
-            if(publicValidaciones[i] === false)
+            if (publicValidaciones[i] === false)
             {
                 //alert("ENTRA, campos[i]: "+campos[i]);
-                document.getElementById(campos[i]).setAttribute("style","border-color: red; border-width: 2px;");              
-                auxSub = false;
+                (url === "/registroUsuario")?
+                    document.getElementById(campos[i]).setAttribute("style", "border-color: red; border-width: 2px;"):
+                        document.getElementById(camposEmpresa[i]).setAttribute("style", "border-color: red; border-width: 2px;");
+                
                 document.getElementById("condiciones").checked = false;
                 document.getElementById("condiciones").disabled = true;
                 document.getElementById("registro").disabled = true;
+                auxSub = false;
             }
             else
             {
                 //alert("else");
-                document.getElementById(campos[i]).setAttribute("style","");
+                (url === "/registroUsuario")? 
+                document.getElementById(campos[i]).setAttribute("style", ""):
+                        document.getElementById(camposEmpresa[i]).setAttribute("style", "");
             }
         }
     }
-    
-    for (var i = 0; i < publicValidaciones.length; i++)
-    {                 
+
+    for (var i = 0, j = 0; i < publicValidaciones.length, j < publicValEmpresa.length; i++, j++)
+    {
         publicValidaciones[i] = true;
+        publicValEmpresa[j] = true;
     }
-    
+
     return auxSub;
-};
+}
+;
 ////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -148,7 +193,13 @@ function clickSubmit()
 function validaTexto(input)
 {
     var elemento = $('#' + input).val();
-    var exp = /^([A-Za-zñáéíóú]{2,40})+$/;
+    var exp;
+    if(input !== "descripEmpresa"){
+        exp = /^([A-Za-zñáéíóú]{2,40})+$/;
+    }
+    else{
+        exp = /^([A-Za-zñáéíóú]{2,200})+$/;
+    }
 
     if (elemento !== '' && elemento !== null)
     {
@@ -158,7 +209,8 @@ function validaTexto(input)
         }
     }
     return false;
-};
+}
+;
 
 /*validaEmail: función que valida el campo email
  * @returns {undefined}
@@ -176,7 +228,8 @@ function validaEmail()
         }
     }
     return false;
-};
+}
+;
 
 /*validaTelefono: función que valida el campo teléfono
  * @returns {Boolean}
@@ -194,7 +247,8 @@ function validaTelefono()
         }
     }
     return false;
-};
+}
+;
 
 /*validaContraseña: función que valida la contraseña (leer especificaciones en la expresión regular)
  * @returns {Boolean}
@@ -213,13 +267,14 @@ function validaContraseña()
         }
     }
     return false;
-};
+}
+;
 
 
 function validaCIF() //EN PRUEBAS
 {
     var CIF = $("#CIF").val();
-    var exp = /^[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,3}$/;
+    var exp = /^[a-zA-Z]{1}\\d{7}[a-jA-J0-9]{1}$/;
 
     if (CIF !== '' && CIF !== null)
     {
@@ -230,6 +285,8 @@ function validaCIF() //EN PRUEBAS
     }
     return false;
 }
+
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////

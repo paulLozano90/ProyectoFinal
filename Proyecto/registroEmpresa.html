@@ -140,14 +140,14 @@ and open the template in the editor.
                              <div class="form-group">
                                 <label for="ciudadEmpresa" class="col-lg-2 control-label">Ciudad</label>
                                 <div class="col-lg-10">
-                                    <input type="text" class="form-control" id="ciudadEmpresa" name="ciudadEmpresa"placeholder="Ejemplo: Madrid">
+                                    <input type="text" class="form-control" id="ciudadEmpresa" name="ciudadEmpresa" placeholder="Ejemplo: Madrid">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-lg-offset-2 col-lg-10">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox"> He leído y acepto las condiciones de registro
+                                            <input type="checkbox" id="condiciones"> He leído y acepto las condiciones de registro
                                             <a href="#">Condiciones de registro</a>
                                         </label>
                                     </div>
@@ -155,7 +155,7 @@ and open the template in the editor.
                             </div>
                             <div class="form-group">
                                 <div class="col-lg-offset-2 col-lg-10">
-                                    <button type="submit" name="registroEmpresa" class="btn btn-primary">Regístrate en Únete</button>
+                                    <button type="submit" id="registro" name="registroEmpresa" class="btn btn-primary" disabled>Regístrate en Únete</button>
                                 </div>
                             </div>
                         </form>
@@ -186,6 +186,7 @@ and open the template in the editor.
         </div>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-        <script src="js/general.js"></script>
+        <script type="text/javascript" src="js/general.js"></script>
+        <script type="text/javascript" src="js/validacionesCliente.js"></script>
     </body>
 </html>
