@@ -15,20 +15,35 @@
         <link rel="stylesheet" href="css/general.css" />
     </head>
     <body>
+           <div id="cabecera" class="container">
+            <div class="jumbotron">
+                <img id="logoCabecera" src="images/logotipoUnete.png" alt="Logotipo Únete" style="margin-right:20px;">
+                <h1 style="text-align:left;">Únete</h1>
+            </div>
+            <!-- bootstrap nav -->
+            <div class="navbar navbar-default">
+                    <ul class="nav nav-justified">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#">Restaurantes</a></li>
+                        <li><a href="#">Deportes</a></li>
+                        <li><a href="#">Salud y belleza</a></li>
+                    </ul>
+            </div>
+        </div>
         <h2 align="center">Registra tu evento</h2>
-        <div class="row" style="margin-top:100px">
+        <div class="row" style="margin-top:30px">
             <div class="col-md-3"></div>
             <div class="col-md-4">
-                <label for="text">Nombre de la empresa</label><br><br>
-                <input type="text" id="nombreEmpresa" placeholder="Nombre de la empresa"><br><br>
                 <label for="text">Nombre del evento</label><br><br>
-                <input type="text" id="nombreEvento" placeholder="Nombre del evento"><br><br>
-                <label for="text">Descripcion del evento</label><br><br>
-                <textarea id="descripcion"  placeholder="Explicanos tu evento aquí..." maxlength="200" rows="5" cols="40"></textarea>
+                <input type="text" id="nombreEmpresa" placeholder="Nombre de la empresa"><br><br>
+                <label for="text">Descripcion</label><br><br>
+                <textarea id="descripcionCorta" placeholder="Descripcion del evento" rows="2" cols="20"></textarea><br><br>
+                <label for="text">Explicanos más....</label><br><br>
+                <textarea id="descripcionLarga" placeholder="Explicanos tu evento aquí..." maxlength="200" rows="5" cols="40"></textarea>
                 <label for="text">Fecha caducidad del evento</label><br><br>
                 <input type="date" id="fechaEvento"><br><br>
           
-                <br><br>
+                <br>
             </div>
             <div class="col-md-4">
                 <label for="text">Precio del evento (sin descuento)</label><br><br>
@@ -48,5 +63,28 @@
             </div>
             <div class="col-md-3"></div>
         </div>
+         <footer id="footer" class="well">
+                <div class="row">
+                    <hr>
+                    <div class="col-md-12 col-sm-12">
+                        <!-- bootstrap nav -->
+                        <div id="navFooter" class="center-block">
+                            <div class="navbar">
+                                <ul class="nav-justified">
+                                    <li><a href="#">Acerca de</a></li>
+                                    <li><a href="#">Política de cookies</a></li>
+                                    <li><a href="#">Bases legales</a></li>
+                                    <li><a href="#">Redes sociales 
+                                            <i style="width: 15px; height: 15px; color: #FFFFFF;" class="fa fa-facebook-square"></i>
+                                            <i style="width: 15px; height: 15px; color: #FFFFFF;" class="fa fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /bootstrap nav -->
+                </div>
+            </footer>
     </body>
 </html>
