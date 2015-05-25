@@ -23,12 +23,7 @@ function conectar(){
     $servidor = "localhost";
     $bbdd = "unete";
     $conexion = mysqli_connect($servidor,$user,$pass) or die ("Error al conectar a la BBDD ".mysqli_error());
-    /*LEER IMPORTANTE: He tenido que utilizar la librería de funciones mysqli ya que mysql (la que nos dió paco) está obsoleta da
-    error. Acordar esta nomenclatura para consultas y demás funciones y leeros la API por si hubiera alguna
-    modificación con respecto a la anterior sintaxis, por ejemplo, en la siguiente linea la función es:
-    mysqli(CONEXION, BASE_DE_DATOS) y no al revés.     */
-    
-    /* ---------->>>>> */mysqli_select_db($conexion,$bbdd);
+    mysqli_select_db($conexion,$bbdd);
     
     return $conexion;
 }

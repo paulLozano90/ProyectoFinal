@@ -32,7 +32,7 @@ body{
     margin: 0px 0 0 100px;
 }/*Cabezera*/
 #cabecera{
-    width: 85%;    
+    width: 75%;    
 }
 #cabecera > .jumbotron{
     margin-bottom: 0px;
@@ -42,10 +42,6 @@ body{
 #cabecera > .navbar-default{
     margin-bottom: 50px;
 }
-.container > hr{
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
 #logoCabecera{
     width: 130px;
     height: 105px;
@@ -54,7 +50,15 @@ body{
 }
 /*Barra navegacion*/
 .nav, .navbar-default{
-    background: none;    
+    background: none;
+}
+#cabecera > .navbar > .nav-justified{
+    background: #FFFFFF;
+    color: black;
+}
+.nav-justified > li > a:link{
+    color: black;
+    font-size: 18px;
 }
 /*Titulos,descripciones...*/
 .titulo_incio{

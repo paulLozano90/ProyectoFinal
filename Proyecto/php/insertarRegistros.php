@@ -58,5 +58,4 @@ if(isset($_POST['registroEmpresa'])){
         header("Location: ../registroEmpresa.html");
     }
 }
-
 ?>
