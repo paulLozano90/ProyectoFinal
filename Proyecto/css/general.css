@@ -83,29 +83,18 @@ body{
 input, textArea{
     color: #1D2323;
 }
-
 /*Logotipos*/
 #logoPrincipal{
     width: 180px;
     height: 155px;
 }
-
-/*Registro*/
-.definicion{
-    padding: 10px 0 10px 0;
-    font-size: 15px;
-}
-/*Botones para el registro*/
-.btn-inicio{
-    width: 80px;
-    height: 80px;
+/*Botones general*/
+.btn{
     border-radius: 10px 10px;
-    padding-top: 5px;
+    font-size: 14px;
 }
-.btn-default{
-    margin: 1px;
-    width: 200px;
-    font-size: 22px;    
+.btn:hover{
+    background:aqua; 
 }
 /*Enlaces de las paginas*/
 a{
@@ -129,19 +118,29 @@ a:hover, a:focus{
     margin-left: 50px;
 }
 /*Tags HTML*/
+h1{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 45px;
+}
 hr{
     background-color: #FFFFFF;
     background-size: 2px;
 }
-/*#change{
-    background-color: #FFFFFF;
-}*/
+/*INICIO*/
+.btn-inicio{
+    font-size: 25px;    
+    width: 200px;
+}
+#bienvenida{
+    margin-top: 120px;
+    text-align: left;
+}
+/*REGISTROS --> FORMULARIOS*/
+/*Formularios*/
 .form-control{
     background-color: #E6E6E6;
     width: 300px; 
-}
-#inicio, #registro{
-    font-size: 13px;
 }
 .form-group {    
     margin-top: 30px;
@@ -149,26 +148,18 @@ hr{
     font-size: 15px;
     color:white;
 }
-.panel-body {    
-    color:black;    
+.definicion{
+    padding: 10px 0 10px 0;
+    font-size: 15px;
 }
-h1{
-    text-align: center;
-    margin-top: 30px;
-    font-size: 45px;
-}
-#bienvenida{
-    margin-top: 120px;
-    text-align: left;
-}
-.btn-default{
-    height: auto;
-    background-image: none;
-    border-color: #FFFFFF;
-    font-size: 25px;
-    color: black;
-}
+/*PRINCIPALES USUARIO/EMPRESA*/
 .ofertas{
-    padding: 0 70px 0 70px;
+    padding: 0 70px 0 70px;    
 }
-
+.espacioOfertas{
+    margin-left: 35px;
+}
+/*DESCRIPCION/COMPRA EVENTO*/
+.panel-body {    
+    color:black;
+}
