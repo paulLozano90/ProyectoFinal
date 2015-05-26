@@ -84,7 +84,7 @@ function validar()
 {
     var aux = true;
     alert(url);
-    if (url === "/registroUsuario.html")
+    if (url === "/registroUsuario.html#")
     {
         var listaValidaciones = new Array
                 (
@@ -117,7 +117,7 @@ function validar()
         if (listaValidaciones[i] === false)
         {
             //alert('entra en validar');
-            if (url === "/registroUsuario.html")
+            if (url === "/registroUsuario.html#")
             {
                 publicValidaciones[i] = false;
 
@@ -136,7 +136,7 @@ function validar()
 function clickSubmit()
 {
     var auxSub = true;
-    //alert('entra en click');
+    alert('entra en click');
     if (validar() === true)
     {
         document.getElementById("error").style.display = 'none';
@@ -147,11 +147,11 @@ function clickSubmit()
         document.getElementById("error").style.display = 'inline';
         for (var i = 0; i < publicValidaciones.length; i++)
         {
-            //alert("no ok");
+            alert("no ok");
             if (publicValidaciones[i] === false)
             {
-                //alert("ENTRA, campos[i]: "+campos[i]);
-                (url === "/registroUsuario")?
+                alert("ENTRA, campos[i]: "+campos[i]);
+                (url === "/registroUsuario.html#")?
                     document.getElementById(campos[i]).setAttribute("style", "border-color: red; border-width: 2px;"):
                         document.getElementById(camposEmpresa[i]).setAttribute("style", "border-color: red; border-width: 2px;");
                 
@@ -162,8 +162,8 @@ function clickSubmit()
             }
             else
             {
-                //alert("else");
-                (url === "/registroUsuario")? 
+                alert("else");
+                (url === "/registroUsuario.html#")? 
                 document.getElementById(campos[i]).setAttribute("style", ""):
                         document.getElementById(camposEmpresa[i]).setAttribute("style", "");
             }
