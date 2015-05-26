@@ -27,19 +27,19 @@ body{
 }
 .principal{
     margin: 0px 0 0 100px;
-}/*Cabezera*/
-#cabecera{
+}
+/*Cabezera*/
+header.container{
     width: 75%;    
 }
-#cabecera > .jumbotron{
+header > .jumbotron{
     margin-bottom: 0px;
     padding-top: 20px;
     padding-bottom: 20px;
 }
-#cabecera > .navbar-default{
+header > .navbar-default{
     margin-bottom: 50px;
 }
-
 .jumbotron{
     background: none;    
 }
@@ -53,18 +53,18 @@ body{
 .nav, .navbar-default{
     background: none;
 }
-#cabecera > .navbar > .nav-justified{
+header > .navbar > .nav-header{
     background: #FFFFFF;
     color: black;
 }
-.nav-justified > li > a{
+.nav-header > li > a{
     font-size: 18px;
     color: black;
 }
-.nav-justified > li > a:link{
+.nav-header > li > a:link{
     color: black;
 }
-.nav-justified > li > a:hover{
+.nav-header > li > a:hover{
     background: #43D3DE;
     color: #FFFFFF;
 }
@@ -112,19 +112,24 @@ a:hover, a:focus{
     color: #FFFFFF;
 }
 /*Footer*/
-#footer{
+footer{
     position: relative;
-    bottom: 0;    
+    margin-top: 50px;
+    bottom: 0; 
 }
-#navFooter{
-    width: auto;
-    height: 50px; 
+.nav-footer > li{
+    width: 325px;
 }
-#navFooter a{
+.nav-footer > li > a{
     color: #FFFFFF;
     font-size: 15px;
-    margin-left: 50px;
 }
+.nav-footer > li >a:hover{
+    background: none;
+    color: #43D3DE;
+    text-decoration: none;
+}
+
 /*Tags HTML*/
 h1{
     text-align: center;
@@ -165,9 +170,15 @@ hr{
     padding: 0 70px 0 70px;    
 }
 .espacioOfertas{
-    margin-left: 35px;
+    margin-left: 40px;
+}
+.btn-ofertas{
+    margin-top:15px;
+    font-size: 17px;    
+    width: 100px;
 }
 /*DESCRIPCION/COMPRA EVENTO*/
 .panel-body {    
     color:black;
 }
+
