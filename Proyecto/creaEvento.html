@@ -29,39 +29,78 @@
                 </ul>
             </div>
         </header>
-        <h2 align="center">Registra tu evento</h2>
         <div class="row" style="margin-top:30px">
-            <div class="col-md-3"></div>
-            <div class="col-md-4">
-                <label for="text">Nombre del evento</label><br><br>
-                <input type="text" id="nombreEmpresa" placeholder="Nombre de la empresa"><br><br>
-                <label for="text">Descripcion</label><br><br>
-                <textarea id="descripcionCorta" placeholder="Descripcion del evento" rows="2" cols="20"></textarea><br><br>
-                <label for="text">Explicanos más....</label><br><br>
-                <textarea id="descripcionLarga" placeholder="Explicanos tu evento aquí..." maxlength="200" rows="5" cols="40"></textarea>
-                <label for="text">Fecha caducidad del evento</label><br><br>
-                <input type="date" id="fechaEvento"><br><br>
-          
-                <br>
-            </div>
-            <div class="col-md-4">
-                <label for="text">Precio del evento (sin descuento)</label><br><br>
-                <input type="text" id="precioAntiguoEvento"><br><br>
-                <label for="text">Precio actual del evento</label><br><br>
-                <input type="text" id="precioNuevoEvento"><br><br>
-                <label for="text">Subir foto del evento</label><br><br>
-                <input type="file" id="fotoEvento" style="color:#FFFFFF;"><br><br>
-                <label for="text">Localizate!</label><br><br>
-                <input type="text" id="googlemaps" placeholder="Mapa Google Maps"><br><br>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" id="aceptar"> Aceptar las condiciones de uso
-                    </label>
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label for="nomEvento" class="col-lg-2 control-label">Evento</label>
+                    <div id="nomEvento" class="col-lg-10">
+                        <input type="text" class="form-control" id="nomEvento" name="nomEvento" placeholder="Ejemplo: Spa Los Nogales" maxlength="25">
+                        <small>Máximo 25 caracteres</small>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary" id="crear">Crear el evento</button>
-            </div>
-            <div class="col-md-3"></div>
+                <div class="form-group">
+                    <label for="descEvento" class="col-lg-2 control-label">Descripción</label>
+                    <div id="descEvento" class="col-lg-10">
+                        <textarea class="form-control" id="descEvento" name="descEvento" placeholder="Descripción del evento" maxlength="200" rows="4"></textarea>
+                        <small>Máximo 200 caracteres</small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="descLargaEvento" class="col-lg-2 control-label">Cuentanos más...</label>
+                    <div id="descLargaEvento" class="col-lg-10">
+                        <textarea class="form-control" id="descLargaEvento" name="descLargaEvento" placeholder="Explicanos tu evento..." maxlength="500" rows="5"></textarea>
+                        <small>Minimo 250 caracteres</small>
+                    </div>
+                </div>
+            </form>
+            <br>
         </div>
+        <div class="col-md-4">
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label for="precioEvento" class="col-lg-2 control-label">Precio</label>
+                    <div id="precioEvento" class="col-lg-10">
+                        <input type="text" class="form-control" id="precioEvento" name="precioEvento" placeholder="Ejemplo: 30 Euros" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="precioDescEvento" class="col-lg-2 control-label">Precio Final</label>
+                    <div id="precioDescEvento" class="col-lg-10">
+                        <input type="text" class="form-control" id="precioDescEvento" name="precioDescEvento" placeholder="Ejemplo: 10 Euros" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="fechaEvento" class="col-lg-2 control-label">Fecha</label>
+                    <div id="fechaEvento" class="col-lg-10">
+                        <input type="date" class="form-control" id="fechaEvento" name="fechaEvento" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="caducidadEvento" class="col-lg-2 control-label">Caducidad</label>
+                    <div id="caducidadEvento" class="col-lg-10">
+                        <input type="date" class="form-control" id="caducidadEvento" name="caducidadEvento" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="fotoEvento" class="col-lg-2 control-label">Foto</label>
+                    <div id="fotoEvento" class="col-lg-10">
+                        <input type="file" class="form-control" id="fotoEvento" name="fotoEvento" />
+                    </div>
+                </div>
+                <br />
+                <div class="checkbox" style="padding-left:100px">
+                    <input type="checkbox" id="aceptar"> Aceptar las condiciones de uso
+                    <br><br>
+                    <button type="submit" class="btn btn-default" id="crear">Crear el evento</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
         <footer>
             <center>
                 <hr>
