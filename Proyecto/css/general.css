@@ -82,7 +82,7 @@ header > .navbar > .nav-header{
     font-weight: bold;
 }
 .descripciones{
-    font-size: 18px; 
+    font-size: 16px; 
 }
 .eslogan{
     font-size: 40px; 
@@ -122,14 +122,13 @@ footer{
 }
 .nav-footer > li > a{
     color: #FFFFFF;
-    font-size: 15px;
+    font-size: 16px;
 }
 .nav-footer > li >a:hover{
     background: none;
     color: #43D3DE;
     text-decoration: none;
 }
-
 /*Tags HTML*/
 h1{
     text-align: center;
@@ -180,5 +179,15 @@ hr{
 /*DESCRIPCION/COMPRA EVENTO*/
 .panel-body {    
     color:black;
+}
+#tablaResumen{
+    font-size: 16px;
+}
+td{
+    padding-bottom: 10px;
+}
+td > label{
+    margin-left: 5px;
+    margin-right: 10px;
 }
 
