@@ -33,8 +33,8 @@ $(document).ready(function () {
     //Enlace para mostrar la descripcion del evento
     $(".btn-ofertas").click(function () {
         //Redireccion cuando haya value...
-        //window.location.href = "http://localhost:50571/descripEvento.html?id=" + $(this).val() + "";
-        window.location.href = "http://localhost:50571/descripEvento.html";
+        //window.location.href = "descripEvento.html?id=" + $(this).val() + "";
+        window.location.href = "descripEvento.html";
     });
 });
 
