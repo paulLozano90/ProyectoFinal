@@ -25,12 +25,11 @@ body{
     border: none;
     opacity: 0.95;
 }
-.principal{
-    margin: 0px 0 0 100px;
+section.container{
+    min-height:430px;
 }
-/*#margenPrincipal{
-    margin-top: 60px;
-    padding-bottom: 60px;
+/*.principal{
+    margin: 0px 0 0 100px;
 }*/
 /*Cabezera*/
 header.container{
@@ -115,6 +114,11 @@ a{
 a:hover, a:focus{
     color: #FFFFFF;
 }
+/*Migas de pan*/
+.breadcrumb {
+    background: none;
+    width: auto;
+}
 /*Footer*/
 footer{
     position: relative;
@@ -122,11 +126,11 @@ footer{
     bottom: 0; 
 }
 .nav-footer > li{
-    width: 325px;
+    width: 325px;    
+    font-size: 16px;
 }
 .nav-footer > li > a{
     color: #FFFFFF;
-    font-size: 16px;
 }
 .nav-footer > li >a:hover{
     background: none;
