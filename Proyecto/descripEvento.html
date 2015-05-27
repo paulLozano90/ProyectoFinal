@@ -42,7 +42,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 <h1 style="text-align:left;">Únete</h1>
             </div>
             <nav class="navbar navbar-default">
-               <ul class="nav nav-justified nav-header">
+              <ul class="nav nav-justified nav-header">
                     <li class="active"><a href="principalUsuario.html">Home</a></li>
                     <li><a href="#">Restaurantes</a></li>
                     <li><a href="#">Deportes</a></li>
@@ -50,39 +50,106 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 </ul>
             </nav>
         </header>
-        <section class="container">            
-            <div id="ofertas" class="row" style="margin-right:180px;">
+        <section class="container">
+            <div class="row">
                 <div class="col-md-2"></div>
-                <div class="col-md-3">
-                    <img src="images/OFERTA3.jpg" alt="oferta"/>
-                    <h2>Oferta 1</h2>
-                    <p class="descripciones">1 Noche de alojamiento, en Junior Suite con terraza, para 1 persona en el Gran Hotel Balneario Blancafort 4*
-                        Desayuno buffet.Acceso a las piscinas termales exteriores y a la sala fitness</p>
-                    <button class="btn btn-default btn-ofertas">Únete</button>
+                <div class="col-md-4">
+                    <h2 style="padding-bottom: 20px;">Titulo de la oferta</h2>
+                    <img src="images/OFERTA2.jpg" id="imgDescrip" width="500" height="310" alt="" />
                 </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-3" style="height: 350px; margin-top: 80px;">
+                    <div id="dDescripcion">
+                        <div id="datosOferta" style="height: 65%; width: auto; padding-bottom: 35px;">
+                            <ul class="nav nav-tabs">
+                                <li class="active" style="font-weight:bold;"><a data-toggle="tab" href="#Localización">Descripcion</a></li>
+                                <li style="font-weight:bold;"><a data-toggle="tab" href="#Condiciones">Condiciones</a></li>
+                            </ul>
+                            <div class="tab-content" style="margin-top:25px; height: 160px;">
+                                <div id="Localización" class="tab-pane fade in active">
+                                    <p class="descripciones">
+                                        1 Noche de alojamiento, en Junior Suite con terraza, para 1 persona en el Gran Hotel Balneario Blancafort 4*
+                                        Desayuno buffet.Acceso a las piscinas termales exteriores y a la sala fitness.
+                                        Aparcamiento gratuito durante la estancia.Obsequio de un producto cosmético.
+                                        Niños gratis en alojamiento en cama supletoria hasta los 14 años.
+                                    </p>
+                                </div>
+                                <div id="Condiciones" class="tab-pane fade">
+                                    <label class="descripciones">Empresa:</label><br />
+                                    <label class="descripciones">Telefono:</label><br />
+                                    <label class="descripciones">Localizacion:</label><br />
+                                    <label class="descripciones">Disponiblidad:</label><br />
+                                </div>
+                            </div>
+                        </div>
+                        <div id="precioOferta" style="height: 35%;">
+                            <table>
+                                <tr>
+                                    <td valign="middle">
+                                        <p style="font-size: 40px; text-decoration: line-through;">50€</p>
+                                    </td>
+                                    <td valign="middle">
+                                        <p style="font-size: 50px; margin-left: 40px; color: #43D3DE;">25€</p>
+                                    </td>
+                                    <td valign="middle">
+                                        <button class="btn btn-default btn-compra">Únete!</button>
+                                    </td>
+                                </tr>
+                            </table>
 
-                <div class="col-md-3 espacioOfertas">
-                    <img src="images/OFERTA.jpg" alt="oferta"/>
-                    <h2>Oferta 1</h2>
-                    <p class="descripciones">
-                        1 Noche de alojamiento, en Junior Suite con terraza, para 1 persona en el Gran Hotel Balneario Blancafort 4*
-                        Desayuno buffet.Acceso a las piscinas termales exteriores y a la sala fitness
-                    </p>
-                    <button class="btn btn-default btn-ofertas">Únete</button>
-                </div>
-
-                <div class="col-md-3 espacioOfertas">
-                    <img src="images/OFERTA2.jpg" alt="oferta"/>
-                    <h2>Oferta 1</h2>
-                    <p class="descripciones">
-                        1 Noche de alojamiento, en Junior Suite con terraza, para 1 persona en el Gran Hotel Balneario Blancafort 4*
-                        Desayuno buffet.Acceso a las piscinas termales exteriores y a la sala fitness
-                    </p>
-                    <button class="btn btn-default btn-ofertas">Únete</button>
+                        </div>
+                    </div>
+                    <div id="dResumen" style="display: none;">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Resumen de su compra</div>
+                            <div class="panel-body">
+                                <table id="tablaResumen">
+                                    <tr>
+                                        <td>
+                                            <label>¿Cuantos sois?</label>
+                                        </td>
+                                        <td>
+                                            <select id="cantidad" class="form-control" style="width: 60px;">
+                                                <option id="1" selected>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label style="margin-top: 15px;">Precio inicial:</label>
+                                        </td>
+                                        <td>
+                                            <p style="margin-top: 15px; text-decoration: line-through; ">75€</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>Precio final:</label>
+                                        </td>
+                                        <td>
+                                            <p id="precioEvento">50</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label style="margin-top: 15px; font-size: 18px;">Precio total:</label>
+                                        </td>
+                                        <td>
+                                            <p id="precioTotal" style="margin-top: 15px; font-size: 30px; color: #43d3de">50</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <button class="btn btn-default" style="margin-right: 20px;">Confirmar compra</button>
+                        <button class="btn btn-default btn-volver">¿No estas seguro?</button>
+                    </div>
                 </div>
                 <div class="col-md-2"></div>
-            </div>              
-        </section>
+            </div>            
+        </section>     
         <footer>
             <center>
                 <hr>
@@ -91,9 +158,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                         <li><a href="#">Acerca de</a></li>
                         <li><a href="#">Política de cookies</a></li>
                         <li><a href="#">Bases legales</a></li>
-                        <li>Redes Sociales
-                            <a href="https://es-es.facebook.com"><i class="fa fa-facebook-square" style="width:15px;"></i></a>
-                            <a href="https://twitter.com/"><i class="fa fa-twitter" style="width:15px;"></i></a>
+                        <li>
+                            Redes Sociales
+                            <a href="https://es-es.facebook.com"><i style="width: 15px; height: 15px; color: #FFFFFF;" class="fa fa-facebook-square"></i></a>
+                            <a href="https://twitter.com/"><i style="width: 15px; height: 15px; color: #FFFFFF;" class="fa fa-twitter"></i></a>
                         </li>
                     </ul>
                 </div>
