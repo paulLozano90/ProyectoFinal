@@ -277,7 +277,6 @@ function validaContraseña()
     }
     return false;
 }
-;
 
 
 function validaCIF() //EN PRUEBAS
