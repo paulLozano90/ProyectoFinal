@@ -82,9 +82,10 @@ function activaSubmit()
 
 function validar()
 {
+
     var aux = true;
     alert(url);
-    if (url === "/registroUsuario.html#")
+    if (url === "/registroUsuario.html")
     {
         var listaValidaciones = new Array
                 (
@@ -112,12 +113,13 @@ function validar()
                         );
     }
 
+
     for (var i = 0; i < listaValidaciones.length; i++)
     {
         if (listaValidaciones[i] === false)
         {
-            //alert('entra en validar');
-            if (url === "/registroUsuario.html#")
+            alert('entra en validar');
+            if (url === "/registroUsuario.html")
             {
                 publicValidaciones[i] = false;
 
@@ -128,6 +130,18 @@ function validar()
             }
             aux = false;
         }
+        else
+        {
+            if (url === "/registroUsuario.html")
+            {
+                publicValidaciones[i] = true;
+
+            }
+            else
+            {
+                publicValEmpresa[i] = true;
+            }
+        }
     }
     return aux;
 }
@@ -135,12 +149,12 @@ function validar()
 
 function clickSubmit()
 {
-    var auxSub = true;
+    var auxSub;
     alert('entra en click');
     if (validar() === true)
     {
         document.getElementById("error").style.display = 'none';
-        return true;
+        auxSub = true;
     }
     else
     {
@@ -150,11 +164,11 @@ function clickSubmit()
             alert("no ok");
             if (publicValidaciones[i] === false)
             {
-                alert("ENTRA, campos[i]: "+campos[i]);
-                (url === "/registroUsuario.html#")?
-                    document.getElementById(campos[i]).setAttribute("style", "border-color: red; border-width: 2px;"):
+                alert("ENTRA, campos[i]: " + campos[i]);
+                (url === "/registroUsuario.html") ?
+                        document.getElementById(campos[i]).setAttribute("style", "border-color: red; border-width: 2px;") :
                         document.getElementById(camposEmpresa[i]).setAttribute("style", "border-color: red; border-width: 2px;");
-                
+
                 document.getElementById("condiciones").checked = false;
                 document.getElementById("condiciones").disabled = true;
                 document.getElementById("registro").disabled = true;
@@ -163,19 +177,14 @@ function clickSubmit()
             else
             {
                 alert("else");
-                (url === "/registroUsuario.html#")? 
-                document.getElementById(campos[i]).setAttribute("style", ""):
+                alert(auxSub + " 1");
+                (url === "/registroUsuario.html") ?
+                        document.getElementById(campos[i]).setAttribute("style", "") :
                         document.getElementById(camposEmpresa[i]).setAttribute("style", "");
             }
         }
     }
-
-    for (var i = 0, j = 0; i < publicValidaciones.length, j < publicValEmpresa.length; i++, j++)
-    {
-        publicValidaciones[i] = true;
-        publicValEmpresa[j] = true;
-    }
-
+    alert(auxSub);
     return auxSub;
 }
 ;
@@ -194,10 +203,10 @@ function validaTexto(input)
 {
     var elemento = $('#' + input).val();
     var exp;
-    if(input !== "descripEmpresa"){
+    if (input !== "descripEmpresa") {
         exp = /^([A-Za-zñáéíóú]{2,40})+$/;
     }
-    else{
+    else {
         exp = /^([A-Za-zñáéíóú]{2,200})+$/;
     }
 
