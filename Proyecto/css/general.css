@@ -28,6 +28,10 @@ body{
 .principal{
     margin: 0px 0 0 100px;
 }
+/*#margenPrincipal{
+    margin-top: 60px;
+    padding-bottom: 60px;
+}*/
 /*Cabezera*/
 header.container{
     width: 75%;    
@@ -177,17 +181,47 @@ hr{
     width: 100px;
 }
 /*DESCRIPCION/COMPRA EVENTO*/
+.panel-default > .panel-heading{
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #43D3DE;
+}
 .panel-body {    
     color:black;
+    background-color: #FFFFFF;
 }
 #tablaResumen{
     font-size: 16px;
 }
-td{
-    padding-bottom: 10px;
+#tablaResumen td{
+    padding-bottom: 8px;
 }
-td > label{
-    margin-left: 5px;
-    margin-right: 10px;
+#tablaResumen label{
+    font-weight: normal;
+    margin: 0px 10px 0px 5px;
+}
+#tablaResumen  p{
+    margin-bottom: 0px;
+    font-weight: bold;
+}
+.btn-compra{
+    margin-left: 40px; 
+    font-size: 20px; 
+    width: 150px; 
+}
+#precioOferta  p{
+    margin-bottom: 0px;
+}
+#datosOferta a{
+    border: 1px solid #FFFFFF;
+}
+#datosOferta a:hover{
+    background: #43D3DE;
+    color: #FFFFFF;
+}
+#imgDescrip{
+    border: 1px solid #FFFFFF;
+    border-radius: 10px;
 }
 
