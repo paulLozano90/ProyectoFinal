@@ -36,20 +36,6 @@ $(document).ready(function() {
         //window.location.href = "descripEvento.html?id=" + $(this).val() + "";
         window.location.href = "descripEvento.html";
     });
-
-    var url = "../php/mostrarOfertas.php";
-    alert("Url:"+url);
-    $.getJSON(url,function(datosOferta){
-        alert(datosOferta);
-        $.each(datosOferta, function(i, oferta){
-            alert(oferta[i]);
-            var mierda = + "<p>" + oferta.idEmpresa + "</p>"
-                        + "<p>" + oferta.idTipo + "</p>"
-                        + "<p>" + oferta.nombre + "</p>";
-                
-                $(mierda).appendTo("#datos");
-        });
-    });
 });
 
 //Funcion para sacar los parametros de la URL
@@ -64,20 +50,4 @@ $.urlParam = function(elemento) {
     } else {
         return dato;
     }
-}
-
-//Conexion ajax para ver ofertas
-function mostrarOfertas() {
-    
-    var url = "../php/mostrarOfertas.php";
-    $.getJSON(url,function(datosOferta){
-        $.each(datosOferta, function(i, oferta){
-            
-            var mierda = + "<p>" + oferta.idEmpresa + "</p>"
-                        + "<p>" + oferta.idTipo + "</p>"
-                        + "<p>" + oferta.nombre + "</p>";
-                
-                $(mierda).appendTo("#datos");
-        });
-    });
 }
