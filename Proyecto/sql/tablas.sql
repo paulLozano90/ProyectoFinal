@@ -31,8 +31,6 @@ telefono INT(9),
 password VARCHAR(20)
 );
 
-
-
 insert into usuarios (nombre,apellido1,apellido2,email,telefono,contraseña) values 
 ('Paul','Lozano','Cruzado','plc@email.es',914125468,'77/77');
 
@@ -40,6 +38,10 @@ CREATE TABLE tipoEvento(
 idTipo INT (3) PRIMARY KEY NOT NULL AUTO_INCREMENT,
 nombre VARCHAR(20)
 );
+
+insert into tipoEvento (nombre) values ('Deportes');
+insert into tipoEvento (nombre) values ('Restaurantes');
+insert into tipoEvento (nombre) values ('Salud y belleza');
 
 CREATE TABLE eventos
 (id_evento INT (3) PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -55,7 +57,9 @@ CONSTRAINT fk_empresas FOREIGN KEY (id_empresa) REFERENCES empresas(id_empresa),
 CONSTRAINT fk_tipo FOREIGN KEY (idTipo) REFERENCES tipoEvento(idTipo)
 );
 
-
+insert into eventos (id_empresa,idTipo,nombre,descripcion,precioNormal,precioReducido,fechaCreacion,fechaCaducidad) 
+values (1,1,'Piraguismo','Descripcion',50,25,(STR_TO_DATE(REPLACE('15/01/2015','/','.') ,GET_FORMAT(date,'EUR'))),
+(STR_TO_DATE(REPLACE('15/01/2015','/','.') ,GET_FORMAT(date,'EUR'))));
 
 CREATE TABLE usuariosEventos
 (id_evento INT (3) NOT NULL,

@@ -1,6 +1,6 @@
 
 
-$(document).ready(function () {
+$(document).ready(function() {
 
     if ($(document).height() > 991 || $(document).width() < 991) {
         $("#footer").css("position", "absolute");
@@ -12,34 +12,48 @@ $(document).ready(function () {
         $("#login").hide();
     });
     //Ocultar la descripcion del evento
-    $(".btn-compra").click(function () {
+    $(".btn-compra").click(function() {
         $("#dResumen").show();
         $("#dDescripcion").hide();
         $("#cantidad").val("1");
         $("#precioTotal")[0].innerHTML = $("#precioEvento")[0].innerHTML + " Euros";
 
     });
-    $(".btn-volver").click(function () {        
+    $(".btn-volver").click(function() {
         $("#dDescripcion").show();
         $("#dResumen").hide();
     });
-    $("#cantidad").change(function () {
-        
+    $("#cantidad").change(function() {
+
         var cantidad = $("#cantidad").val();
         var precio = $("#precioEvento")[0].innerHTML;
 
-        $("#precioTotal")[0].innerHTML = (cantidad * precio)+" Euros";        
+        $("#precioTotal")[0].innerHTML = (cantidad * precio) + " Euros";
     });
     //Enlace para mostrar la descripcion del evento
-    $(".btn-ofertas").click(function () {
+    $(".btn-ofertas").click(function() {
         //Redireccion cuando haya value...
         //window.location.href = "descripEvento.html?id=" + $(this).val() + "";
         window.location.href = "descripEvento.html";
     });
+
+    var url = "../php/mostrarOfertas.php";
+    alert("Url:"+url);
+    $.getJSON(url,function(datosOferta){
+        alert(datosOferta);
+        $.each(datosOferta, function(i, oferta){
+            alert(oferta[i]);
+            var mierda = + "<p>" + oferta.idEmpresa + "</p>"
+                        + "<p>" + oferta.idTipo + "</p>"
+                        + "<p>" + oferta.nombre + "</p>";
+                
+                $(mierda).appendTo("#datos");
+        });
+    });
 });
 
 //Funcion para sacar los parametros de la URL
-$.urlParam = function (elemento) {
+$.urlParam = function(elemento) {
 
     var param = new RegExp('[\\?&]' + elemento + '=([^&#]*)');
     var url = window.location.href;
@@ -50,4 +64,20 @@ $.urlParam = function (elemento) {
     } else {
         return dato;
     }
+}
+
+//Conexion ajax para ver ofertas
+function mostrarOfertas() {
+    
+    var url = "../php/mostrarOfertas.php";
+    $.getJSON(url,function(datosOferta){
+        $.each(datosOferta, function(i, oferta){
+            
+            var mierda = + "<p>" + oferta.idEmpresa + "</p>"
+                        + "<p>" + oferta.idTipo + "</p>"
+                        + "<p>" + oferta.nombre + "</p>";
+                
+                $(mierda).appendTo("#datos");
+        });
+    });
 }

@@ -18,14 +18,22 @@
 
 function conectar(){
     
-    $user = "root";
-    $pass = "";
     $servidor = "localhost";
+    $user = "root";
+    $pass = "";    
     $bbdd = "unete";
+    
     $conexion = mysqli_connect($servidor,$user,$pass) or die ("Error al conectar a la BBDD ".mysqli_error());
     mysqli_select_db($conexion,$bbdd);
     
     return $conexion;
+}
+
+function desconectar($conexion){
+    
+    $cerrarConexion = mysqli_close($conexion) or die("Ha sucedido un error inexperado en la desconexion de la base de datos");
+    
+    return $cerrarConexion;
 }
 
 ?>
