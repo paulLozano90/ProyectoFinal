@@ -14,10 +14,6 @@ $(document).ready(function() {
                     + "<td>" + cliente.nombre + "</td>"
                     + "</tr>";
             $(newRow).appendTo("#tablajson tbody");
-            
-            $('#nombre')[0].innerHTML = cliente.nombre;
-            $('#empresa')[0].innerHTML = cliente.id_empresa;
-            $('#tipo')[0].innerHTML = cliente.idTipo;
         });
     });
 });
