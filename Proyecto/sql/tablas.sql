@@ -4,7 +4,7 @@ create database unete;
 use unete;
 
 CREATE TABLE empresas(
-id_empresa INT (3) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+idEmpresa INT (3) PRIMARY KEY NOT NULL AUTO_INCREMENT,
 cif VARCHAR(20),
 nombre VARCHAR(20),
 descripcion VARCHAR(50),
@@ -22,7 +22,7 @@ insert into empresas (cif,nombre,descripcion,email,telefono,direccion,localidad,
 ('12345678S','Pepes','Empresa de deporte','pps@email.es',914125468,'Calle Emilio','Madrid',28702,'Madrid');
 
 CREATE TABLE usuarios(
-id_usuario INT (3) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+idUsuario INT (3) PRIMARY KEY NOT NULL AUTO_INCREMENT,
 nombre VARCHAR(30),
 apellido1 VARCHAR(30),
 apellido2 VARCHAR(30),
@@ -44,8 +44,8 @@ insert into tipoEvento (nombre) values ('Restaurantes');
 insert into tipoEvento (nombre) values ('Salud y belleza');
 
 CREATE TABLE eventos
-(id_evento INT (3) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-id_empresa INT (3) NOT NULL,
+(idEvento INT (3) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+idEmpresa INT (3) NOT NULL,
 idTipo INT (3) NOT NULL,
 nombre VARCHAR(20),
 descripcion VARCHAR(50),
@@ -53,22 +53,22 @@ precioNormal FLOAT (4),
 precioReducido FLOAT (4),
 fechaCreacion date,
 fechaCaducidad date,
-CONSTRAINT fk_empresas FOREIGN KEY (id_empresa) REFERENCES empresas(id_empresa),
+CONSTRAINT fk_empresas FOREIGN KEY (idEmpresa) REFERENCES empresas(idEmpresa),
 CONSTRAINT fk_tipo FOREIGN KEY (idTipo) REFERENCES tipoEvento(idTipo)
 );
 
-insert into eventos (id_empresa,idTipo,nombre,descripcion,precioNormal,precioReducido,fechaCreacion,fechaCaducidad) 
+insert into eventos (idEmpresa,idTipo,nombre,descripcion,precioNormal,precioReducido,fechaCreacion,fechaCaducidad) 
 values (1,1,'Piraguismo','Descripcion',50,25,(STR_TO_DATE(REPLACE('15/01/2015','/','.') ,GET_FORMAT(date,'EUR'))),
 (STR_TO_DATE(REPLACE('15/01/2015','/','.') ,GET_FORMAT(date,'EUR'))));
 
 CREATE TABLE usuariosEventos
-(id_evento INT (3) NOT NULL,
-id_usuario INT (3) NOT NULL,
+(idEvento INT (3) NOT NULL,
+idUsuario INT (3) NOT NULL,
 localizador VARCHAR(20),
 fechaSolicitud date,
-PRIMARY KEY (id_evento,id_usuario),
-CONSTRAINT fk_eventos FOREIGN KEY (id_evento) REFERENCES eventos(id_evento),
-CONSTRAINT fk_usuarios FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
+PRIMARY KEY (idEvento,idUsuario),
+CONSTRAINT fk_eventos FOREIGN KEY (idEvento) REFERENCES eventos(idEvento),
+CONSTRAINT fk_usuarios FOREIGN KEY (idUsuario) REFERENCES usuarios(idUsuario)
 );
 
 
