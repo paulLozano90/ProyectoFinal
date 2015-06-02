@@ -4,7 +4,7 @@ include ("conexion.php");
 $conexion = conectar();
 
 $idEvento = $_GET['id'];
-$sql = "SELECT id_empresa,idTipo,nombre FROM eventos where id_evento = $idEvento";
+$sql = "SELECT nombre,descripcion,precioNormal,precioReducido FROM eventos where idEvento = $idEvento";
 $resultados = mysqli_query($conexion, $sql);
 
 if(!$resultados) die("Error al mostrar evento");
@@ -13,11 +13,12 @@ $evento = array();
 
 while($dato = mysqli_fetch_array($resultados)){
     
-    $id_empresa = $dato['id_empresa'];
-    $idTipo = $dato['idTipo'];
     $nombre = $dato['nombre'];
+    $descripcion = $dato['descripcion'];    
+    $precioNormal = $dato['precioNormal'];
+    $precioReducido = $dato['precioReducido'];
 
-    $evento[] = array('id_empresa' => $id_empresa, 'idTipo' => $idTipo, 'nombre' => $nombre);
+    $evento[] = array('nombre' => $nombre, 'descripcion' => $descripcion, 'precioNormal' => $precioNormal, 'precioReducido' => $precioReducido);
 }
 
 desconectar($conexion);

@@ -8,7 +8,7 @@ $(document).ready(function(){
         $.each(evento, function(i, evento) {           
             
             $('#nombre')[0].innerHTML = evento.nombre;
-            $('#empresa')[0].innerHTML = evento.id_empresa;
+            $('#empresa')[0].innerHTML = evento.idEmpresa;
             $('#tipo')[0].innerHTML = evento.idTipo;
         });
     });

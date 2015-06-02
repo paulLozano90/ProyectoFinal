@@ -9,7 +9,7 @@ $(document).ready(function() {
         $.each(clientes, function(i, cliente) {
             var newRow =
                     "<tr>"
-                    + "<td>" + cliente.id_empresa + "</td>"
+                    + "<td>" + cliente.idEmpresa + "</td>"
                     + "<td>" + cliente.idTipo + "</td>"
                     + "<td>" + cliente.nombre + "</td>"
                     + "</tr>";

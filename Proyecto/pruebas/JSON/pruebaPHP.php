@@ -10,7 +10,7 @@ $conexion = mysqli_connect($server, $user, $pass,$bd)
 or die("Ha sucedido un error inexperado en la conexion de la base de datos");
 
 //generamos la consulta
-$sql = "SELECT id_empresa,idTipo,nombre FROM eventos";
+$sql = "SELECT idEmpresa,idTipo,nombre FROM eventos";
 mysqli_set_charset($conexion, "utf8"); //formato de datos utf8
 
 if(!$result = mysqli_query($conexion, $sql)) die();
@@ -19,12 +19,12 @@ $clientes = array(); //creamos un array
 
 while($row = mysqli_fetch_array($result)) 
 { 
-	$id_empresa = $row['id_empresa'];
+	$idEmpresa = $row['idEmpresa'];
         $idTipo = $row['idTipo'];
         $nombre = $row['nombre'];
 	
 
-	$clientes[] = array('id_empresa' => $id_empresa, 'idTipo' => $idTipo, 'nombre' => $nombre);
+	$clientes[] = array('idEmpresa' => $idEmpresa, 'idTipo' => $idTipo, 'nombre' => $nombre);
 
 }
 	
