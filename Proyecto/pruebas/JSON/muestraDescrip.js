@@ -1,17 +1,18 @@
 
-
 $(document).ready(function() {
 
-    var url = "./pasarParametros.php";
-    var jSonvar = { id : "3"};
+    var url = "./muestraDescrip.php";
+    var jSonvar = { id : "1"};
 
     $.getJSON(url,jSonvar,function(evento) {
         $.each(evento, function(i, evento) {           
             
             $('#tituloEvento')[0].innerHTML = evento.nombre;
             $('#descripEvento')[0].innerHTML = evento.descripcion;
-            $('.precioNormal')[0].innerHTML = evento.precioNormal;
-            $('.precioReducido')[0].innerHTML = evento.precioReducido;
+            $('#precioNormal')[0].innerHTML = evento.precioNormal + "€";
+            $('#precioReducido')[0].innerHTML = evento.precioReducido + "€";
+            $('#precioNormalCarro')[0].innerHTML = evento.precioNormal;
+            $('#precioReducidoCarro')[0].innerHTML = evento.precioReducido;
         });
     });
 
@@ -29,8 +30,7 @@ $(document).ready(function() {
         $("#dResumen").show();
         $("#dDescripcion").hide();
         $("#cantidad").val("1");
-        $("#precioTotal")[0].innerHTML = $("#precioReducido")[0].innerHTML + " Euros";
-
+        $("#precioTotal")[0].innerHTML = $("#precioReducido")[0].innerHTML;
     });
     $(".btn-volver").click(function() {
         $("#dDescripcion").show();
@@ -39,9 +39,9 @@ $(document).ready(function() {
     $("#cantidad").change(function() {
 
         var cantidad = $("#cantidad").val();
-        var precio = $(".precioReducido")[0].innerHTML;
+        var precio = $("#precioReducidoCarro")[0].innerHTML;
 
-        $("#precioTotal")[0].innerHTML = (cantidad * precio) + " Euros";
+        $("#precioTotal")[0].innerHTML = (cantidad * precio) + "€";
     });
     //Enlace para mostrar la descripcion del evento
     $(".btn-ofertas").click(function() {

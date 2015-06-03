@@ -86,10 +86,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                             <table>
                                 <tr>
                                     <td valign="middle">
-                                        <p class="precioNormal" style="font-size: 40px; text-decoration: line-through;">50€</p>
+                                        <p id="precioNormal" style="font-size: 40px; text-decoration: line-through;">30€</p>
                                     </td>
                                     <td valign="middle">
-                                        <p class="precioReducido" style="font-size: 50px; margin-left: 40px; color: #43D3DE;">25€</p>
+                                        <p id="precioReducido" style="font-size: 50px; margin-left: 40px; color: #43D3DE;">15€</p>
                                     </td>
                                     <td valign="middle">
                                         <button class="btn btn-default btn-compra">Únete!</button>
@@ -121,7 +121,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                             <label style="margin-top: 15px;">Precio inicial:</label>
                                         </td>
                                         <td>
-                                            <p class="precioNormal" style="margin-top: 15px; text-decoration: line-through; ">75€</p>
+                                            <p id="precioNormalCarro" style="margin-top: 15px; text-decoration: line-through; ">30</p>
+                                        </td>
+                                        <td>
+                                            <p style="margin-top: 15px;">€</p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -129,7 +132,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                             <label>Precio final:</label>
                                         </td>
                                         <td>
-                                            <p id="precioEvento" class="precioReducido">50</p>
+                                            <p id="precioReducidoCarro" >15</p>
+                                        </td>
+                                        <td>
+                                            <p>€</p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -137,7 +143,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                             <label style="margin-top: 15px; font-size: 18px;">Precio total:</label>
                                         </td>
                                         <td>
-                                            <p id="precioTotal" style="margin-top: 15px; font-size: 30px; color: #43d3de">50</p>
+                                            <p id="precioTotal" style="margin-top: 15px; font-size: 30px; color: #43d3de">15</p>
                                         </td>
                                     </tr>
                                 </table>
@@ -169,6 +175,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         </footer>       
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-        <script src="general.js"></script>
+        <script src="muestraDescrip.js"></script>
     </body>
 </html>
