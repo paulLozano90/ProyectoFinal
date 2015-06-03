@@ -15,8 +15,6 @@ telefono INT(9),
 password VARCHAR(20)
 );
 
-insert into usuarios (nombre,apellido1,apellido2,email,telefono,password) values 
-('Paul','Lozano','Cruzado','plc@email.es',914125468,'77/77');
 
 CREATE TABLE empresas(
 idEmpresa INT (3) PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -31,23 +29,20 @@ codPostal INT(5),
 ciudad VARCHAR(20)
 );
 
-insert into empresas (cif,nombre,descripcion,email,telefono,direccion,localidad,codPostal,ciudad) values 
-('12345678S','Pepes','Empresa de deporte','pps@email.es',914125468,'Calle Emilio','Madrid',28702,'Madrid');
 
 CREATE TABLE tipoEvento(
 idTipo INT (3) PRIMARY KEY NOT NULL AUTO_INCREMENT,
 nombre VARCHAR(20)
 );
 
-insert into tipoEvento (nombre) values ('Deportes');
-insert into tipoEvento (nombre) values ('Restaurantes');
-insert into tipoEvento (nombre) values ('Salud y belleza');
+
 
 CREATE TABLE eventos
 (idEvento INT (3) PRIMARY KEY NOT NULL AUTO_INCREMENT,
 idEmpresa INT (3) NOT NULL,
 idTipo INT (3) NOT NULL,
 nombre VARCHAR(20),
+descripCorta VARCHAR(30),
 descripcion VARCHAR(50),
 precioNormal FLOAT (4),
 precioReducido FLOAT (4),
@@ -57,15 +52,6 @@ CONSTRAINT fk_empresas FOREIGN KEY (idEmpresa) REFERENCES empresas(idEmpresa),
 CONSTRAINT fk_tipo FOREIGN KEY (idTipo) REFERENCES tipoEvento(idTipo)
 );
 
-insert into eventos (idEmpresa,idTipo,nombre,descripcion,precioNormal,precioReducido,fechaCreacion,fechaCaducidad) 
-values (1,1,'Paintball','Descripcion',50,25,(STR_TO_DATE(REPLACE('15/01/2015','/','.') ,GET_FORMAT(date,'EUR'))),
-(STR_TO_DATE(REPLACE('15/01/2015','/','.') ,GET_FORMAT(date,'EUR'))));
-insert into eventos (idEmpresa,idTipo,nombre,descripcion,precioNormal,precioReducido,fechaCreacion,fechaCaducidad) 
-values (1,2,'Cena para dos','Descripcion',50,25,(STR_TO_DATE(REPLACE('15/01/2015','/','.') ,GET_FORMAT(date,'EUR'))),
-(STR_TO_DATE(REPLACE('15/01/2015','/','.') ,GET_FORMAT(date,'EUR'))));
-insert into eventos (idEmpresa,idTipo,nombre,descripcion,precioNormal,precioReducido,fechaCreacion,fechaCaducidad) 
-values (1,3,'Spa','Descripcion',50,25,(STR_TO_DATE(REPLACE('15/01/2015','/','.') ,GET_FORMAT(date,'EUR'))),
-(STR_TO_DATE(REPLACE('15/01/2015','/','.') ,GET_FORMAT(date,'EUR'))));
 
 CREATE TABLE usuariosEventos
 (idEvento INT (3) NOT NULL,
