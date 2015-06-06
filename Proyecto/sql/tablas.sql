@@ -15,7 +15,6 @@ telefono INT(9),
 password VARCHAR(20)
 );
 
-
 CREATE TABLE empresas(
 idEmpresa INT (3) PRIMARY KEY NOT NULL AUTO_INCREMENT,
 cif VARCHAR(20),
@@ -29,13 +28,10 @@ codPostal INT(5),
 ciudad VARCHAR(20)
 );
 
-
 CREATE TABLE tipoEvento(
 idTipo INT (3) PRIMARY KEY NOT NULL AUTO_INCREMENT,
 nombre VARCHAR(20)
 );
-
-
 
 CREATE TABLE eventos
 (idEvento INT (3) PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -52,7 +48,6 @@ CONSTRAINT fk_empresas FOREIGN KEY (idEmpresa) REFERENCES empresas(idEmpresa),
 CONSTRAINT fk_tipo FOREIGN KEY (idTipo) REFERENCES tipoEvento(idTipo)
 );
 
-
 CREATE TABLE usuariosEventos
 (idEvento INT (3) NOT NULL,
 idUsuario INT (3) NOT NULL,
@@ -62,5 +57,3 @@ PRIMARY KEY (idEvento,idUsuario),
 CONSTRAINT fk_eventos FOREIGN KEY (idEvento) REFERENCES eventos(idEvento),
 CONSTRAINT fk_usuarios FOREIGN KEY (idUsuario) REFERENCES usuarios(idUsuario)
 );
-
-

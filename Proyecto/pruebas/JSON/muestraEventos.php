@@ -3,7 +3,7 @@
 include ("conexion.php");
 $conexion = conectar();
 
-$sql = "SELECT nombre,descripcion,precioNormal,precioReducido FROM eventos";
+$sql = "SELECT nombre,descripcion,idEvento FROM eventos ORDER BY idEvento desc LIMIT 3";
 $resultados = mysqli_query($conexion, $sql);
 
 if(!$resultados) die("Error al mostrar evento");
@@ -14,10 +14,9 @@ while($dato = mysqli_fetch_array($resultados)){
 
     $nombre = $dato['nombre'];
     $descripcion = $dato['descripcion'];    
-    $precioNormal = $dato['precioNormal'];
-    $precioReducido = $dato['precioReducido'];
+    $idEvento = $dato['idEvento'];
     
-    $evento[] = array('nombre' => $nombre, 'descripcion' => $descripcion, 'precioNormal' => $precioNormal, 'precioReducido' => $precioReducido);
+    $evento[] = array('nombre' => $nombre, 'descripcion' => $descripcion, 'idEvento' => $idEvento);
 }
 	
 desconectar($conexion);
