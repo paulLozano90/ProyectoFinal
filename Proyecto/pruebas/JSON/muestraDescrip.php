@@ -7,7 +7,7 @@ $idEvento = $_GET['id'];
 $sql = "SELECT nombre,descripcion,precioNormal,precioReducido FROM eventos where idEvento = $idEvento";
 $resultados = mysqli_query($conexion, $sql);
 
-if(!$resultados) die("   Error al mostrar evento");
+if(!$resultados) die("Error al mostrar evento");
 
 $evento = array();
 

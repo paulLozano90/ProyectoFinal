@@ -8,7 +8,7 @@ $(document).ready(function() {
 
         $.each(evento, function(i, evento) {
             
-            alert(i + "" + evento.nombre);
+            alert(i + "-" + evento.descripCorta);
             
             for (var j=0; j<$("#ofertas > div").length-1; j++){
                 
@@ -19,7 +19,7 @@ $(document).ready(function() {
                     break;
 
                 case 1:
-                    $("#ofertas > div")[z].children[j].innerHTML = evento.descripcion;
+                    $("#ofertas > div")[z].children[j].innerHTML = evento.descripCorta;
                     break;
                 
                 case 2:
