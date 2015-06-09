@@ -1,6 +1,5 @@
 <?php
 unset($_SESSION["idUsuario"]);
 unset($_SESSION["Nombre"]);
-session_
-session_destroy() = true;
+session_destroy();
 header('location: ../../registroUsuario.html');
