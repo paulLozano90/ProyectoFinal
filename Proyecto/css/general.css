@@ -28,9 +28,9 @@ body{
 section.container{
     min-height:430px;
 }
-/*.principal{
-    margin: 0px 0 0 100px;
-}*/
+.principal{
+    margin: 0px 0 0 80px;
+}
 /*Cabezera*/
 header.container{
     width: 75%;    
