@@ -18,6 +18,7 @@ while($dato = mysqli_fetch_array($resultados)){
     
     $evento[] = array('nombre' => $nombre, 'descripCorta' => $descripCorta, 'idEvento' => $idEvento);
 }
+print_r($evento);
 desconectar($conexion);
   
 $json_string = json_encode($evento);
