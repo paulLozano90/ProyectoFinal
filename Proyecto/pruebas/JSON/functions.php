@@ -26,3 +26,22 @@ function verificar_login($email,$password){
         }
 }
 
+function login(){
+      
+    if(isset($_POST["email"]) && isset($_POST["pass"])){
+        global $conexion;
+        $sql = "SELECT idUsuario, Nombre FROM usuarios WHERE email = '".$_POST["email"]."' and password = '".$_POST["password"]."'";
+	$rec = mysqli_query($conexion,$sql);
+        $data = mysqli_num_rows($rec);
+        
+        if($data == 1){
+            
+        }
+       
+        
+    }
+    else{
+        echo "introduce usuario y password";
+    }
+}
+
