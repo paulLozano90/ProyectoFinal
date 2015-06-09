@@ -4,6 +4,8 @@ $(document).ready(function() {
     var url = "muestraEventos.php";
     var z = 1;
     
+    alert("Entra");
+    
     $.getJSON(url, function(evento) {
 
         $.each(evento, function(i, evento) {
