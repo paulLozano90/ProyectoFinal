@@ -6,14 +6,19 @@ if(isset($_POST["login"]))
     $idses = $_POST["email"];
     $pass = $_POST["pass"];
 
-    if(verificar_login($idses, $pass, $result))
+    
+    
+    if(verificar_login($idses, $pass))
     {
-        session_start();       
-        list($idtry, $emailtry) = spliti("@", $idses);
-        $_SESSION["idUser"] = "id";
-        $_SESSION["idUserValue"] = $idtry;
+        session_start();
+      
+        $getUser = mysqli_query($conexion, "SELECT idUsuario,Nombre FROM usuarios WHERE email = '$idses'");
+        $resultado = $getUser->fetch_assoc();       
         
-        header("Location: ../../principalUsuario.html?".$_SESSION["idUser"]."=".$_SESSION["idUserValue"]);
+        $_SESSION["userId"] = $resultado["idUsuario"];
+        $_SESSION["userName"] = $resultado["Nombre"];
+        
+        header("Location: ../../principalUsuario.html?idUsuario=".$_SESSION["userId"]);
     }
     else
     {
