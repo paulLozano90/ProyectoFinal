@@ -24,19 +24,11 @@ Descripcion=
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/**
- * Funcion para sacar los parametros de la URL
- */
-     
-$.urlParam = function(elemento) {
+$(document).ready(function() {
 
-    var param = new RegExp('[\\?&]' + elemento + '=([^&#]*)');
-    var url = window.location.href;
-    var dato = param.exec(url);
-
-    if (dato != null) {
-        return dato[1];
-    } else {
-        return dato;
-    }
-}
+    //Ocultar login para registrarse
+    $("#abrir").click(function() {
+        $("#formulario").show();
+        $("#login").hide();
+    });
+});
