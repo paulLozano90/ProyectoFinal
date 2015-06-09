@@ -19,6 +19,6 @@ if(isset($_POST["login"]))
 else if(isset($_GET["action"]) and $_GET["action"] == "logout")
 {
     logout();
-    header('location: ../../registroUsuario.html');
+    header('location: ../../inicioWeb.html');
     //header("Location: ../../registroUsuario.html");
 }

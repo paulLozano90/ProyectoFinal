@@ -15,7 +15,7 @@ function verificar_login($email,$password){
         {
             $_SESSION["userId"] = $resultado["idUsuario"];
             $_SESSION["userName"] = $resultado["Nombre"];       
-            $_SESSION["url_s"] = "../../principalUsuario.html?idUsuario=".$_SESSION["userId"];
+            $_SESSION["url_s"] = "../../html/principalUsuario.html?idUsuario=".$_SESSION["userId"];
             session_write_close();
             
             return true;
