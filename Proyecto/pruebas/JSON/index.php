@@ -1,6 +1,6 @@
 <?php
 include 'functions.php';
-session_start();
+
 if(isset($_POST["login"]))
 {
     $idses = $_POST["email"];
@@ -10,7 +10,7 @@ if(isset($_POST["login"]))
     
     if(verificar_login($idses, $pass))
     {
-              
+             
         $getUser = mysqli_query($conexion, "SELECT idUsuario,Nombre FROM usuarios WHERE email = '$idses'");
         $resultado = $getUser->fetch_assoc();       
         
