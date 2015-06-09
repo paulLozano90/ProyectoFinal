@@ -1,38 +1,98 @@
 
-/*
-Autor=Paul Lozano Cruzado, Elias Sanchez Arroyo y Daniel Carrasco Barcena
-Fecha=09-jun-2015
-Licencia=gpl30
-Version=1.0
-Descripcion=
-*/     
+$(document).ready(function() {
 
-/* 
- * Copyright (C) 2015 Paul Lozano Cruzado 
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+    idUsuario();
+    muestraEventos();
+    
+    var idEvento = $.urlParam("idEvento");
+    if(idEvento !== ""){
+        muestraDescrip(idEvento);
+    }
 
-$(document).ready(function () {
+    //Envia enlace para cada evento
+    $(".btn-ofertas").click(function() {
+        window.location.href = "descripEvento.html?idEvento=" + $(this).val() + "";
+    });
+    //Ocultar la descripcion del evento
+    $(".btn-compra").click(function() {
+        $("#dResumen").show();
+        $("#dDescripcion").hide();
+        $("#cantidad").val("1");
+        $("#precioTotal")[0].innerHTML = $("#precioReducido")[0].innerHTML;
+    });
+    //Volver a la descripcion
+    $(".btn-volver").click(function() {
+        $("#dDescripcion").show();
+        $("#dResumen").hide();
+    });
+    //Cambiar el precio del evento
+    $("#cantidad").change(function() {
+
+        var cantidad = $("#cantidad").val();
+        var precio = $("#precioReducidoCarro")[0].innerHTML;
+
+        $("#precioTotal")[0].innerHTML = (cantidad * precio) + "€";
+    });
+});
+
+function idUsuario() {
 
     var url = "../php/principalUsuario.php";
     var idUsuario = $.urlParam("idUsuario");
     var jSonvar = {idUsuario: idUsuario};
 
-    $.getJSON(url, jSonvar, function (user) {
-        $.each(user, function (i, user) {
+    $.getJSON(url, jSonvar, function(user) {
+        $.each(user, function(i, user) {
             $('#usuarioLogeado')[0].innerHTML = user.nombre;
         });
     });
-});
+}
+
+function muestraEventos() {
+
+    var url = "../php/muestraEventos.php";
+    var z = 1;
+
+    $.getJSON(url, function(evento) {
+
+        $.each(evento, function(i, evento) {
+
+            for (var j = 0; j < $("#ofertas > div").length - 1; j++) {
+
+                switch (j) {
+
+                    case 0:
+                        $("#ofertas > div")[z].children[j].innerHTML = evento.nombre;
+                        break;
+
+                    case 1:
+                        $("#ofertas > div")[z].children[j].innerHTML = evento.descripCorta;
+                        break;
+
+                    case 2:
+                        $("#ofertas > div")[z].children[j].value = evento.idEvento;
+                        break;
+                }
+            }
+            z++;
+        });
+    });
+}
+
+function muestraDescrip(idEvento) {
+
+    var url = "../php/muestraDescrip.php";    
+    var jSonvar = {idEvento: idEvento};
+
+    $.getJSON(url, jSonvar, function(evento) {
+        $.each(evento, function(i, evento) {
+
+            $('#tituloEvento')[0].innerHTML = evento.nombre;
+            $('#descripEvento')[0].innerHTML = evento.descripcion;
+            $('#precioNormal')[0].innerHTML = evento.precioNormal + "€";
+            $('#precioReducido')[0].innerHTML = evento.precioReducido + "€";
+            $('#precioNormalCarro')[0].innerHTML = evento.precioNormal;
+            $('#precioReducidoCarro')[0].innerHTML = evento.precioReducido;
+        });
+    });
+}

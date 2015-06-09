@@ -4,13 +4,9 @@ $(document).ready(function() {
     var url = "muestraEventos.php";
     var z = 1;
     
-    alert("Entra");
-    
     $.getJSON(url, function(evento) {
 
-        $.each(evento, function(i, evento) {
-            
-            alert(i + "-" + evento.descripCorta);
+        $.each(evento, function(i, evento) {            
             
             for (var j=0; j<$("#ofertas > div").length-1; j++){
                 
