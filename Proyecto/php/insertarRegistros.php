@@ -29,7 +29,6 @@ if(isset($_POST['registroUsuario'])){
     
     $insertarUsuario = "insert into usuarios (nombre,apellido1,apellido2,email,telefono,password) values 
                 ('$nombreUsuario','$apellido1','$apellido2','$emailUsuario',$telfUsuario,'$passUsuario')";
-    //IMPORTANTE: en la función mysqli_query, los parámetros son de la forma (conexión,query)
     $datos = mysqli_query($conexion,$insertarUsuario);
     
     if($datos){
@@ -48,6 +47,29 @@ if(isset($_POST['registroEmpresa'])){
     $codEmpresa = $_POST['codEmpresa'];
     $localEmpresa = $_POST['localEmpresa'];
     $ciudadEmpresa = $_POST['ciudadEmpresa'];
+    
+    $insertarEmpresa = "insert into empresas (cif,nombre,descripcion,email,telefono,direccion,localidad,codPostal,ciudad) values 
+                ('$CIF','$nombreEmpresa','$descripEmpresa','$emailEmpresa',$telfEmpresa,'$dirEmpresa','$localEmpresa',$codEmpresa,'$ciudadEmpresa')";
+    
+    $datos = mysqli_query($conexion,$insertarEmpresa);
+    
+    if($datos){
+        header("Location: ../registroEmpresa.html");
+    }
+}
+
+if(isset($_POST['registroEvento'])){
+    
+    $idEmpresa = 1;
+    $nombreEvento = $_POST['nombreEvento'];
+    $descripCorta = $_POST['descripCorta'];
+    $descripcion = $_POST['descripcion'];
+    $precioNormal = $_POST['precioNormal'];
+    $precioReducido = $_POST['precioReducido'];
+    $fechaCreacion = $_POST['fechaCreacion'];
+    $fechaCaducidad = $_POST['fechaCaducidad'];
+    
+    
     
     $insertarEmpresa = "insert into empresas (cif,nombre,descripcion,email,telefono,direccion,localidad,codPostal,ciudad) values 
                 ('$CIF','$nombreEmpresa','$descripEmpresa','$emailEmpresa',$telfEmpresa,'$dirEmpresa','$localEmpresa',$codEmpresa,'$ciudadEmpresa')";
