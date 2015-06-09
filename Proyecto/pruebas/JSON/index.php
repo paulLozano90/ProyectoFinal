@@ -1,32 +1,24 @@
 <?php
 include 'functions.php';
+include 'logout.php';
 
+session_start();
 if(isset($_POST["login"]))
 {
     $idses = $_POST["email"];
     $pass = $_POST["pass"];
-
-    
-    
     if(verificar_login($idses, $pass))
-    {
-             
-        $getUser = mysqli_query($conexion, "SELECT idUsuario,Nombre FROM usuarios WHERE email = '$idses'");
-        $resultado = $getUser->fetch_assoc();       
-        
-        $_SESSION["userId"] = $resultado["idUsuario"];
-        $_SESSION["userName"] = $resultado["Nombre"];
-        
-        session_write_close();
-        
-        header("Location: ../../principalUsuario.html?idUsuario=".$_SESSION["userId"]);
+    {      
+        header("Location: ".$_SESSION["url_s"]);
     }
     else
     {
         echo 'El usuario introducido no existe';
     }
 }
-else
+else if(isset($_GET["action"]) and $_GET["action"] == "logout")
 {
-    print "pulse login";
+    logout();
+    header('location: ../../registroUsuario.html');
+    //header("Location: ../../registroUsuario.html");
 }
