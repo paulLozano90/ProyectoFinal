@@ -1,21 +1,22 @@
 <?php
 
-include ("conexion.php");
-$conexion = conectar();
+function controlUserName() {
 
-$idUsuario = $_GET["idUsuario"];
-$sql = "SELECT nombre FROM usuarios where idUsuario = $idUsuario";
-$resultados = mysqli_query($conexion, $sql);
+    $idUsuario = $_GET["idUsuario"];
+    $sql = "SELECT nombre FROM usuarios where idUsuario = $idUsuario";
+    $resultados = mysqli_query($conexion, $sql);
 
-$user = array();
+    $user = array();
 
-while($usuarios = mysqli_fetch_array($resultados)){
-    $nombre = $usuarios['nombre'];
-    $user[] = array("nombre" => utf8_encode($nombre));
+    while ($usuarios = mysqli_fetch_array($resultados)) {
+        $nombre = $usuarios['nombre'];
+        $user[] = array("nombre" => utf8_encode($nombre));
+    }
+
+    desconectar($conexion);
+
+    $json_string = json_encode($user);
+    print $json_string;
 }
 
-desconectar($conexion);
-  
-$json_string = json_encode($user);
-print $json_string;
 ?>

@@ -37,7 +37,7 @@ $(document).ready(function() {
 
 function idUsuario() {
 
-    var url = "../php/principalUsuario.php";
+    var url = "";
     var idUsuario = $.urlParam("idUsuario");
     var jSonvar = {idUsuario: idUsuario};
 
