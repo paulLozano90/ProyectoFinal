@@ -32,7 +32,7 @@ if(isset($_POST['registroUsuario'])){
     $datos = mysqli_query($conexion,$insertarUsuario);
     
     if($datos){
-        header("Location: ../registroUsuario.html");
+        header("Location: ../html/registroUsuario.html");
     }
 }
 
@@ -54,7 +54,7 @@ if(isset($_POST['registroEmpresa'])){
     $datos = mysqli_query($conexion,$insertarEmpresa);
     
     if($datos){
-        header("Location: ../registroEmpresa.html");
+        header("Location: ../html/registroEmpresa.html");
     }
 }
 
@@ -71,13 +71,14 @@ if(isset($_POST['registroEvento'])){
     
     
     
-    $insertarEmpresa = "insert into empresas (cif,nombre,descripcion,email,telefono,direccion,localidad,codPostal,ciudad) values 
-                ('$CIF','$nombreEmpresa','$descripEmpresa','$emailEmpresa',$telfEmpresa,'$dirEmpresa','$localEmpresa',$codEmpresa,'$ciudadEmpresa')";
+    $insertarEvento = "insert into eventos (idEmpresa,idTipo,nombre,descripCorta,descripcion,precioNormal,precioReducido,fechaCreacion,fechaCaducidad,foto) values 
+                ('$idEmpresa','select idTipo from empresas where idEmpresa = $idEmpresa','$nombreEvento',"
+              . "'$descripCorta',$descripcion,'$precioNormal','$precioReducido',$fechaCreacion,'$fechaCaducidad')";
     
-    $datos = mysqli_query($conexion,$insertarEmpresa);
+    $datos = mysqli_query($conexion,$insertarEvento);
     
     if($datos){
-        header("Location: ../registroEmpresa.html");
+        header("Location: ../html/creaEvento.html");
     }
 }
 ?>
