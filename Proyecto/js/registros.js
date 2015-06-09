@@ -31,4 +31,9 @@ $(document).ready(function() {
         $("#formulario").show();
         $("#login").hide();
     });
+    
+    $(".volverRegistro").click(function() {
+        $("#formulario").hide();
+        $("#login").show();
+    });
 });
