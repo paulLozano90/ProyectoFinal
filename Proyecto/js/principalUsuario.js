@@ -59,17 +59,23 @@ function muestraEventos() {
 
             for (var j = 0; j < $("#ofertas > div").length - 1; j++) {
 
-                switch (j) {
+                //alert("../images/"+evento.foto;);
 
-                    case 0:
-                        $("#ofertas > div")[z].children[j].innerHTML = evento.nombre;
+                switch (j) {                    
+
+                    case 0:                        
+                        $("#ofertas > div")[z].children[j].src = "../images/"+evento.foto;
                         break;
 
                     case 1:
-                        $("#ofertas > div")[z].children[j].innerHTML = evento.descripCorta;
+                        $("#ofertas > div")[z].children[j].innerHTML = evento.nombre;
                         break;
 
                     case 2:
+                        $("#ofertas > div")[z].children[j].innerHTML = evento.descripCorta;
+                        break;
+
+                    case 3:
                         $("#ofertas > div")[z].children[j].value = evento.idEvento;
                         break;
                 }
@@ -93,6 +99,7 @@ function muestraDescrip(idEvento) {
             $('#precioReducido')[0].innerHTML = evento.precioReducido + "€";
             $('#precioNormalCarro')[0].innerHTML = evento.precioNormal;
             $('#precioReducidoCarro')[0].innerHTML = evento.precioReducido;
+            $('#imgDescrip')[0].src = "../images/"+evento.foto;
         });
     });
 }
