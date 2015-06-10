@@ -55,7 +55,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             <div class="col-md-4">
                 <form class="form-horizontal" role="form">
                     <div class="form-group">
-                        <label for="nomEvento" class="col-lg-2 control-label">Evento</label>
+                        <label for="tipoEvento" class="col-lg-2 control-label">Tipo de evento</label>
+                        <div id="tipoEvento" class="col-lg-10">
+                            <select id="cantidad" class="form-control">
+                                <option selected>--Selecciona tu tipo de evento</option>
+                                <option value="1">Deportes</option>
+                                <option value="2">Restaurantes</option>
+                                <option value="3">Salud y belleza</option>
+                            </select>
+                        </div>                        
+                    </div>
+                    <div class="form-group">
+                        <label for="nomEvento" class="col-lg-2 control-label">Nombre</label>
                         <div id="nomEvento" class="col-lg-10">
                             <input type="text" class="form-control" id="nomEvento" name="nomEvento" placeholder="Ejemplo: Spa Los Nogales" maxlength="25">
                             <small>Máximo 25 caracteres</small>
@@ -64,15 +75,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                     <div class="form-group">
                         <label for="descEvento" class="col-lg-2 control-label">Descripción</label>
                         <div id="descEvento" class="col-lg-10">
-                            <textarea class="form-control" id="descEvento" name="descEvento" placeholder="Descripción del evento" maxlength="200" rows="4"></textarea>
-                            <small>Máximo 200 caracteres</small>
+                            <textarea class="form-control" id="descEvento" name="descEvento" placeholder="Descripción del evento" maxlength="100" rows="4"></textarea>
+                            <small>Máximo 100 caracteres</small>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="descLargaEvento" class="col-lg-2 control-label">Cuentanos más...</label>
                         <div id="descLargaEvento" class="col-lg-10">
-                            <textarea class="form-control" id="descLargaEvento" name="descLargaEvento" placeholder="Explicanos tu evento..." maxlength="500" rows="5"></textarea>
+                            <textarea class="form-control" id="descLargaEvento" name="descLargaEvento" placeholder="Explicanos tu evento..." maxlength="300" rows="5"></textarea>
                             <small>Minimo 250 caracteres</small>
                         </div>
                     </div>
@@ -84,13 +95,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                     <div class="form-group">
                         <label for="precioEvento" class="col-lg-2 control-label">Precio</label>
                         <div id="precioEvento" class="col-lg-10">
-                            <input type="text" class="form-control" id="precioEvento" name="precioEvento" placeholder="Ejemplo: 30 Euros" />
+                            <input type="text" class="form-control" id="precioEvento" name="precioEvento" placeholder="Ejemplo: 30" />
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="precioDescEvento" class="col-lg-2 control-label">Precio Final</label>
                         <div id="precioDescEvento" class="col-lg-10">
-                            <input type="text" class="form-control" id="precioDescEvento" name="precioDescEvento" placeholder="Ejemplo: 10 Euros" />
+                            <input type="text" class="form-control" id="precioDescEvento" name="precioDescEvento" placeholder="Ejemplo: 10" />
                         </div>
                     </div>
                     <div class="form-group">
@@ -114,9 +125,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                     </div>
                     <br />
                     <div class="checkbox" style="padding-left:100px">
-                        <input type="checkbox" id="aceptar"> Aceptar las condiciones de uso
-                        <br><br>
-                        <button type="submit" class="btn btn-default" id="crear">Crear el evento</button>
+                        <div id="checkbox" class="col-lg-10">
+                            <input type="checkbox" id="aceptar"> Aceptar las condiciones de uso
+                            <br><br>
+                            <button type="submit" class="btn btn-default" id="crear">Crear el evento</button>
+                        </div>                        
                     </div>
                 </form>
             </div>
