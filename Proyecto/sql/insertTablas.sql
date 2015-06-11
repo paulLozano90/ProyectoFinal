@@ -2,7 +2,7 @@
 /*Insertar usuarios */
 
 insert into usuarios (nombre,apellido1,apellido2,email,telefono,password) values 
-('Paul','Lozano','Cruzado','plc@email.es',914125468,'77/77');
+('Paul','Lozano','Cruzado','plc90@hotmail.es',914125468,'123456');
 
 
 /*Insertar tipo de empresas */

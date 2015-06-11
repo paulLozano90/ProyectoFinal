@@ -181,14 +181,12 @@ hr{
     font-size: 15px;
 }
 /*PRINCIPALES USUARIO/EMPRESA*/
-
  #ofertas > div > img{
-    width: 220px;
-    height: 180px;
+    width: 255px;
+    height: 220px;
     border: 1px solid #FFFFFF;
     border-radius: 10px;
-        }
-        
+}        
 .ofertas{
     padding: 0 70px 0 70px;    
 }

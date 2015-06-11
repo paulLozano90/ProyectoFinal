@@ -6,7 +6,7 @@ $(document).ready(function() {
     
     var idEvento = $.urlParam("idEvento");
     if(idEvento !== ""){
-        muestraDescrip(idEvento);
+        muestraDescrip(idEvento);        
     }
 
     //Envia enlace para cada evento
@@ -37,13 +37,14 @@ $(document).ready(function() {
 
 function idUsuario() {
 
-    var url = "";
-    var idUsuario = $.urlParam("idUsuario");
+    var url = "../php/principalUsuario.php";
+    var idUsuario = 3;
     var jSonvar = {idUsuario: idUsuario};
 
     $.getJSON(url, jSonvar, function(user) {
         $.each(user, function(i, user) {
-            $('#usuarioLogeado')[0].innerHTML = user.nombre;
+            $('#usuarioLogeado')[0].innerHTML = "&nbsp;"+user.nombre+"&nbsp;";
+            //setCookie("usuarioLogeado", user.nombre, 365);
         });
     });
 }
@@ -58,8 +59,6 @@ function muestraEventos() {
         $.each(evento, function(i, evento) {
 
             for (var j = 0; j < $("#ofertas > div").length - 1; j++) {
-
-                //alert("../images/"+evento.foto;);
 
                 switch (j) {                    
 
@@ -100,6 +99,7 @@ function muestraDescrip(idEvento) {
             $('#precioNormalCarro')[0].innerHTML = evento.precioNormal;
             $('#precioReducidoCarro')[0].innerHTML = evento.precioReducido;
             $('#imgDescrip')[0].src = "../images/"+evento.foto;
+            $('.breadcrumb .active')[0].innerHTML = evento.nombre;
         });
     });
 }

@@ -26,7 +26,7 @@ Descripcion=
 
 window.onload = function () {
     cookies();
-    deleteAllCookies();
+    //deleteAllCookies();
 };
 
 /* nombre:      nVentana
@@ -85,7 +85,7 @@ function cookies() {
     }
     else {
         $("#avisoCookies").hide(1000);
-        alert("Cookies Aceptadas");
+        //alert("Cookies Aceptadas");
     }
 }
 
