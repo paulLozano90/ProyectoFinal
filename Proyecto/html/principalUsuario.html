@@ -37,6 +37,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
     </head>
     <body>
+        <div id="avisoCookies" style="display:block;">
+            <div id="texto">Usamos cookies propias y de terceros para mostrar publicidad personalizada 
+                según su navegación. Si continua navegando consideramos que acepta la 
+                <a id="masInfo" href="javascript:void(0)" onclick="nVentana('politicaCookies.html')">Politica de Cookies</a>
+                <button class="btn btn-default btn-cookies" onclick="aceptarCookie();">Aceptar</button>
+            </div>
+        </div>
         <header class="container">
             <div class="jumbotron">
                 <a href="principalUsuario.html"><img id="logoCabecera" src="../images/logotipoUnete.png" alt="Logotipo Únete" style="margin-right:20px;"></a>
@@ -100,17 +107,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 <hr>
                 <div class="navbar center-block">
                     <ul class="nav-justified nav-footer" style="margin-left:-80px;">
-                        <li><a href="#">Acerca de</a></li>
-                        <li><a href="#">Política de cookies</a></li>
-                        <li><a href="#">Bases legales</a></li>
-                        <li>Redes Sociales
-                            <a href="https://es-es.facebook.com"><i class="fa fa-facebook-square" style="width:15px;"></i></a>
-                            <a href="https://twitter.com/"><i class="fa fa-twitter" style="width:15px;"></i></a>
+                        <li><a href="#">Acerca de nosotros</a></li>
+                        <li><a href="javascript:void(0)" onclick="nVentana('politicaCookies.html')">Política de cookies</a></li>
+                        <li><a href="javascript:void(0)" onclick="nVentana('terminosGenerales.html')">Terminos Generales</a></li>
+                        <li>
+                            Redes Sociales
+                            <a href="https://es-es.facebook.com"><i style="width: 15px; height: 15px; color: #FFFFFF;" class="fa fa-facebook-square"></i></a>
+                            <a href="https://twitter.com/"><i style="width: 15px; height: 15px; color: #FFFFFF;" class="fa fa-twitter"></i></a>
                         </li>
                     </ul>
                 </div>
             </center>
-        </footer> 
+        </footer>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
         <script src="../js/principalUsuario.js"></script>
