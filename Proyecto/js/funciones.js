@@ -36,7 +36,7 @@ window.onload = function () {
  */
 
 function nVentana(link) {
-    var nv = window.open(link, "nventana", "scrollbars=yes, top=0, left=0, height=750px, width=600px");
+    var nv = window.open(link, "nventana", "scrollbars=yes, top=0, left=0, height=650px, width=600px");
 }
 
 /* nombre:      $urlParam
@@ -85,7 +85,6 @@ function cookies() {
     }
     else {
         $("#avisoCookies").hide(1000);
-        //alert("Cookies Aceptadas");
     }
 }
 

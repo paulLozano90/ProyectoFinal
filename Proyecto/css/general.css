@@ -52,7 +52,6 @@ header > .navbar-default{
     margin-top: 10px;
     float: left;
 }
-
 /*Barra navegacion*/
 .nav, .navbar-default{
     background: none;
@@ -70,6 +69,12 @@ header > .navbar > .nav-header{
 }
 .nav-header > li > a:hover{
     background: #43D3DE;
+    color: #FFFFFF;
+}
+.nav-header .active{
+    background: #43D3DE;
+}
+.nav-header .active a{
     color: #FFFFFF;
 }
 /*Titulos,descripciones...*/
@@ -133,8 +138,11 @@ footer{
     margin-top: 50px;
     bottom: 0; 
 }
+.nav-footer{
+    margin-left: -50px;
+}
 .nav-footer > li{
-    width: 325px;    
+    width: 275px;    
     font-size: 16px;
 }
 .nav-footer > li > a{
@@ -154,6 +162,9 @@ h1{
 hr{
     background-color: #FFFFFF;
     background-size: 2px;
+}
+table p{
+    margin-bottom: 0px;
 }
 /*INICIO*/
 .btn-inicio{
@@ -220,16 +231,12 @@ hr{
     margin: 0px 10px 0px 5px;
 }
 #tablaResumen  p{
-    margin-bottom: 0px;
     font-weight: bold;
 }
 .btn-compra{
-    margin-left: 40px; 
+    margin-left: 30px; 
     font-size: 20px; 
-    width: 150px; 
-}
-#precioOferta  p{
-    margin-bottom: 0px;
+    width: 125px; 
 }
 #datosOferta a{
     border: 1px solid #FFFFFF;
@@ -237,6 +244,12 @@ hr{
 #datosOferta a:hover{
     background: #43D3DE;
     color: #FFFFFF;
+}
+#tablaCondiciones p{
+    margin-left: 7px;
+}
+#tablaCondiciones td{
+    padding-bottom: 12px;
 }
 #imgDescrip{
     border: 1px solid #FFFFFF;

@@ -3,35 +3,10 @@ $(document).ready(function() {
 
     idUsuario();
     muestraEventos();
-    
-    var idEvento = $.urlParam("idEvento");
-    if(idEvento !== ""){
-        muestraDescrip(idEvento);        
-    }
 
     //Envia enlace para cada evento
     $(".btn-ofertas").click(function() {
         window.location.href = "descripEvento.html?idEvento=" + $(this).val() + "";
-    });
-    //Ocultar la descripcion del evento
-    $(".btn-compra").click(function() {
-        $("#dResumen").show();
-        $("#dDescripcion").hide();
-        $("#cantidad").val("1");
-        $("#precioTotal")[0].innerHTML = $("#precioReducido")[0].innerHTML;
-    });
-    //Volver a la descripcion
-    $(".btn-volver").click(function() {
-        $("#dDescripcion").show();
-        $("#dResumen").hide();
-    });
-    //Cambiar el precio del evento
-    $("#cantidad").change(function() {
-
-        var cantidad = $("#cantidad").val();
-        var precio = $("#precioReducidoCarro")[0].innerHTML;
-
-        $("#precioTotal")[0].innerHTML = (cantidad * precio) + "€";
     });
 });
 
@@ -44,7 +19,7 @@ function idUsuario() {
     $.getJSON(url, jSonvar, function(user) {
         $.each(user, function(i, user) {
             $('#usuarioLogeado')[0].innerHTML = "&nbsp;"+user.nombre+"&nbsp;";
-            //setCookie("usuarioLogeado", user.nombre, 365);
+            setCookie("usuarioLogeado", user.nombre, 365);
         });
     });
 }
@@ -80,26 +55,6 @@ function muestraEventos() {
                 }
             }
             z++;
-        });
-    });
-}
-
-function muestraDescrip(idEvento) {
-
-    var url = "../php/muestraDescrip.php";    
-    var jSonvar = {idEvento: idEvento};
-
-    $.getJSON(url, jSonvar, function(evento) {
-        $.each(evento, function(i, evento) {
-
-            $('#tituloEvento')[0].innerHTML = evento.nombre;
-            $('#descripEvento')[0].innerHTML = evento.descripcion;
-            $('#precioNormal')[0].innerHTML = evento.precioNormal + "€";
-            $('#precioReducido')[0].innerHTML = evento.precioReducido + "€";
-            $('#precioNormalCarro')[0].innerHTML = evento.precioNormal;
-            $('#precioReducidoCarro')[0].innerHTML = evento.precioReducido;
-            $('#imgDescrip')[0].src = "../images/"+evento.foto;
-            $('.breadcrumb .active')[0].innerHTML = evento.nombre;
         });
     });
 }
