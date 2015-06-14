@@ -61,6 +61,7 @@ if(isset($_POST['registroEmpresa'])){
 if(isset($_POST['registroEvento'])){
     
     $idEmpresa = 1;
+    $idTipo = '1';
     $nombreEvento = $_POST['nombreEvento'];
     $descripCorta = $_POST['descripCorta'];
     $descripcion = $_POST['descripcion'];
@@ -71,18 +72,16 @@ if(isset($_POST['registroEvento'])){
     
     if (isset($_FILES["foto"]) and $_FILES["foto"]["error"] == UPLOAD_ERR_OK) {
 
-    if (!move_uploaded_file($_FILES["foto"]["tmp_name"], "C:/wamp/www/foto/" . basename($_FILES["foto"]["name"]))) {
-        $foto = $_FILES["foto"]["name"];
-    }}
+        if (!move_uploaded_file($_FILES["foto"]["tmp_name"], "C:/wamp/www/Proyecto/images/" . basename($_FILES["foto"]["name"]))) {
+        }
+    }
     
     $insertarEvento = "insert into eventos (idEmpresa,idTipo,nombre,descripCorta,descripcion,
                        precioNormal,precioReducido,fechaCreacion,fechaCaducidad,foto) values 
-                       ('$idEmpresa','(select idTipo from empresas where idEmpresa = $idEmpresa)','$nombreEvento',
-                       '$descripCorta',$descripcion,'$precioNormal','$precioReducido',
-                      '(STR_TO_DATE(REPLACE('$fechaCreacion','/','.') ,GET_FORMAT(date,'EUR')))',
-                      '(STR_TO_DATE(REPLACE('$fechaCaducidad','/','.') ,GET_FORMAT(date,'EUR')))')";
+                       ('$idEmpresa','$idTipo','$nombreEvento','$descripCorta','$descripcion',"
+            . "         '$precioNormal','$precioReducido','$fechaCreacion','$fechaCaducidad','";
     
-    $datos = mysqli_query($conexion,$insertarEvento);
+    $insertarEvento .= $_FILES['foto']['name']."' )";
     
     if($datos){
         header("Location: ../html/creaEvento.html");
