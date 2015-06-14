@@ -294,9 +294,9 @@ table p{
     background-color: #43D3DE;
     vertical-align: middle;
 }
-#tablaMuestraTodos th:nth-child(5){
+/*#tablaMuestraTodos th:nth-child(5){
     width: 108px;
-}
+}*/
 #tablaMuestraTodos td{
     vertical-align: middle;
 }
