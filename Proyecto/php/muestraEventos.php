@@ -3,8 +3,19 @@
 include ("conexion.php");
 $conexion = conectar();
 
-$sql = "SELECT foto,nombre,descripCorta,idEvento FROM eventos ORDER BY idEvento desc LIMIT 3";
+//$tipoEvento = 'Ocio';
+$tipoEvento = $_GET['tipoEvento'];
+
+if ($tipoEvento == 'Home'){
+    $where = "";
+}else{
+    $where = "WHERE idTipo=(SELECT idTipo FROM tipoEvento WHERE nombre='$tipoEvento')";
+}
+
+$sql = "SELECT foto,nombre,descripCorta,idEvento FROM eventos $where ORDER BY idEvento desc LIMIT 3";
 $resultados = mysqli_query($conexion, $sql);
+
+//echo $sql;
 
 if(!$resultados) die("Error al mostrar evento");
 

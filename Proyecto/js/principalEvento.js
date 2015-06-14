@@ -35,11 +35,12 @@ function muestraEvento(idEvento) {
 
     var url = "../php/principalEvento.php";    
     var jSonvar = {idEvento: idEvento};
-
+    var nombreTipo = "";
+    var enlaceTipo = "";
+    
     $.getJSON(url, jSonvar, function(evento) {
         $.each(evento, function(i, evento) {
-
-            $('.breadcrumb .active')[0].innerHTML = evento.nombre;
+            
             $('#tituloEvento')[0].innerHTML = evento.nombre;
             $('#descripEvento')[0].innerHTML = evento.descripcion;
             $('#precioNormal')[0].innerHTML = evento.precioNormal + "€";
@@ -47,10 +48,35 @@ function muestraEvento(idEvento) {
             $('#precioNormalCarro')[0].innerHTML = evento.precioNormal;
             $('#precioReducidoCarro')[0].innerHTML = evento.precioReducido;
             $('#imgDescrip')[0].src = "../images/"+evento.foto;
+            $('#imgDescrip')[0].alt = evento.nombre;
             $("#tablaCondiciones tr p")[0].innerHTML = evento.empresa;
             $("#tablaCondiciones tr p")[1].innerHTML = evento.telefono;
             $("#tablaCondiciones tr p")[2].innerHTML = evento.direccion;
             $("#tablaCondiciones tr p")[3].innerHTML = evento.fechaCaducidad;
+            
+            if(evento.idTipo === "1"){
+                nombreTipo = "Restaurantes";
+                enlaceTipo = "eventosRestaurantes.html";
+            }else if(evento.idTipo === "2"){
+                nombreTipo = "Ocio";
+                enlaceTipo = "eventosOcio.html";
+            }else if(evento.idTipo === "3"){
+                nombreTipo = "Salud y Belleza";
+                enlaceTipo = "eventosSaludyBelleza.html";
+            }
+            
+            var migas ="<li><a href='principalUsuario.html'>Home</a></li>"
+                      +"<li><a href='"+enlaceTipo+"'>"+nombreTipo+"</a></li>"
+                      +"<li class='active'>"+evento.nombre+"</li>";
+              
+            $(migas).appendTo(".breadcrumb");
+            
+            for (var i=0; i<$(".nav-header  a").length; i++){
+                if(nombreTipo === $(".nav-header  a")[i].innerText){
+                    $(".nav-header  > li")[i].className = "active";
+                }
+            }
+            
         });
     });
 }
