@@ -28,6 +28,7 @@ function muestraTodos(elemento) {
                     + "</tr>";
 
             $(fila).appendTo("#tablaMuestraTodos tbody");
+            $("#tablaMuestraTodos th:nth-child(5)").css("width","108px");
 
             $(".btn-evento").click(function() {
                 window.location.href = "descripEvento.html?idEvento=" + $(this).val() + "";
