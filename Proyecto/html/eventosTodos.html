@@ -78,11 +78,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                 <th>
                                     <select id="selectOrder" class="form-control">
                                         <option value="idEvento#asc" selected="selected">Por defecto</option>
-                                        <option value="nombre#asc">Nombre de la A la Z</option>
-                                        <option value="nombre#desc">Nombre de la Z la A</option>
+                                        <option value="idEvento#desc">Ultimos eventos añadidos</option>
+                                        <option value="ev.nombre#asc">Nombre de la A la Z</option>
+                                        <option value="ev.nombre#desc">Nombre de la Z la A</option>
                                         <option value="precioReducido#asc">Precio de menor a mayor</option>
                                         <option value="precioReducido#desc">Precio de mayor a menor</option>
-                                        <option value="idEvento#desc">Ultimos eventos añadidos</option>
+                                        <option value="te.nombre#asc">Tipo de evento</option>                                        
                                     </select>
                                 </th>
                             </tr>
@@ -91,10 +92,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                     <table id="tablaMuestraTodos" class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>Nombre</th>
-                                <th>Precio Normal</th>
-                                <th>Precio Reducido</th>
+                                <th>Nombre del evento</th>
+                                <th>Precio</th>
                                 <th>Fecha de caducidad</th>
+                                <th>Tipo de evento</th>
                                 <th></th>
                             </tr>
                         </thead>

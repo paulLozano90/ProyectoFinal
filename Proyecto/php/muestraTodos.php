@@ -3,16 +3,19 @@
 include ("conexion.php");
 $conexion = conectar();
 
-//$elemento = 'nombre#desc';
+//$elemento = 'ev.nombre#desc';
 $elemento = $_GET['elemento'];
 
 list($campo, $tipo) = explode('#', $elemento);
 
+$orderBy = "ORDER BY $campo $tipo";
 
-    $orderBy = "ORDER BY $campo $tipo";
+$sql = "SELECT ev.nombre as nombreEvento,precioReducido,fechaCaducidad,idEvento,te.nombre as tipoEvento "
+     . "FROM eventos ev "
+     . "LEFT JOIN tipoEvento te "
+     . "ON te.idTipo = ev.idTipo "
+     . "$orderBy";
 
-
-$sql = "SELECT nombre,precioNormal,precioReducido,fechaCaducidad,idEvento FROM eventos $orderBy";
 $resultados = mysqli_query($conexion, $sql);
 
 //echo $sql;
@@ -23,14 +26,15 @@ $evento = array();
 
 while($dato = mysqli_fetch_array($resultados)){
 
-    $nombre = $dato['nombre'];
-    $precioNormal = $dato['precioNormal'];
-    $precioReducido = $dato['precioReducido'];
+    $nombreEvento = $dato['nombreEvento'];
+    $precioEvento = $dato['precioReducido'];
     $fechaCaducidad = $dato['fechaCaducidad'];
     $idEvento = $dato['idEvento'];
+    $tipoEvento = $dato['tipoEvento'];
     
-    $evento[] = array('nombre' => utf8_encode($nombre), 'precioNormal' => $precioNormal, 'precioReducido' => $precioReducido,
-                      'fechaCaducidad' => $fechaCaducidad, 'idEvento' => $idEvento);    
+    $evento[] = array('nombreEvento' => utf8_encode($nombreEvento), 'precioEvento' => $precioEvento, 
+                      'fechaCaducidad' => utf8_encode($fechaCaducidad), 'idEvento' => $idEvento,
+                      'tipoEvento' => utf8_encode($tipoEvento));    
 }
 
 desconectar($conexion);

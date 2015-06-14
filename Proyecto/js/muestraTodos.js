@@ -20,10 +20,10 @@ function muestraTodos(elemento) {
         $.each(evento, function(i, evento) {          
 
             var fila = "<tr>"
-                    + "<td>" + evento.nombre + "</td>"
-                    + "<td>" + evento.precioNormal + "</td>"
-                    + "<td>" + evento.precioReducido + "</td>"
+                    + "<td>" + evento.nombreEvento + "</td>"
+                    + "<td>" + evento.precioEvento + "</td>"                    
                     + "<td>" + evento.fechaCaducidad + "</td>"
+                    + "<td>" + evento.tipoEvento + "</td>"
                     + "<td><button class='btn btn-default btn-evento' value='" + evento.idEvento + "'>Ver Evento</button></td>"
                     + "</tr>";
 
