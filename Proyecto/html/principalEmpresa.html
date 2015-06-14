@@ -36,72 +36,89 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         <link rel="stylesheet" href="../css/general.css" />
     </head>
     <body>
+        <div id="avisoCookies" style="display:block;">
+            <div id="texto">Usamos cookies propias y de terceros para mostrar publicidad personalizada 
+                según su navegación. Si continua navegando consideramos que acepta la 
+                <a id="masInfo" href="javascript:void(0)" onclick="nVentana('politicaCookies.html')">Politica de Cookies</a>
+                <button class="btn btn-default btn-cookies" onclick="aceptarCookie();">Aceptar</button>
+            </div>
+        </div>
         <header class="container">
             <div class="jumbotron">
                 <a href="principalEmpresa.html"><img id="logoCabecera" src="../images/logotipoUnete.png" alt="Logotipo Únete" style="margin-right:20px;"></a>
                 <h1 style="text-align:left;">Únete</h1>
+                <div style="float: right; margin-top: -40px;">
+                    <div style="float: left;">Bienvenido:</div>
+                    <span style="float: left; color: #FFFFFF;" id="usuarioLogeado"></span>
+                    <a style="float: left;" href="../pruebas/JSON/index.php?action=logout">Cerrar sesión</a>
+                </div>
             </div>
-            <div class="navbar navbar-default">
+            <nav class="navbar navbar-default">
                 <ul class="nav nav-justified nav-header">
-                    <li class="active"><a href="principalEmpresa.html">Home</a></li>
-                    <li><a href="creaEvento.html">Crear evento</a></li>
-                    <li><a href="#">Mis eventos</a></li>    
+                    <li class="active"><a href="principalEmpresa.html">Mis eventos</a></li>
+                    <li><a href="creaEvento.html">Crear evento</a></li> 
                 </ul>
-            </div>
+            </nav>
+            <ol class="breadcrumb">
+                <li class="active">Mis eventos</li>
+            </ol>
         </header>
-        <div class="container">
-            <div id="ofertas" class="row" style="margin-right:180px;">
+        <section class="container">
+            <div class="row">
+                <div class="col-md-2"></div>   
+                <div class="col-md-8">
+                    <div style="float: right; padding-bottom: 20px;">
+                        <table>
+                            <tr>
+                                <th style="padding-right: 15px;">Ordenar por:</th>
+                                <th>
+                                    <select id="selectOrder" class="form-control">
+                                        <option value="idEvento#asc" selected="selected">Por defecto</option>
+                                        <option value="idEvento#desc">Ultimos eventos añadidos</option>
+                                        <option value="ev.nombre#asc">Nombre de la A la Z</option>
+                                        <option value="ev.nombre#desc">Nombre de la Z la A</option>                                
+                                    </select>
+                                </th>
+                            </tr>
+                        </table>
+                    </div>
+                    <table id="tablaMuestraTodos" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Nombre del evento</th>
+                                <th>Precio Normal</th>
+                                <th>Precio Reducido</th>
+                                <th>Fecha de creacion</th>
+                                <th>Fecha de caducidad</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
                 <div class="col-md-2"></div>
-                <div class="col-md-3">
-                    <img src="images/OFERTA3.jpg" alt="oferta" />
-                    <h2>Oferta 1</h2>
-                    <p>
-                        1 Noche de alojamiento, en Junior Suite con terraza, para 1 persona en el Gran Hotel Balneario Blancafort 4*
-                        Desayuno buffet.Acceso a las piscinas termales exteriores y a la sala fitness
-                    </p>
-                    <button class="btn btn-default btn-ofertas">Ver Evento</button>
-                </div>
-
-                <div class="col-md-3 espacioOfertas">
-                    <img src="images/OFERTA.jpg" alt="oferta" />
-                    <h2>Oferta 1</h2>
-                    <p>
-                        1 Noche de alojamiento, en Junior Suite con terraza, para 1 persona en el Gran Hotel Balneario Blancafort 4*
-                        Desayuno buffet.Acceso a las piscinas termales exteriores y a la sala fitness
-                    </p>
-                    <button class="btn btn-default btn-ofertas">Ver Evento</button>
-                </div>
-
-                <div class="col-md-3 espacioOfertas">
-                    <img src="images/OFERTA2.jpg" alt="oferta" />
-                    <h2>Oferta 1</h2>
-                    <p>
-                        1 Noche de alojamiento, en Junior Suite con terraza, para 1 persona en el Gran Hotel Balneario Blancafort 4*
-                        Desayuno buffet.Acceso a las piscinas termales exteriores y a la sala fitness
-                    </p>
-                    <button class="btn btn-default btn-ofertas">Ver Evento</button>
-                </div>
-                <div class="col-md-2"></div>
-            </div>
-            <footer>
-                <center>
-                    <hr>
-                    <div class="navbar center-block">
-                        <ul class="nav-justified nav-footer" style="margin-left:-80px;">
+            </div>            
+        </section>     
+        <footer>
+            <center>
+                <hr>
+                <div class="navbar center-block">
+                    <ul class="nav-justified nav-footer" style="margin-left:-80px;">
                         <li><a href="acercaNosotros.html">Acerca de nosotros</a></li>
                         <li><a href="javascript:void(0)" onclick="nVentana('politicaCookies.html')">Política de cookies</a></li>
                         <li><a href="javascript:void(0)" onclick="nVentana('terminosGenerales.html')">Terminos Generales</a></li>
-                            <li>
-                                Redes Sociales
-                                <a href="https://es-es.facebook.com"><i style="width: 15px; height: 15px; color: #FFFFFF;" class="fa fa-facebook-square"></i></a>
-                                <a href="https://twitter.com/"><i style="width: 15px; height: 15px; color: #FFFFFF;" class="fa fa-twitter"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </center>
-            </footer>
-            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-            <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-            <script src="../js/funciones.js"></script>
+                        <li>
+                            Redes Sociales
+                            <a href="https://es-es.facebook.com"><i style="width: 15px; height: 15px; color: #FFFFFF;" class="fa fa-facebook-square"></i></a>
+                            <a href="https://twitter.com/"><i style="width: 15px; height: 15px; color: #FFFFFF;" class="fa fa-twitter"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </center>
+        </footer>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script src="../js/funciones.js"></script>
+        <script src="../js/principalEmpresa.js"></script>
     </body>
 </html>
