@@ -36,21 +36,34 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         <link rel="stylesheet" href="../css/general.css" />
     </head>
     <body>
+        <div id="avisoCookies" style="display:block;">
+            <div id="texto">Usamos cookies propias y de terceros para mostrar publicidad personalizada 
+                según su navegación. Si continua navegando consideramos que acepta la 
+                <a id="masInfo" href="javascript:void(0)" onclick="nVentana('politicaCookies.html')">Politica de Cookies</a>
+                <button class="btn btn-default btn-cookies" onclick="aceptarCookie();">Aceptar</button>
+            </div>
+        </div>
         <header class="container">
             <div class="jumbotron">
                 <a href="principalEmpresa.html"><img id="logoCabecera" src="../images/logotipoUnete.png" alt="Logotipo Únete" style="margin-right:20px;"></a>
                 <h1 style="text-align:left;">Únete</h1>
+                <div style="float: right; margin-top: -40px;">
+                    <div style="float: left;">Bienvenido:</div>
+                    <span style="float: left; color: #FFFFFF;" id="usuarioLogeado"></span>
+                    <a style="float: left;" href="../pruebas/JSON/index.php?action=logout">Cerrar sesión</a>
+                </div>
             </div>
-            <div class="navbar navbar-default">
+            <nav class="navbar navbar-default">
                 <ul class="nav nav-justified nav-header">
-                    <li class="active"><a href="principalEmpresa.html">Home</a></li>
-                    <li><a href="creaEvento.html">Crear evento</a></li>
-                    <li><a href="#">Mis eventos</a></li>
-
+                    <li><a href="principalEmpresa.html">Mis eventos</a></li>
+                    <li class="active"><a href="creaEvento.html">Crear evento</a></li> 
                 </ul>
-            </div>
+            </nav>
+            <ol class="breadcrumb">
+                <li class="active">Crear evento</li>
+            </ol>
         </header>
-        <div class="row" style="margin-top:30px">
+        <section class="row" style="margin-top:30px">
             <div class="col-md-2"></div>
             <div class="col-md-4">
                 <form class="form-horizontal" role="form">
@@ -134,7 +147,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 </form>
             </div>
             <div class="col-md-2"></div>
-        </div>
+        </section>
         <footer>
             <center>
                 <hr>
