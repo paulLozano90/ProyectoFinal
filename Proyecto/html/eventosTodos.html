@@ -72,13 +72,21 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 <div class="col-md-2"></div>   
                 <div class="col-md-8">
                     <div style="float: right; padding-bottom: 20px;">
-                        <select id="ordenarTabla" class="form-control">
-                            <option value="idEvento#asc" selected="selected">--Ordenar por defecto</option>
-                            <option value="nombre#asc">Nombre de la A la Z</option>
-                            <option value="nombre#desc">Nombre de la Z la A</option>
-                            <option value="precioReducido#asc">Precio de menor a mayor</option>
-                            <option value="precioReducido#desc">Precio de mayor a menor</option>
-                        </select>
+                        <table>
+                            <tr>
+                                <th style="padding-right: 15px;">Ordenar por:</th>
+                                <th>
+                                    <select id="selectOrder" class="form-control">
+                                        <option value="idEvento#asc" selected="selected">Por defecto</option>
+                                        <option value="nombre#asc">Nombre de la A la Z</option>
+                                        <option value="nombre#desc">Nombre de la Z la A</option>
+                                        <option value="precioReducido#asc">Precio de menor a mayor</option>
+                                        <option value="precioReducido#desc">Precio de mayor a menor</option>
+                                        <option value="idEvento#desc">Ultimos eventos añadidos</option>
+                                    </select>
+                                </th>
+                            </tr>
+                        </table>
                     </div>
                     <table id="tablaMuestraTodos" class="table table-bordered">
                         <thead>
@@ -90,8 +98,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                 <th></th>
                             </tr>
                         </thead>
-                        <tbody>
-                        </tbody>
+                        <tbody></tbody>
                     </table>
                 </div>
                 <div class="col-md-2"></div>
@@ -104,7 +111,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                     <ul class="nav-justified nav-footer">
                         <li><a href="acercaNosotros.html">Acerca de nosotros</a></li>
                         <li><a href="javascript:void(0)" onclick="nVentana('politicaCookies.html')">Política de cookies</a></li>
-                        <li><a href="javascript:void(0)" onclick="nVentana('terminosGenerales.html')">Terminos Generales</a></li>
+                        <li><a href="javascript:void(0)" onclick="nVentana('terminosGenerales.html')">Términos Generales</a></li>
                         <li>
                             Redes Sociales
                             <a href="https://es-es.facebook.com"><i style="width: 15px; height: 15px; color: #FFFFFF;" class="fa fa-facebook-square"></i></a>

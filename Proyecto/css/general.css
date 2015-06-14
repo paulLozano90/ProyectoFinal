@@ -280,3 +280,26 @@ table p{
     font-size: 14px;
     padding: 0 0 0 0;
 }
+/*Tabla eventos*/
+#tablaMuestraTodos{
+    font-size: 16px;
+    background: #FFFFFF;
+    color: #000000;
+}
+#tablaMuestraTodos th{
+    height: 50px;
+    font-size: 18px;
+    color: #FFFFFF;
+    font-weight: bold;
+    background-color: #43D3DE;
+    vertical-align: middle;
+}
+#tablaMuestraTodos th:nth-child(5){
+    width: 108px;
+}
+#tablaMuestraTodos td{
+    vertical-align: middle;
+}
+#selectOrder{
+    width: 225px;
+}

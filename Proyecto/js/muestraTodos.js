@@ -3,10 +3,10 @@ $(document).ready(function() {
 
     $('#usuarioLogeado')[0].innerHTML = "&nbsp;" + getCookie("usuarioLogeado") + "&nbsp;";
   
-    muestraTodos($("#ordenarTabla").val());
+    muestraTodos("idEvento#asc");
 
-    $("#ordenarTabla").change(function() {        
-        muestraTodos($("#ordenarTabla").val());
+    $("#selectOrder").change(function() {        
+        muestraTodos($("#selectOrder").val());
     });
 });
 
