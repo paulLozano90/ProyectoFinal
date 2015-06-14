@@ -1,8 +1,10 @@
 
 $(document).ready(function() {
 
+    var tipoEvento = $(".nav-header > .active a")[0].innerText;
+
     idUsuario();
-    muestraEventos();
+    muestraEventos(tipoEvento);
 
     //Envia enlace para cada evento
     $(".btn-ofertas").click(function() {
@@ -13,7 +15,7 @@ $(document).ready(function() {
 function idUsuario() {
 
     var url = "../php/principalUsuario.php";
-    var idUsuario = 3;
+    var idUsuario = 1;
     var jSonvar = {idUsuario: idUsuario};
 
     $.getJSON(url, jSonvar, function(user) {
@@ -24,12 +26,13 @@ function idUsuario() {
     });
 }
 
-function muestraEventos() {
+function muestraEventos(tipoEvento) {
 
     var url = "../php/muestraEventos.php";
+    var jSonvar = {tipoEvento: tipoEvento};
     var z = 1;
 
-    $.getJSON(url, function(evento) {
+    $.getJSON(url, jSonvar, function(evento) {
 
         $.each(evento, function(i, evento) {
 
