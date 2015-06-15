@@ -6,7 +6,7 @@ $conexion = conectar();
 //$tipoEvento = 'Ocio';
 $tipoEvento = $_GET['tipoEvento'];
 
-if ($tipoEvento == 'Home'){
+if ($tipoEvento == 'Últimos Eventos'){
     $where = "";
 }else{
     $where = "WHERE idTipo=(SELECT idTipo FROM tipoEvento WHERE nombre='$tipoEvento')";
