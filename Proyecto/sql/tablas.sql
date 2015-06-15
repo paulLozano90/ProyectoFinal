@@ -50,11 +50,11 @@ CONSTRAINT fk_tipo FOREIGN KEY (idTipo) REFERENCES tipoEvento(idTipo)
 );
 
 CREATE TABLE usuariosEventos
-(idEvento INT (3) NOT NULL,
+(idDescuento INT (3) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+idEvento INT (3) NOT NULL,
 idUsuario INT (3) NOT NULL,
 localizador VARCHAR(20),
-fechaSolicitud date,
-PRIMARY KEY (idEvento,idUsuario),
+fechaSolicitud VARCHAR(20),
 CONSTRAINT fk_eventos FOREIGN KEY (idEvento) REFERENCES eventos(idEvento),
 CONSTRAINT fk_usuarios FOREIGN KEY (idUsuario) REFERENCES usuarios(idUsuario)
 );
