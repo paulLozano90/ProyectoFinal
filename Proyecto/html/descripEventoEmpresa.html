@@ -42,6 +42,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 <a id="masInfo" href="javascript:void(0)" onclick="nVentana('politicaCookies.html')">Politica de Cookies</a>
                 <button class="btn btn-default btn-cookies" onclick="aceptarCookie();">Aceptar</button>
             </div>
+            <div id="tipoUsuario" hidden="hidden">Empresa</div>
         </div>
         <header class="container">
             <div class="jumbotron">
@@ -59,8 +60,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                     <li><a href="creaEvento.html">Crear evento</a></li> 
                 </ul>
             </div>
-            <ol class="breadcrumb">
-                <li class="active">Mis Eventos</li>
+            <ol class="breadcrumb">                
             </ol>
         </header>
         <section class="container">
@@ -134,66 +134,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                     <td valign="middle">
                                         <p id="precioReducido" style="font-size: 47px; margin-left: 35px; color: #43D3DE;">15€</p>
                                     </td>
-                                    <td valign="middle">
-                                        <button class="btn btn-default btn-compra">Únete!</button>
-                                    </td>
                                 </tr>
                             </table>
 
                         </div>
-                    </div>
-                    <div id="dResumen" style="display: none;">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">Resumen de su compra</div>
-                            <div class="panel-body">
-                                <table id="tablaResumen">
-                                    <tr>
-                                        <td>
-                                            <label>¿Cuantos sois?</label>
-                                        </td>
-                                        <td>
-                                            <select id="cantidad" class="form-control" style="width: 60px;">
-                                                <option id="1" selected>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label style="margin-top: 15px;">Precio inicial:</label>
-                                        </td>
-                                        <td>
-                                            <p id="precioNormalCarro" style="margin-top: 15px; text-decoration: line-through; ">30</p>
-                                        </td>
-                                        <td>
-                                            <p style="margin-top: 15px;">€</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label>Precio final:</label>
-                                        </td>
-                                        <td>
-                                            <p id="precioReducidoCarro" >15</p>
-                                        </td>
-                                        <td>
-                                            <p>€</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label style="margin-top: 15px; font-size: 18px;">Precio total:</label>
-                                        </td>
-                                        <td>
-                                            <p id="precioTotal" style="margin-top: 15px; font-size: 30px; color: #43d3de">15</p>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                        <button class="btn btn-default" style="margin-right: 20px;">Confirmar compra</button>
-                        <button class="btn btn-default btn-volver">¿No estas seguro?</button>
                     </div>
                 </div>
                 <div class="col-md-2"></div>
