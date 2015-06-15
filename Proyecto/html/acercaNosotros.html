@@ -35,6 +35,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         <link rel="stylesheet" href="../css/general.css" />
     </head>
     <body>
+        <div id="avisoCookies" style="display:block;">
+            <div id="texto">Usamos cookies propias y de terceros para mostrar publicidad personalizada 
+                según su navegación. Si continua navegando consideramos que acepta la 
+                <a id="masInfo" href="javascript:void(0)" onclick="nVentana('politicaCookies.html')">Politica de Cookies</a>
+                <button class="btn btn-default btn-cookies" onclick="aceptarCookie();">Aceptar</button>
+            </div>
+        </div>
         <header class="container">
             <div class="jumbotron">
                 <a href="principalUsuario.html"><img id="logoCabecera" src="../images/logotipoUnete.png" alt="Logotipo Únete" style="margin-right:20px;"></a>
@@ -42,11 +49,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             </div>
             <nav class="navbar navbar-default">
                 <ul class="nav nav-justified nav-header">
-                    <li><a href="principalUsuario.html">Home</a></li>
+                    <li><a href="principalUsuario.html">Últimos eventos</a></li>
                     <li><a href="eventosRestaurantes.html">Restaurantes</a></li>
                     <li><a href="eventosOcio.html">Ocio</a></li>
                     <li><a href="eventosSaludyBelleza.html">Salud y Belleza</a></li>
-                    <li><a href="eventosTodos.html">Todas</a></li>
+                    <li><a href="eventosTodos.html">Todos los eventos</a></li>
                 </ul>
             </nav>
         </header>
