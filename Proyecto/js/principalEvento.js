@@ -39,7 +39,9 @@ $(document).ready(function() {
     });
     //Solicitar descuento
     $(".btn-descuento").click(function() {
+        
         //alert(idEvento +"|"+nombreUsuario);
+        
         solicitaDescuento(idEvento,nombreUsuario);
     });
 });
@@ -122,12 +124,19 @@ function muestraEventoEmpresa(idEvento) {
 
 function solicitaDescuento(idEvento, nombreUsuario) {
 
-    var url = "../php/.php";
+    var url = "../php/generarDescuento.php";
     var jSonvar = {idEvento: idEvento, nombreUsuario: nombreUsuario};
 
-    var caracteres = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    var longitud = 8;
-
-    alert(rand_code(caracteres, longitud));
-
-}   
+    $.getJSON(url, jSonvar, function(correcto) {
+        
+        if (correcto = "True"){
+            ventanaConfirmacion("../html/confirmacionDescuento.html");
+        }        
+    });
+} 
+function ventanaConfirmacion(link) {
+    
+    var left = (screen.width/2)-(375/2); 
+    var top = (screen.height/2)-(275/2);
+    var nv = window.open(link, "nventana", "scrollbars=yes, top="+top+", left="+left+", height=275px, width=375px");
+}

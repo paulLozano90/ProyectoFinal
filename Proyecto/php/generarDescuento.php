@@ -2,8 +2,11 @@
 
 include ("conexion.php");
 
-$nombreUsuario = 'Paul';
-$idEvento = 1;
+//$nombreUsuario = 'Paul';
+//$idEvento = 1;
+
+$nombreUsuario = $_GET["nombreUsuario"];
+$idEvento = $_GET['idEvento'];
 
 $datosUsuario = mostrarDatosUsuario($nombreUsuario);
 
@@ -20,7 +23,10 @@ while ($disponible == "no"){
 
 //echo $idEvento.$idUsuario.$codigo;
 
-insertLocalizador($idEvento,$idUsuario,$codigo);
+$correcto = insertLocalizador($idEvento,$idUsuario,$codigo);
+
+$json_string = json_encode($correcto);
+echo $json_string;
 
 function generarCodigo($longitud) {
 
@@ -75,6 +81,7 @@ function comprobarCodigo($codigo){
 function insertLocalizador($idEvento,$idUsuario,$codigo){
     
     $conexion = conectar();
+    $correcto = "";
     
     $insertarUsuario = "INSERT INTO usuariosEventos (idEvento,idUsuario,localizador) 
                         VALUES ('$idEvento','$idUsuario','$codigo')";
@@ -84,8 +91,11 @@ function insertLocalizador($idEvento,$idUsuario,$codigo){
     if(!$datos) die("Error al insertar datos de la compra");
     
     if($datos){
-        echo "insert realizado correctamente";
+        $correcto = "True";
+    }else{
+        $correcto = "False";
     }
+    return $correcto;
 }
 
 ?>
