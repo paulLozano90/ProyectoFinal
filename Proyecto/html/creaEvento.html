@@ -34,6 +34,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
         <link type="image/x-icon" href="images/logotipoUnete.png" rel="shortcut icon" />
         <link rel="stylesheet" href="../css/general.css" />
+        <script>
+            
+            $(document).ready(function() {
+    
+                var nombreUsuario = getCookie("usuarioLogeado");    
+                nombreUsuario = nombreUsuario.replace("%20", " ");
+                $('#usuarioLogeado')[0].innerHTML = "&nbsp;"+nombreUsuario+"&nbsp;";                
+            });
+            
+        </script>
     </head>
     <body>
         <div id="avisoCookies" style="display:block;">
@@ -168,5 +178,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="../js/funciones.js"></script>
-    <script src=""></script>
 </html>
