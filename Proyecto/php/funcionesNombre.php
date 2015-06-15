@@ -8,10 +8,10 @@ include ("conexion.php");
 //$idEmpresa = $_GET["idEmpresa"];
 //$idUsuario = $_GET["idUsuario"];
 
-if($_GET["idEmpresa"] !== null){
+if($_GET["idEmpresa"] !== ''){
     dimeNombreEmpresa($_GET["idEmpresa"]);
 }
-if($_GET["idUsuario"] !== null){
+if($_GET["idUsuario"] !== ''){
     dimeNombreUsuario($_GET["idUsuario"]);
 }
 

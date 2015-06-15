@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
     
-    var idEmpresa = 1;
+    var idEmpresa = 2;
     muestraEventosEmpresa(idEmpresa,"idEvento#asc");
     
     $("#selectOrder").change(function() {        
