@@ -17,8 +17,12 @@ var campos = new Array("nombreUsuario", "apellido1", "apellido2", "emailUsuario"
 //public Empresa
 var cif, nom_emp, em_emp, tel_emp, desc, dir, zip_code, loc, cit;
 var publicValEmpresa = new Array(cif, nom_emp, em_emp, tel_emp, desc, dir, zip_code, loc, cit);
-var camposEmpresa = new Array("CIF", "nombreEmpresa", "emailEmpresa", "telfEmpresa", "descripEmpresa", "dirEmpresa", "localEmpresa", "ciudadEmpresa");
+var camposEmpresa = new Array("CIF", "nombreEmpresa", "emailEmpresa", "telfEmpresa", "descripEmpresa", "dirEmpresa", "codEmpresa", "localEmpresa", "ciudadEmpresa");
 
+//public Evento
+var tipo, nom_ev, desc_ev, cuent, pre, fpre, fech, cad, fot;
+var publicValEvento = new Array(tipo, nom_ev, desc_ev, cuent, pre, fpre, fech, cad, fot);
+var camposEvento = new Array("cantidad", "nomEvento", "descEvento", "descLargaEvento", "precioEvento", "precioDescEvento", "fechaEvento", "caducidadEvento", "fotoEvento");
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -85,7 +89,7 @@ function validar()
 
     var aux = true;
     alert(url);
-    if (url === "/registroUsuario.html")
+    if (url === "/html/registroUsuario.html")
     {
         var listaValidaciones = new Array
                 (
@@ -97,34 +101,38 @@ function validar()
                         validaContraseña()
                         );
     }
-    else
+    if (url === "/html/registroEmpresa.html")
     {
+       // alert("entra en if validar");
         var listaValidaciones = new Array
                 (
                         validaCIF(),
                         validaTexto("nombreEmpresa"),
                         validaEmail(),
                         validaTelefono(),
-                        validaDesc(),
-                        validaZip(),
+                        validaTexto("descripEmpresa"),
                         validaDir(),
+                        validaZip(),
                         validaTexto("localEmpresa"),
                         validaTexto("ciudadEmpresa")
                         );
     }
 
+    //alert("sale if validar");
 
     for (var i = 0; i < listaValidaciones.length; i++)
     {
+         // alert("entra en for");
         if (listaValidaciones[i] === false)
         {
-            alert('entra en validar');
-            if (url === "/registroUsuario.html")
+            //    alert("entra en for if false");
+            //  alert('entra en validar');
+            if (url === "/html/registroUsuario.html")
             {
                 publicValidaciones[i] = false;
 
             }
-            else
+            if (url === "/html/registroEmpresa.html")
             {
                 publicValEmpresa[i] = false;
             }
@@ -132,12 +140,13 @@ function validar()
         }
         else
         {
-            if (url === "/registroUsuario.html")
+            // alert("entra en for if true");
+            if (url === "/html/registroUsuario.html")
             {
                 publicValidaciones[i] = true;
 
             }
-            else
+            if (url === "/html/registroEmpresa.html")
             {
                 publicValEmpresa[i] = true;
             }
@@ -158,33 +167,57 @@ function clickSubmit()
     }
     else
     {
+        alert("else click");
         document.getElementById("error").style.display = 'inline';
-        for (var i = 0; i < publicValidaciones.length; i++)
+        if (url === "/html/registroUsuario.html")
         {
-            alert("no ok");
-            if (publicValidaciones[i] === false)
+            for (var i = 0; i < publicValidaciones.length; i++)
             {
-                alert("ENTRA, campos[i]: " + campos[i]);
-                (url === "/registroUsuario.html") ?
-                        document.getElementById(campos[i]).setAttribute("style", "border-color: red; border-width: 2px;") :
-                        document.getElementById(camposEmpresa[i]).setAttribute("style", "border-color: red; border-width: 2px;");
-
-                document.getElementById("condiciones").checked = false;
-                document.getElementById("condiciones").disabled = true;
-                document.getElementById("registro").disabled = true;
-                auxSub = false;
-            }
-            else
-            {
-                alert("else");
-                alert(auxSub + " 1");
-                (url === "/registroUsuario.html") ?
-                        document.getElementById(campos[i]).setAttribute("style", "") :
-                        document.getElementById(camposEmpresa[i]).setAttribute("style", "");
+                alert("no ok");
+                if (publicValidaciones[i] === false)
+                {
+                    alert("ENTRA, campos[i]: " + campos[i]);
+                    document.getElementById(campos[i]).setAttribute("style", "border-color: red; border-width: 2px;");
+                    //document.getElementById(camposEmpresa[i]).setAttribute("style", "border-color: red; border-width: 2px;");
+                    document.getElementById("condiciones").checked = false;
+                    document.getElementById("condiciones").disabled = true;
+                    document.getElementById("registro").disabled = true;
+                    auxSub = false;
+                }
+                else
+                {
+                    //alert("else");
+                    //alert(auxSub + " 1");
+                    document.getElementById(campos[i]).setAttribute("style", "");
+                    //document.getElementById(camposEmpresa[i]).setAttribute("style", "");
+                }
             }
         }
+        if (url === "/html/registroEmpresa.html")
+        {
+            for (var i = 0; i < publicValEmpresa.length; i++)
+            {
+                //alert("no ok");
+                if (publicValEmpresa[i] === false)
+                {
+                    //alert("ENTRA, camposEMpresa[i]: " + camposEmpresa[i]);
+                    document.getElementById(camposEmpresa[i]).setAttribute("style", "border-color: red; border-width: 2px;");
+                    document.getElementById("condiciones").checked = false;
+                    document.getElementById("condiciones").disabled = true;
+                    document.getElementById("registro").disabled = true;
+                    auxSub = false;
+                }
+                else
+                {
+                    //alert("else");
+                    //alert(auxSub + " 1");
+                    document.getElementById(camposEmpresa[i]).setAttribute("style", "");
+                }
+            }
+        }
+
     }
-    alert(auxSub);
+    //alert(auxSub);
     return auxSub;
 }
 ;
@@ -204,10 +237,10 @@ function validaTexto(input)
     var elemento = $('#' + input).val();
     var exp;
     if (input !== "descripEmpresa") {
-        exp = /^([A-Za-zñáéíóú]{2,40})+$/;
+        exp = /^([A-Z]{1}[a-zñáéíóú]{2,40})+$/;
     }
     else {
-        exp = /^([A-Za-zñáéíóú]{2,200})+$/;
+        exp = /^([A-Z]{1}[a-zñáéíóú]{2,200})+$/;
     }
 
     if (elemento !== '' && elemento !== null)
@@ -226,7 +259,14 @@ function validaTexto(input)
  */
 function validaEmail()
 {
-    var email = $("#emailUsuario").val();
+    if(url === "/html/registroUsuario.html")
+    {
+        var email = $("#emailUsuario").val();
+    }
+    if(url === "/html/registroEmpresa.html")
+    {
+        var email = $("#emailEmpresa").val();
+    }
     var exp = /^[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,3}$/;
 
     if (email !== '' && email !== null)
@@ -245,7 +285,14 @@ function validaEmail()
  */
 function validaTelefono()
 {
-    var telef = $("#telfUsuario").val();
+    if(url === "/html/registroUsuario.html")
+    {
+        var telef = $("#telfUsuario").val();
+    }
+    if(url === "/html/registroEmpresa.html")
+    {
+        var telef = $("#telfEmpresa").val();
+    }
     var exp = /^[9|6|7][0-9]{8}$/;
 
     if (telef !== '' && telef !== null)
@@ -282,11 +329,41 @@ function validaContraseña()
 function validaCIF() //EN PRUEBAS
 {
     var CIF = $("#CIF").val();
-    var exp = /^[a-zA-Z]{1}\\d{7}[a-jA-J0-9]{1}$/;
+    var exp = /(^[A-Z]{1}[0-9]{7}[A-Z0-9]{1}$|^[T]{1}[A-Z0-9]{8}$)|^[0-9]{8}[A-Z]{1}$/;
 
     if (CIF !== '' && CIF !== null)
     {
         if (exp.test(CIF))
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+function validaDir()
+{
+    var dir = $("#dirEmpresa").val();
+    var exp = /^([A-Za-z0-9ñáéíóú ]{8,40})+$/;
+
+    if (dir !== '' && dir !== null)
+    {
+        if (exp.test(dir))
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+function validaZip()
+{
+    var zip = $("#codEmpresa").val();
+    var exp = /^([0-9]{5})+$/;
+
+    if (zip !== '' && zip !== null)
+    {
+        if (exp.test(zip))
         {
             return true;
         }
