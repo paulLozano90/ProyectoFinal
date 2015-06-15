@@ -130,20 +130,4 @@ function solicitaDescuento(idEvento, nombreUsuario) {
 
     alert(rand_code(caracteres, longitud));
 
-}
-
-function rand_code(chars, lon) {
-
-        code = "";
-
-        for (x = 0; x < lon; x++){
-
-            rand = Math.floor(Math.random() * chars.length);
-
-            code += chars.substr(rand, 1);
-
-        }
-        return code;
-    }
-
-    
+}   
