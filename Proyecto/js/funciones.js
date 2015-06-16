@@ -84,12 +84,13 @@ function cookies() {
         $("#avisoCookies").css("height", "33px");
     }
     else {
-        $("#avisoCookies").hide(1000);
+        $("#avisoCookies").hide();
     }
 }
 
 function aceptarCookie() {
-    $("#avisoCookies").hide(1000);
+    $("#avisoCookies").hide();
+    $("#avisoCookies").css("transition", "all 0.5s");
     $("#avisoCookies").css("height", "0px");
     setCookie("cookieHabilitado", true, 365);
 }

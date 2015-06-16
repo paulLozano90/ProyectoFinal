@@ -266,7 +266,7 @@ table p{
     padding-top: 3px;
     background: black;    
     overflow: hidden;
-    transition: height 1s;
+    transition: height 3s;
 }
 #avisoCookies #texto{
     width:100%;
