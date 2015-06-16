@@ -3,8 +3,8 @@
 include 'functions.php';
 include '../../php/principalUsuario.php';
 include 'logout.php';
-include 'conexion.php';
-$conexion = conectar();
+//include 'conexion.php';
+//$conexion = conectar();
 
 session_start();
 if (!isset($_SESSION["userId"])){
