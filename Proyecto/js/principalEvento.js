@@ -22,7 +22,7 @@ $(document).ready(function() {
         $("#dResumen").show();
         $("#dDescripcion").hide();
         $("#cantidad").val("1");
-        $("#precioTotal")[0].innerHTML = $("#precioReducido")[0].innerHTML;
+        $("#precioTotal")[0].innerHTML = $("#precioReducidoCarro")[0].innerHTML;
     });
     //Volver a la descripcion
     $(".btn-volver").click(function() {
@@ -35,13 +35,12 @@ $(document).ready(function() {
         var cantidad = $("#cantidad").val();
         var precio = $("#precioReducidoCarro")[0].innerHTML;
 
-        $("#precioTotal")[0].innerHTML = (cantidad * precio) + "€";
+        $("#precioTotal")[0].innerHTML = (cantidad * precio);
     });
     //Solicitar descuento
     $(".btn-descuento").click(function() {
         
-        //alert(idEvento +"|"+nombreUsuario);
-        
+        //alert(idEvento +"|"+nombreUsuario);        
         solicitaDescuento(idEvento,nombreUsuario);
     });
 });
