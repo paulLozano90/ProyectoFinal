@@ -41,7 +41,7 @@ $(document).ready(function() {
     $(".btn-descuento").click(function() {
         
         //alert(idEvento +"|"+nombreUsuario);        
-        solicitaDescuento(idEvento,nombreUsuario);
+        solicitaDescuento(idEvento,nombreUsuario,$("#precioTotal")[0].innerHTML);
     });
 });
 
@@ -121,10 +121,10 @@ function muestraEventoEmpresa(idEvento) {
     });
 }
 
-function solicitaDescuento(idEvento, nombreUsuario) {
+function solicitaDescuento(idEvento, nombreUsuario, precioTotal) {
 
     var url = "../php/generarDescuento.php";
-    var jSonvar = {idEvento: idEvento, nombreUsuario: nombreUsuario};
+    var jSonvar = {idEvento: idEvento, nombreUsuario: nombreUsuario, precioTotal: precioTotal};
 
     $.getJSON(url, jSonvar, function(correcto) {
         

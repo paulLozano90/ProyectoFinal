@@ -4,9 +4,11 @@ include ("conexion.php");
 
 //$nombreUsuario = 'Paul';
 //$idEvento = 1;
+//$precioTotal = 15;
 
 $nombreUsuario = $_GET["nombreUsuario"];
 $idEvento = $_GET['idEvento'];
+$precioTotal = $_GET['precioTotal'];
 
 $datosUsuario = mostrarDatosUsuario($nombreUsuario);
 
@@ -23,7 +25,7 @@ while ($disponible == "no"){
 
 //echo $idEvento.$idUsuario.$codigo;
 
-$correcto = insertLocalizador($idEvento,$idUsuario,$codigo);
+$correcto = insertLocalizador($idEvento,$idUsuario,$codigo,$precioTotal);
 
 $json_string = json_encode($correcto);
 echo $json_string;
@@ -78,19 +80,20 @@ function comprobarCodigo($codigo){
     return $disponible;
 }
 
-function insertLocalizador($idEvento,$idUsuario,$codigo){
+function insertLocalizador($idEvento,$idUsuario,$codigo,$precioTotal){
     
     $conexion = conectar();
     $correcto = "";
     
-    $insertarUsuario = "INSERT INTO usuariosEventos (idEvento,idUsuario,localizador) 
-                        VALUES ('$idEvento','$idUsuario','$codigo')";
+    $insertarUsuario = "INSERT INTO usuariosEventos (idEvento,idUsuario,localizador,precioTotal) 
+                        VALUES ('$idEvento','$idUsuario','$codigo', $precioTotal)";
     
     $datos = mysqli_query($conexion,$insertarUsuario);
     
     if(!$datos) die("Error al insertar datos de la compra");
     
     if($datos){
+        //$datosDescuento = $codigo."#".$precioTotal;
         $correcto = "True";
     }else{
         $correcto = "False";

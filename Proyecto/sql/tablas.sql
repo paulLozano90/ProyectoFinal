@@ -55,6 +55,7 @@ idEvento INT (3) NOT NULL,
 idUsuario INT (3) NOT NULL,
 localizador VARCHAR(20),
 fechaSolicitud VARCHAR(20),
+precioTotal FLOAT (4),
 CONSTRAINT fk_eventos FOREIGN KEY (idEvento) REFERENCES eventos(idEvento),
 CONSTRAINT fk_usuarios FOREIGN KEY (idUsuario) REFERENCES usuarios(idUsuario)
 );
