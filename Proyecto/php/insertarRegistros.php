@@ -60,31 +60,39 @@ if(isset($_POST['registroEmpresa'])){
 
 if(isset($_POST['registroEvento'])){
     
-    $idEmpresa = 1;
-    $idTipo = '1';
-    $nombreEvento = $_POST['nombreEvento'];
-    $descripCorta = $_POST['descripCorta'];
-    $descripcion = $_POST['descripcion'];
-    $precioNormal = $_POST['precioNormal'];
-    $precioReducido = $_POST['precioReducido'];
-    $fechaCreacion = $_POST['fechaCreacion'];
-    $fechaCaducidad = $_POST['fechaCaducidad'];
+    $idEmpresa = 2;
+    $idTipo = 2;
+    $nombreEvento = $_POST['nomEvento'];
+    $descripCorta = $_POST['descEvento'];
+    $descripcion = $_POST['descLargaEvento'];
+    $precioNormal = $_POST['precioEvento'];
+    $precioReducido = $_POST['precioDescEvento'];    
+    $fechaCreacion = strftime( "%d/%m/%Y", time());
+    $fechaCaducidad = $_POST['caducidadEvento'];
+    list($año, $mes, $dia) = explode('-', $fechaCaducidad);
+    $newCaducidad = $dia."/".$mes."/".$año;
     
-    if (isset($_FILES["foto"]) and $_FILES["foto"]["error"] == UPLOAD_ERR_OK) {
+    if (isset($_FILES["fotoEvento"]) and $_FILES["fotoEvento"]["error"] == UPLOAD_ERR_OK) {
 
-        if (!move_uploaded_file($_FILES["foto"]["tmp_name"], "C:/wamp/www/Proyecto/images/" . basename($_FILES["foto"]["name"]))) {
+        if (!move_uploaded_file($_FILES["fotoEvento"]["tmp_name"], "C:/wamp/www/Proyecto/images/" . basename($_FILES["fotoEvento"]["name"]))) {
         }
     }
     
     $insertarEvento = "insert into eventos (idEmpresa,idTipo,nombre,descripCorta,descripcion,
                        precioNormal,precioReducido,fechaCreacion,fechaCaducidad,foto) values 
                        ('$idEmpresa','$idTipo','$nombreEvento','$descripCorta','$descripcion',"
-            . "         '$precioNormal','$precioReducido','$fechaCreacion','$fechaCaducidad','";
+            . "         '$precioNormal','$precioReducido','$fechaCreacion','$newCaducidad','";
     
-    $insertarEvento .= $_FILES['foto']['name']."' )";
+    $insertarEvento .= $_FILES['fotoEvento']['name']."' )";
+    
+    //echo $insertarEvento;
+    
+    $datos = mysqli_query($conexion,$insertarEvento);
     
     if($datos){
-        header("Location: ../html/creaEvento.html");
+        
+        header("Location: ../html/principalEmpresa.html");
+        //echo $insertarEvento;
     }
 }
 ?>
