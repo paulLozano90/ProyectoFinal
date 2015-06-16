@@ -1,10 +1,14 @@
 <?php
+session_start();
 
 function logout(){
     unset( $_SESSION["userId"] );
     unset( $_SESSION["userNombre"]);
-    unset( $_SESSION["url_s"]);
     session_destroy();
+    
+    header("location: ../html/registroUsuario.html");
 }
+
+logout();
 
 

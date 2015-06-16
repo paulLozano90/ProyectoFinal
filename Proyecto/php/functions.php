@@ -2,6 +2,7 @@
 
 include 'conexion.php';
 $conexion = conectar();
+//controlUserName();
 
 function verificar_login($email,$password){
         
@@ -13,11 +14,9 @@ function verificar_login($email,$password){
 	
         if($data == 1)
         {
+            session_start();
             $_SESSION["userId"] = $resultado["idUsuario"];
             $_SESSION["userName"] = $resultado["Nombre"];       
-            $_SESSION["url_s"] = "../../html/principalUsuario.html?idUsuario=".$_SESSION["userId"];
-            session_write_close();
-            
             return true;
         }
         else
@@ -26,22 +25,23 @@ function verificar_login($email,$password){
         }
 }
 
-function login(){
-      
-    if(isset($_POST["email"]) && isset($_POST["pass"])){
-        global $conexion;
-        $sql = "SELECT idUsuario, Nombre FROM usuarios WHERE email = '".$_POST["email"]."' and password = '".$_POST["password"]."'";
-	$rec = mysqli_query($conexion,$sql);
-        $data = mysqli_num_rows($rec);
-        
-        if($data == 1){
-            
-        }
-       
-        
+function controlUserName() {
+
+    global $conexion;
+    $idUsuario = $_GET["idUsuario"];
+    $sql = "SELECT nombre FROM usuarios where idUsuario = $idUsuario";
+    $resultados = mysqli_query($conexion, $sql);
+
+    $user = array();
+
+    while ($usuarios = mysqli_fetch_array($resultados)) {
+        $nombre = $usuarios['nombre'];
+        $user[] = array("nombre" => utf8_encode($nombre));
     }
-    else{
-        echo "introduce usuario y password";
-    }
+
+    desconectar($conexion);
+
+    $json_string = json_encode($user);
+    print $json_string;
 }
 

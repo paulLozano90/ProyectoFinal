@@ -1,5 +1,6 @@
 <?php
 
+
 function controlUserName() {
 
     $idUsuario = $_GET["idUsuario"];
@@ -40,4 +41,5 @@ desconectar($conexion);
 
 $json_string = json_encode($user);
 print $json_string;
-//?>
+
+?>
