@@ -67,10 +67,3 @@ insert into eventos (idEmpresa,idTipo,nombre,descripCorta,descripcion, precioNor
 values ('3','3','Depilación láser Unisex','Acaba con el vello de tu cuerpo con estas 3 sesiones de Depilación láser diodo',
 '¿Pelos tú? Hace tiempo que han desaparecido de tu cuerpo gracias al Láser de Diodo que, aunque parezca la varita mágica de Photoshop, se trata de la depilación definitiva para eliminar el vello.',
 '210','40', '13/06/2015','1/08/2015','depilacion.jpg');
-
-/*Insertar usuariosEventos */
-
-insert into usuariosEventos (idEvento,idUsuario,localizador)
-values ('1','1','123456');
-insert into usuariosEventos (idEvento,idUsuario,localizador)
-values ('1','1','123457');
