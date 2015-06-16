@@ -84,9 +84,10 @@ function insertLocalizador($idEvento,$idUsuario,$codigo,$precioTotal){
     
     $conexion = conectar();
     $correcto = "";
+    $fechaActual = strftime( "%d/%m/%Y", time());
     
-    $insertarUsuario = "INSERT INTO usuariosEventos (idEvento,idUsuario,localizador,precioTotal) 
-                        VALUES ('$idEvento','$idUsuario','$codigo', $precioTotal)";
+    $insertarUsuario = "INSERT INTO usuariosEventos (idEvento,idUsuario,localizador,precioTotal,fechaSolicitud) 
+                        VALUES ('$idEvento','$idUsuario','$codigo', $precioTotal,'$fechaActual')";
     
     $datos = mysqli_query($conexion,$insertarUsuario);
     
