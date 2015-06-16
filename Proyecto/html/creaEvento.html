@@ -34,16 +34,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
         <link type="image/x-icon" href="../images/logotipoUnete.png" rel="shortcut icon" />
         <link rel="stylesheet" href="../css/general.css" />
-        <script>
-            
-            $(document).ready(function() {
-    
-                var nombreUsuario = getCookie("usuarioLogeado");    
-                nombreUsuario = nombreUsuario.replace("%20", " ");
-                $('#usuarioLogeado')[0].innerHTML = "&nbsp;"+nombreUsuario+"&nbsp;";                
-            });
-            
-        </script>
     </head>
     <body>
         <div id="avisoCookies" style="display:block;">
@@ -73,17 +63,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 <li class="active">Crear evento</li>
             </ol>
         </header>
-        <section class="row" style="margin-top:30px">
-            <div class="col-md-2"></div>
-            <div class="col-md-4">
-                <form class="form-horizontal" role="form">
+        <section class="row">
+            <form method="post" action="../php/insertarRegistros.php" class="form-horizontal form-evento" role="form" enctype="multipart/form-data">
+                <div class="col-md-2"></div>
+                <div class="col-md-4">
                     <div class="form-group">
                         <label for="tipoEvento" class="col-lg-2 control-label" style="padding-left: 0px;">Tipo de evento</label>
                         <div id="tipoEvento" class="col-lg-10">
                             <select id="cantidad" class="form-control" required>
-                                <option value selected> -- Selecciona tu tipo de evento -- </option>
-                                <option value="1">Deportes</option>
-                                <option value="2">Restaurantes</option>
+                                <option value selected> -- Selecciona tu tipo de evento</option>
+                                <option value="1">Restaurantes</option>
+                                <option value="2">Ocio</option>                   
                                 <option value="3">Salud y belleza</option>
                             </select>
                         </div>                        
@@ -95,26 +85,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                             <small>Máximo 50 caracteres</small>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="descEvento" class="col-lg-2 control-label" style="padding-left: 0px;">Descripción</label>
-                        <div id="descEvento" class="col-lg-10">
-                            <textarea class="form-control" id="descEvento" name="descEvento" placeholder="Descripción del evento" maxlength="100" rows="4"></textarea>
-                            <small>Máximo 100 caracteres</small>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="descLargaEvento" class="col-lg-2 control-label" style="padding-left: 0px;">Cuentanos más...</label>
-                        <div id="descLargaEvento" class="col-lg-10">
-                            <textarea class="form-control" id="descLargaEvento" name="descLargaEvento" placeholder="Explicanos tu evento..." maxlength="300" rows="5"></textarea>
-                            <small>Minimo 250 caracteres</small>
-                        </div>
-                    </div>
-                </form>
-                <br>
-            </div>
-            <div class="col-md-4">
-                <form class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="precioEvento" class="col-lg-2 control-label">Precio</label>
                         <div id="precioEvento" class="col-lg-10">
@@ -128,44 +98,56 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="fechaEvento" class="col-lg-2 control-label">Fecha</label>
-                        <div id="fechaEvento" class="col-lg-10">
-                            <input type="date" class="form-control" id="fechaEvento" name="fechaEvento" />
-                        </div>
-                    </div>
-                    <div class="form-group">
                         <label for="caducidadEvento" class="col-lg-2 control-label" style="padding-left: 0px;">Caducidad</label>
                         <div id="caducidadEvento" class="col-lg-10">
                             <input type="date" class="form-control" id="caducidadEvento" name="caducidadEvento" />
                         </div>
                     </div>
-
                     <div class="form-group">
                         <label for="fotoEvento" class="col-lg-2 control-label">Foto</label>
                         <div id="fotoEvento" class="col-lg-10">
                             <input type="file" class="form-control" id="fotoEvento" name="fotoEvento" />
                         </div>
                     </div>
-                    <br />
-                    <div class="checkbox" style="padding-left:100px">
+                </div>
+                <div class="col-md-4">                    
+                    <div class="form-group">
+                        <label for="descEvento" class="col-lg-2 control-label" style="padding-left: 0px;">Descripción</label>
+                        <div id="descEvento" class="col-lg-10">
+                            <textarea class="form-control" id="descEvento" name="descEvento" placeholder="Descripción del evento" maxlength="100" rows="4"></textarea>
+                            <small>Máximo 100 caracteres</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descLargaEvento" class="col-lg-2 control-label" style="padding-left: 0px;">Cuentanos más...</label>
+                        <div id="descLargaEvento" class="col-lg-10">
+                            <textarea class="form-control" id="descLargaEvento" name="descLargaEvento" placeholder="Explicanos tu evento..." maxlength="300" rows="6"></textarea>
+                            <small>Minimo 250 caracteres</small>
+                        </div>
+                    </div>
+                    <div class="checkbox" style="padding-left:82px">
                         <div id="checkbox" class="col-lg-10">
                             <input type="checkbox" id="condiciones"> Aceptar las condiciones de uso
-                            <br><br>
-                            <button type="submit" class="btn btn-default" id="registro">Crear el evento</button>
                         </div>                        
                     </div>
-                </form>
-            </div>
-            <div class="col-md-2"></div>
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-10">
+                            <button type="submit" name="registroEvento" class="btn btn-default" id="registro">Crear el evento</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </form>
         </section>
         <footer>
             <center>
                 <hr>
                 <div class="navbar center-block">
                     <ul class="nav-justified nav-footer" style="margin-left:-80px;">
-                          <li><a href="acercaNosotros.html">Acerca de nosotros</a></li>
-                          <li><a href="javascript:void(0)" onclick="nVentana('politicaCookies.html')">Política de cookies</a></li>
-                          <li><a href="javascript:void(0)" onclick="nVentana('terminosGenerales.html')">Terminos Generales</a></li>
+                        <li><a href="acercaNosotros.html">Acerca de nosotros</a></li>
+                        <li><a href="javascript:void(0)" onclick="nVentana('politicaCookies.html')">Política de cookies</a></li>
+                        <li><a href="javascript:void(0)" onclick="nVentana('terminosGenerales.html')">Terminos Generales</a></li>
                         <li>Redes Sociales
                             <a href="https://es-es.facebook.com"><i style="width: 15px; height: 15px; color: #FFFFFF;" class="fa fa-facebook-square"></i></a>
                             <a href="https://twitter.com/"><i style="width: 15px; height: 15px; color: #FFFFFF;" class="fa fa-twitter"></i></a>
@@ -178,4 +160,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="../js/funciones.js"></script>
+    <script src="../js/principalEmpresa.js"></script>
 </html>
