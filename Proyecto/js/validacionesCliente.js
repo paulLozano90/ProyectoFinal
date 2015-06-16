@@ -47,25 +47,58 @@ var camposEvento = new Array("cantidad", "nomEvento", "descEvento", "descLargaEv
 /////////////////////////////////////////////////////////////////////////////////////////////////
 function activaCondiciones()
 {
-    var check = document.getElementById("condiciones");
-    var submit = document.getElementById("registro");
-    var nom = $("#nombreUsuario").val();
-    var ap1 = $("#apellido1").val();
-    var ap2 = $("#apellido2").val();
-    var email = $("#emailUsuario").val();
-    var telf = $("#telfUsuario").val();
-    var pass = $("#passUsuario").val();
 
-    if (nom === "" || ap1 === "" || ap2 === "" || email === "" || telf === "" || pass === "")
+    if (url === "/html/registroUsuario.html")
     {
-        check.disabled = true;
-        check.checked = false;
-        submit.disabled = true;
+        var check = document.getElementById("condiciones");
+        var submit = document.getElementById("registro");
+        var nom = $("#nombreUsuario").val();
+        var ap1 = $("#apellido1").val();
+        var ap2 = $("#apellido2").val();
+        var email = $("#emailUsuario").val();
+        var telf = $("#telfUsuario").val();
+        var pass = $("#passUsuario").val();
+
+        if (nom === "" || ap1 === "" || ap2 === "" || email === "" || telf === "" || pass === "")
+        {
+            check.disabled = true;
+            check.checked = false;
+            submit.disabled = true;
+        }
+        else
+        {
+            check.disabled = false;
+        }
     }
-    else
+    if(url === "/html/registroEmpresa.html")
     {
-        check.disabled = false;
+        alert("entra");
+        var check = document.getElementById("condiciones");
+        var submit = document.getElementById("registro");
+        var cif = $("#CIF").val();
+        var nom = $("#nombreEmpresa").val();
+        var em = $("#emailEmpresa").val();
+        var telf = $("#telfEmpresa").val();
+        var desc = $("#descripEmpresa").val();
+        var dir = $("#dirEmpresa").val();
+        var cod = $("#codEmpresa").val();
+        var loc = $("#localEmpresa").val();
+        var ciu = $("#ciudadEmpresa").val();
+        
+        if (cif === "" || nom === "" || em === "" || telf === "" || desc === "" || dir === "" || cod === "" || loc === "" || ciu === "")
+        {
+            alert("entra if");
+            check.disabled = true;
+            check.checked = false;
+            submit.disabled = true;
+        }
+        else
+        {
+            alert("entra else");
+            check.disabled = false;
+        }
     }
+
 }
 ;
 
@@ -103,7 +136,7 @@ function validar()
     }
     if (url === "/html/registroEmpresa.html")
     {
-       // alert("entra en if validar");
+        // alert("entra en if validar");
         var listaValidaciones = new Array
                 (
                         validaCIF(),
@@ -122,7 +155,7 @@ function validar()
 
     for (var i = 0; i < listaValidaciones.length; i++)
     {
-         // alert("entra en for");
+        // alert("entra en for");
         if (listaValidaciones[i] === false)
         {
             //    alert("entra en for if false");
@@ -259,11 +292,11 @@ function validaTexto(input)
  */
 function validaEmail()
 {
-    if(url === "/html/registroUsuario.html")
+    if (url === "/html/registroUsuario.html")
     {
         var email = $("#emailUsuario").val();
     }
-    if(url === "/html/registroEmpresa.html")
+    if (url === "/html/registroEmpresa.html")
     {
         var email = $("#emailEmpresa").val();
     }
@@ -285,11 +318,11 @@ function validaEmail()
  */
 function validaTelefono()
 {
-    if(url === "/html/registroUsuario.html")
+    if (url === "/html/registroUsuario.html")
     {
         var telef = $("#telfUsuario").val();
     }
-    if(url === "/html/registroEmpresa.html")
+    if (url === "/html/registroEmpresa.html")
     {
         var telef = $("#telfEmpresa").val();
     }
