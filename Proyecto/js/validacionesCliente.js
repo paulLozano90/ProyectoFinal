@@ -26,23 +26,6 @@ var camposEvento = new Array("cantidad", "nomEvento", "descEvento", "descLargaEv
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-///////////////////////////////Main jQuery document: EXPORTADO A GENERAL.JS, NO TOCAR DE MOMENTO////////////////////////
-/*$(document).ready(function ()
- {
- if ($(document).height() > 991 || $(document).width() < 991) {
- $("#footer").css("position", "absolute");
- }
- $("#abrir").click(function () {
- $("#formulario").show();
- //$("#registro").hide();
- });
- 
- 
- });*/
-/////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
 ///////////////////////////////CONTROLADOR DEL FORMULARIO(CLIENTE)///////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 function activaCondiciones()
@@ -72,7 +55,7 @@ function activaCondiciones()
     }
     if(url === "/html/registroEmpresa.html")
     {
-        alert("entra");
+       // alert("entra");
         var check = document.getElementById("condiciones");
         var submit = document.getElementById("registro");
         var cif = $("#CIF").val();
