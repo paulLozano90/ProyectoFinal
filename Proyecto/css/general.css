@@ -6,7 +6,7 @@
 }
 /*Cuerpo de la pagina*/
 
-#error {
+.errorLogin {
     
     color: #FF5C5C; 
     font-weight: bold; 

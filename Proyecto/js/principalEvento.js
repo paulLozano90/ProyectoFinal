@@ -128,7 +128,7 @@ function solicitaDescuento(idEvento, nombreUsuario, precioTotal) {
 
     $.getJSON(url, jSonvar, function(correcto) {
         
-        if (correcto = "True"){
+        if (correcto == "True"){
             ventanaConfirmacion("../html/confirmacionDescuento.html");
         }        
     });

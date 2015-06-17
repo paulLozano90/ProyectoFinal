@@ -15,7 +15,7 @@ var publicValidaciones = new Array(nom, ap1, ap2, em, tel, pas);
 var campos = new Array("nombreUsuario", "apellido1", "apellido2", "emailUsuario", "telfUsuario", "passUsuario");
 
 //public Empresa
-var cif, nom_emp, em_emp, tel_emp, desc, dir, zip_code, loc, cit;
+var cif, nom_emp, em_emp,pasem, tel_emp, desc, dir, zip_code, loc, cit;
 var publicValEmpresa = new Array(cif, nom_emp, em_emp, pasem,  tel_emp, desc, dir, zip_code, loc, cit);
 var camposEmpresa = new Array("CIF", "nombreEmpresa", "emailEmpresa","passEmpresa", "telfEmpresa", "descripEmpresa", "dirEmpresa", "codEmpresa", "localEmpresa", "ciudadEmpresa");
 

@@ -51,7 +51,7 @@ function comprobarUsuario() {
     var jSonvar = {email: email, pass: pass, tipo:tipo};
     
     $.getJSON(url, jSonvar, function(idUsuario) {
-        alert(idUsuario);
+        
         if (idUsuario == "False") {;
             $("#errorLogin").show();
         } else {
