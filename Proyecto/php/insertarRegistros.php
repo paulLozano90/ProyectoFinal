@@ -72,7 +72,7 @@ if (isset($_POST['registroEmpresa'])) {
 
 if (isset($_POST['registroEvento'])) {
 
-    $idEmpresa = $_SESSION["userId"];
+    $idEmpresa = $_POST["idEmpresa"];
     $idTipo = $_POST["tipo"];
     $nombreEvento = utf8_decode($_POST['nomEvento']);
     $descripCorta = utf8_decode($_POST['descEvento']);
