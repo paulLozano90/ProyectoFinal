@@ -42,6 +42,11 @@ $(document).ready(function() {
     });
 });
 
+function abrirRegistro(){
+    $("#formulario").show();
+    $("#login").hide();
+}
+
 function comprobarUsuario() {
 
     var email = $("#inputEmail1").val();
