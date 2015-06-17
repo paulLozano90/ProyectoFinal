@@ -278,7 +278,7 @@ function clickSubmit()
                 }
             }
         }
-        else//enctype="multipart/form-data"
+        else//
         {
             for (var i = 0; i < publicValEvento.length; i++)
             {
@@ -322,10 +322,10 @@ function validaTexto(input)
     var elemento = $('#' + input).val();
     var exp;
     if (input !== "descripEmpresa" || input !== "descEvento" || input !== "descLargaEvento") {
-        exp = /^([A-Z]{1}[a-zñáéíóú]{2,40})+$/;
+        exp = /^([A-Z]{1}[a-zñáéíóú ]{2,40})+$/;
     }
     else {
-        exp = /^([A-Z]{1}[a-zñáéíóú]{2,200})+$/;
+        exp = /^([A-Z]{1}[a-zñáéíóú ]{200,1000})+$/;
     }
 
     if (elemento !== '' && elemento !== null)
@@ -352,7 +352,7 @@ function validaEmail()
     {
         var email = $("#emailEmpresa").val();
     }
-    var exp = /^[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,3}$/;
+    var exp = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 
     if (email !== '' && email !== null)
     {
@@ -481,7 +481,7 @@ function validaCad()
 function validaPrecio(precio)
 {
     var pre = $('#'+precio).val();
-    var exp = /^([1-9]{1}[0-9]{2})+$/;
+    var exp = /^([1-9]{1}[0-9]{0,2})$/;
     
     if(pre !== '' && pre !== null)
     {
@@ -495,12 +495,15 @@ function validaPrecio(precio)
 
 function validaFoto()
 {
-    var archivo = $("#fotoEvento").name;
-    var exp = /\.(jpg\png\gif)$/i;
+    var archivo = $("#fotoEvento").val();
+    var extensiones = new Array(".jpg", ".png", ".jpge");
     
-    if(exp.test(archivo))
+    for(var i = 0 ; i< extensiones.length; i++)
     {
-        return true;
+        if((archivo.substring(archivo.lastIndexOf("."))).toLowerCase() === extensiones[i])
+        {
+            return true;
+        }
     }
     return false;
 }

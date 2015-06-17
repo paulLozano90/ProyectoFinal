@@ -64,14 +64,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             </ol>
         </header>
         <section class="row">
-            <form method="post" action="../php/insertarRegistros.php" class="form-horizontal form-evento" role="form" onsubmit="clickSubmit();">
+            <form method="post" action="../php/insertarRegistros.php" class="form-horizontal form-evento" role="form" onsubmit="return clickSubmit();" enctype="multipart/form-data">
                 <div id="error" style="display: none; color: #FF7171; font-weight: bold; font-size: 16px;">Por favor, rellene correctamente los campos marcados</div>
                 <div class="col-md-2"></div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="tipoEvento" class="col-lg-2 control-label" style="padding-left: 0px;">Tipo de evento</label>
                         <div id="tipoEvento" class="col-lg-10">
-                            <select id="cantidad" class="form-control" required  onchange="activaCondiciones();">
+                            <select name="tipo" id="cantidad" class="form-control" required  onchange="activaCondiciones();">
                                 <option value="" selected> -- Selecciona tu tipo de evento</option>
                                 <option value="1">Restaurantes</option>
                                 <option value="2">Ocio</option>                   
