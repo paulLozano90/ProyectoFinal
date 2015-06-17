@@ -8,8 +8,9 @@ $(document).ready(function() {
         
         var nombreUsuario = getCookie("usuarioLogeado");
         nombreUsuario = nombreUsuario.replace("%20", " ");
-        $('#usuarioLogeado')[0].innerHTML = "&nbsp;" + nombreUsuario + "&nbsp;";
+        $('#usuarioLogeado')[0].innerHTML = "&nbsp;" + nombreUsuario + "&nbsp;";        
     }
+    document.getElementById("idEmpresa").innerHTML = (getCookie("idUsuario"));
 
     $("#selectOrder").change(function() {
         muestraEventosEmpresa(idEmpresa, $("#selectOrder").val());

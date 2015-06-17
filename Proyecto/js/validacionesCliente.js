@@ -509,6 +509,12 @@ function validaFoto()
     }
     return false;
 }
+function ventanaConfirmacion(link) {
+    
+    var left = (screen.width/2)-(375/2); 
+    var top = (screen.height/2)-(275/2);
+    var nv = window.open(link, "nventana", "scrollbars=yes, top="+top+", left="+left+", height=275px, width=375px");
+}
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////

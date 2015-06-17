@@ -27,6 +27,11 @@ while ($disponible == "no"){
 
 $correcto = insertLocalizador($idEvento,$idUsuario,$codigo,$precioTotal);
 
+if($correcto == "True"){    
+    $fecha = dimeFechaCaducidad($idEvento);
+    $correcto = $codigo."#".$fecha;
+}
+
 $json_string = json_encode($correcto);
 echo $json_string;
 
@@ -100,6 +105,24 @@ function insertLocalizador($idEvento,$idUsuario,$codigo,$precioTotal){
         $correcto = "False";
     }
     return $correcto;
+}
+
+function dimeFechaCaducidad($idEvento){
+    
+    $conexion = conectar();
+    
+    $fecha = "";
+    $sql = "SELECT fechaCaducidad FROM eventos WHERE idEvento = '$idEvento'";
+    $resultados = $conexion->query($sql);
+
+    if ($resultados->num_rows > 0) {
+        while ($dato = $resultados->fetch_assoc()) {
+            $fecha = $dato["fechaCaducidad"];
+        }
+    }
+    desconectar($conexion);
+    
+    return $fecha;
 }
 
 ?>

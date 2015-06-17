@@ -61,40 +61,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <body>
         <div class="row wrapper">
             <center>
-                <h2>Muchas gracias por su confianza</h2>
+                <h2>Muchas gracias</h2>
                 <br>
                 <div style="font-size:16px;">
-                    <span>El localizador de su descuento es: </span><span id="codigo" style="font-size:17px; font-weight: bold"></span><br>
-                    <span>Recuerde que podrá disfrutar de este descuento hasta el :</span><span id="fecha" style="font-size:17px; font-weight: bold"></span>
+                    <span>Su registro ha sido realizado correctamente</span><br>                    
                 </div>                
             </center>
             <br>
             <br>
-            <div class="cerrar"><input type="button" class="btn btn-default bth-cerrar" value="Cerrar" onclick="window.close()"></div>
+            <div class="cerrar"><input type="button" class="btn btn-default bth-cerrar" value="Cerrar" onclick="window.location.href = 'registroUsuario.html'"></div>
         </div>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-        <script>
-                window.onload = function() {
-                    
-                    var codigo = $.urlParam("codigo");
-                    var fecha = $.urlParam("fecha");
-                    $("#codigo")[0].innerHTML = codigo;
-                    $("#fecha")[0].innerHTML = fecha;
-                };
-                
-                $.urlParam = function(elemento) {
-                    var param = new RegExp('[\\?&]' + elemento + '=([^&#]*)');
-                    var url = window.location.href;
-                    var dato = param.exec(url);
-
-                    if (dato != null) {
-                        return dato[1];
-                    } else {
-                        return dato;
-                    }
-                }
-        </script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>       
     </body>
 </html>

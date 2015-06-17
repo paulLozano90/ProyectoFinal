@@ -36,7 +36,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         <link rel="stylesheet" href="../css/general.css" />
     </head>
     <body>
-        <div class="container">
+        <div class="container" style="margin-top: 50px;">
             <div class="well">
                 <div class="row">
                     <div class="col-md-1"></div>
@@ -83,7 +83,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                         </form>
                     </div>
                     <div id="formulario" class="col-md-5" style="display: none;">
-                        <h3 style="margin-top: 50px;">Registrate</h3>
+                        <h3>Registrate</h3>
                          <div style="font-size: 14px; padding-bottom:5px;">Por favor, rellene todos los campos obligatorios(*). <br>Los campos de texto deben contener el primer carácter en mayúsculas</div>
                         <div id="error" style="display: none;">Por favor, rellene correctamente los campos marcados</div>
                         <form style="margin-bottom: 30px;" class="form-horizontal" role="form" action="../php/insertarRegistros.php" method="post" onsubmit="return clickSubmit();">
@@ -111,7 +111,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                 <label for="passEmpresa" class="col-lg-2 control-label">Contraseña*</label>
                                 <div class="col-lg-10">
                                     <input type="password" class="form-control" id="passEmpresa" name="passEmpresa" placeholder="Ejemplo: psanchezgar@email.com" oninput="activaCondiciones();">
-                                    <small>Solo caracteres alfanuméricos y caracteres especiales.</small>
+                                    <small>Cadena de entre 6-12 caracteres con al menos una <br> letra mayúscula, una minúscula y un número.</small>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -145,7 +145,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                 <label for="localEmpresa" class="col-lg-2 control-label">Localidad*</label>
                                 <div class="col-lg-10">
                                     <input type="text" class="form-control" id="localEmpresa" name="localEmpresa" placeholder="Ejemplo: Alcobendas" oninput="activaCondiciones();">
-
                                 </div>
                             </div>
                             <div class="form-group">
@@ -158,8 +157,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                 <div class="col-lg-offset-2 col-lg-10">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" id="condiciones" disabled onchange="activaSubmit();"> He leído y acepto las condiciones de registro
-                                            <a href="#">Condiciones de registro</a>
+                                            <input type="checkbox" id="condiciones" disabled onchange="activaSubmit();"> He leído y acepto las condiciones de <br>registro
+                                            <a href="javascript:void(0)" onclick="nVentana('terminosGenerales.html')">Condiciones de registro</a>
                                         </label>
                                     </div>
                                 </div>
@@ -174,13 +173,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                     </div>
                 </div>
             </div>
-            <footer>
-                <center>
-                    <hr>
-                </center>
-            </footer>
-            <!--scripts loaded here-->
         </div>
+        <!--scripts loaded here-->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="../js/registros.js"></script>
