@@ -45,8 +45,8 @@ precioReducido FLOAT (4),
 fechaCreacion VARCHAR(10),
 fechaCaducidad VARCHAR(10),
 foto VARCHAR(50),
-CONSTRAINT fk_empresas FOREIGN KEY (idEmpresa) REFERENCES empresas(idEmpresa),
-CONSTRAINT fk_tipo FOREIGN KEY (idTipo) REFERENCES tipoEvento(idTipo)
+CONSTRAINT fk_empresas FOREIGN KEY (idEmpresa) REFERENCES empresas(idEmpresa) on delete cascade,
+CONSTRAINT fk_tipo FOREIGN KEY (idTipo) REFERENCES tipoEvento(idTipo) on delete cascade
 );
 
 CREATE TABLE usuariosEventos
@@ -56,6 +56,6 @@ idUsuario INT (3) NOT NULL,
 localizador VARCHAR(20),
 fechaSolicitud VARCHAR(20),
 precioTotal FLOAT (4),
-CONSTRAINT fk_eventos FOREIGN KEY (idEvento) REFERENCES eventos(idEvento),
-CONSTRAINT fk_usuarios FOREIGN KEY (idUsuario) REFERENCES usuarios(idUsuario)
+CONSTRAINT fk_eventos FOREIGN KEY (idEvento) REFERENCES eventos(idEvento) on delete cascade,
+CONSTRAINT fk_usuarios FOREIGN KEY (idUsuario) REFERENCES usuarios(idUsuario) on delete cascade
 );
