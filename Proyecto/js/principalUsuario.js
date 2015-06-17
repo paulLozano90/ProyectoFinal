@@ -2,6 +2,13 @@
 $(document).ready(function () {
 
     var tipoEvento = $(".nav-header > .active a")[0].innerText;
+    
+    if($('#usuarioLogeado')[0].innerHTML === ""){
+        
+        var nombreUsuario = getCookie("usuarioLogeado");
+        nombreUsuario = nombreUsuario.replace("%20", " ");
+        $('#usuarioLogeado')[0].innerHTML = "&nbsp;" + nombreUsuario + "&nbsp;&nbsp;";
+    }
 
     idUsuario();
     muestraEventos(tipoEvento);
