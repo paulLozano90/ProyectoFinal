@@ -74,7 +74,7 @@ if(isset($_POST['registroEvento'])){
     
     if (isset($_FILES["fotoEvento"]) and $_FILES["fotoEvento"]["error"] == UPLOAD_ERR_OK) {
 
-        if (!move_uploaded_file($_FILES["fotoEvento"]["tmp_name"], "C:/wamp/www/Proyecto/images/" . basename($_FILES["fotoEvento"]["name"]))) {
+        if (!move_uploaded_file($_FILES["fotoEvento"]["tmp_name"], "C:/wamp/www/imagenesEventos" . basename($_FILES["fotoEvento"]["name"]))) {
         }
     }
     

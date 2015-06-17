@@ -61,7 +61,7 @@ function muestraEvento(idEvento) {
             $('#precioReducido')[0].innerHTML = evento.precioReducido + "€";
             $('#precioNormalCarro')[0].innerHTML = evento.precioNormal;
             $('#precioReducidoCarro')[0].innerHTML = evento.precioReducido;
-            $('#imgDescrip')[0].src = "../images/" + evento.foto;
+            $('#imgDescrip')[0].src = "http://localhost/imagenesEventos/" + evento.foto;
             $('#imgDescrip')[0].alt = evento.nombre;
             $("#tablaCondiciones tr p")[0].innerHTML = evento.empresa;
             $("#tablaCondiciones tr p")[1].innerHTML = evento.telefono;

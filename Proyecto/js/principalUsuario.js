@@ -48,7 +48,7 @@ function muestraEventos(tipoEvento) {
                 switch (j) {
 
                     case 0:
-                        $("#ofertas > div")[z].children[j].src = "../images/" + evento.foto;
+                        $("#ofertas > div")[z].children[j].src = "http://localhost/imagenesEventos/" + evento.foto;
                         break;
 
                     case 1:
