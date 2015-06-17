@@ -6,7 +6,7 @@ function logout(){
     unset( $_SESSION["userNombre"]);
     session_destroy();
     
-    header("location: ../html/registroUsuario.html");
+    header("location: ../html/principalUsuario.html");
 }
 
 logout();
