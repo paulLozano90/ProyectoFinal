@@ -62,9 +62,9 @@ if(isset($_POST['registroEvento'])){
     
     $idEmpresa = 2;
     $idTipo = $_POST["tipo"];
-    $nombreEvento = $_POST['nomEvento'];
-    $descripCorta = $_POST['descEvento'];
-    $descripcion = $_POST['descLargaEvento'];
+    $nombreEvento = utf8_decode($_POST['nomEvento']);
+    $descripCorta = utf8_decode($_POST['descEvento']);
+    $descripcion = utf8_decode($_POST['descLargaEvento']);
     $precioNormal = $_POST['precioEvento'];
     $precioReducido = $_POST['precioDescEvento'];    
     $fechaCreacion = strftime( "%d/%m/%Y", time());
