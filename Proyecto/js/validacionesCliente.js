@@ -130,7 +130,7 @@ function validar()
 {
 
     var aux = true;
-    alert(url);
+    //alert(url);
     if (url === "/html/registroUsuario.html")
     {
         var listaValidaciones = new Array
@@ -284,7 +284,7 @@ function clickSubmit()
         {
             for (var i = 0; i < publicValEvento.length; i++)
             {
-                alert("no ok");
+                //alert("no ok");
                 if (publicValEvento[i] === false)
                 {
                     //alert("ENTRA, camposEMpresa[i]: " + camposEmpresa[i]);
@@ -297,14 +297,14 @@ function clickSubmit()
                 else
                 {
                     //alert("else");
-                    alert(auxSub + " 1");
+                    //alert(auxSub + " 1");
                     document.getElementById(camposEvento[i]).setAttribute("style", "");
                 }
             }
         }
 
     }
-    alert(auxSub);
+    //alert(auxSub);
     return auxSub;
 }
 ;
@@ -398,7 +398,14 @@ function validaTelefono()
  */
 function validaContraseña()
 {
-    var pass = $("#passUsuario").val();
+    if (url === "/html/registroUsuario.html")
+    {
+        var pass = $("#passUsuario").val();
+    }
+    if (url === "/html/registroEmpresa.html")
+    {
+        var pass = $("#passEmpresa").val();
+    }  
     //valida contraseñas con al menos una letra mayúscula, una minúscula, un número y longitud entre 6 y 12 caracteres.
     var exp = /(^(?=.*[a-z])(?=.*[A-Z])(?=.*\d){6,12}.+$)/;
 
@@ -431,7 +438,7 @@ function validaCIF() //EN PRUEBAS
 function validaDir()
 {
     var dir = $("#dirEmpresa").val();
-    var exp = /^([A-Za-z0-9ñáéíóú ]{8,40})+$/;
+    var exp = /^([A-Za-z0-9ñáéíóú ]{5,40})+$/;
 
     if (dir !== '' && dir !== null)
     {

@@ -40,8 +40,7 @@ if (isset($_POST['registroUsuario'])) {
         if ($datos) {
             header("Location: ../html/registroUsuario.html");
         }
-    }
-    else{
+    } else {
         header("Location: ../html/emailExiste.html");
     }
 }
@@ -59,14 +58,22 @@ if (isset($_POST['registroEmpresa'])) {
     $localEmpresa = $_POST['localEmpresa'];
     $ciudadEmpresa = $_POST['ciudadEmpresa'];
 
+    $sql = "select * from empresas where email = '$emailEmpresa'";
+    $rec = mysqli_query($conexion, $sql);
+    $data = mysqli_num_rows($rec);
 
-    $insertarEmpresa = "insert into empresas (cif,nombre,descripcion,email,password,telefono,direccion,localidad,codPostal,ciudad) values 
+    if ($data == 0) {
+
+        $insertarEmpresa = "insert into empresas (cif,nombre,descripcion,email,password,telefono,direccion,localidad,codPostal,ciudad) values 
                 ('$CIF','$nombreEmpresa','$descripEmpresa','$emailEmpresa','$passEmpresa','$telfEmpresa','$dirEmpresa','$localEmpresa',$codEmpresa,'$ciudadEmpresa')";
 
-    $datos = mysqli_query($conexion, $insertarEmpresa);
+        $datos = mysqli_query($conexion, $insertarEmpresa);
 
-    if ($datos) {
-        header("Location: ../html/registroEmpresa.html");
+        if ($datos) {
+            header("Location: ../html/registroEmpresa.html");
+        }
+    } else {
+        header("Location: ../html/emailExisteEm.html");
     }
 }
 
