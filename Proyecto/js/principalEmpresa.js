@@ -10,7 +10,7 @@ $(document).ready(function() {
         nombreUsuario = nombreUsuario.replace("%20", " ");
         $('#usuarioLogeado')[0].innerHTML = "&nbsp;" + nombreUsuario + "&nbsp;";        
     }
-    document.getElementById("idEmpresa").innerHTML = (getCookie("idUsuario"));
+    document.getElementById("idEmpresa").setAttribute("value",getCookie("idUsuario"));
 
     $("#selectOrder").change(function() {
         muestraEventosEmpresa(idEmpresa, $("#selectOrder").val());
