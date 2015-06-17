@@ -91,63 +91,65 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                     </div>
                     <div id="formulario" class="col-md-5" style="display: none;">
                         <h3 style="margin-top: 50px;">Registrate</h3>
-                        <div id="error" style="display: none; color: red; font-weight: bold; font-size: 14px;">Por favor, rellene correctamente los campos marcados</div>
+                         <div style="font-size: 14px; padding-bottom:5px;">Por favor, rellene todos los campos obligatorios(*). <br>Los campos de texto deben contener el primer carácter en mayúsculas</div>
+                        <div id="error" style="display: none; color: #FF5C5C; font-weight: bold; font-size: 14px;">Por favor, rellene correctamente los campos marcados</div>
                         <form style="margin-bottom: 30px;" class="form-horizontal" role="form" action="../php/insertarRegistros.php" method="post" onsubmit="return clickSubmit();">
+
                             <div class="form-group">
-                                <label for="CIF" class="col-lg-2 control-label">CIF</label>
+                                <label for="CIF" class="col-lg-2 control-label">CIF*</label>
                                 <div class="col-lg-10">
                                     <input type="text" class="form-control" id="CIF" name="CIF" placeholder="Ejemplo: C12345678" oninput="activaCondiciones();">
                                 </div>
                             </div>                            
                             <div class="form-group">
-                                <label for="nombreEmpresa" class="col-lg-2 control-label">Empresa</label>
+                                <label for="nombreEmpresa" class="col-lg-2 control-label">Empresa*</label>
                                 <div class="col-lg-10">
                                     <input type="text" class="form-control" id="nombreEmpresa" name="nombreEmpresa" placeholder="Ejemplo: Pepe" oninput="activaCondiciones();">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="emailEmpresa" class="col-lg-2 control-label">Email</label>
+                                <label for="emailEmpresa" class="col-lg-2 control-label">Email*</label>
                                 <div class="col-lg-10">
                                     <input type="text" class="form-control" id="emailEmpresa" name="emailEmpresa" placeholder="Ejemplo: psanchezgar@email.com" oninput="activaCondiciones();">
                                     <small>Solo caracteres alfanuméricos y caracteres especiales.</small>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="telfEmpresa" class="col-lg-2 control-label">Teléfono</label>
+                                <label for="telfEmpresa" class="col-lg-2 control-label">Teléfono*</label>
                                 <div class="col-lg-10">
                                     <input type="text" class="form-control" id="telfEmpresa" name="telfEmpresa" placeholder="Ejemplo: 916544433" oninput="activaCondiciones();">
                                     <small>Solo caracteres numéricos.</small>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="descripEmpresa" class="col-lg-2 control-label">Descripción</label>
+                                <label for="descripEmpresa" class="col-lg-2 control-label" style="padding-left: 5px;">Descripción*</label>
                                 <div class="col-lg-10">
                                     <textarea class="form-control" id="descripEmpresa" name="descripEmpresa" placeholder="¿A que te dedicas? Cuentanos...." maxlength="200"  oninput="activaCondiciones();"></textarea>
                                     <small>Máximo 200 caracteres</small>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="dirEmpresa" class="col-lg-2 control-label">Dirección</label>
+                                <label for="dirEmpresa" class="col-lg-2 control-label">Dirección*</label>
                                 <div class="col-lg-10">
                                     <input type="text" class="form-control" id="dirEmpresa" name="dirEmpresa" placeholder="Ejemplo: Paseo de la Castellana 169" oninput="activaCondiciones();">
 
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="codEmpresa" class="col-lg-2 control-label">C.Postal</label>
+                                <label for="codEmpresa" class="col-lg-2 control-label">C.Postal*</label>
                                 <div class="col-lg-10">
                                     <input type="text" class="form-control" id="codEmpresa" name="codEmpresa" placeholder="Ejemplo: 28702" oninput="activaCondiciones();">  
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="localEmpresa" class="col-lg-2 control-label">Localidad</label>
+                                <label for="localEmpresa" class="col-lg-2 control-label">Localidad*</label>
                                 <div class="col-lg-10">
                                     <input type="text" class="form-control" id="localEmpresa" name="localEmpresa" placeholder="Ejemplo: Alcobendas" oninput="activaCondiciones();">
 
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="ciudadEmpresa" class="col-lg-2 control-label">Ciudad</label>
+                                <label for="ciudadEmpresa" class="col-lg-2 control-label">Ciudad*</label>
                                 <div class="col-lg-10">
                                     <input type="text" class="form-control" id="ciudadEmpresa" name="ciudadEmpresa" placeholder="Ejemplo: Madrid" oninput="activaCondiciones();">
                                 </div>

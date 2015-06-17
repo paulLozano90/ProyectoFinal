@@ -93,40 +93,40 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                     <div class="col-md-5">
                         <form method="post" action="../php/insertarRegistros.php" id="formulario" style="margin-top: 100px; display: none;" class="form-horizontal" onsubmit="return clickSubmit();">
                             <h3>Registrate</h3>
-                            <div style="font-size: 16px;">Recuerde que todos los campos son obligatorios</div>
+                             <div style="font-size: 14px; padding-bottom:5px;">Por favor, rellene todos los campos obligatorios(*). <br>Los campos de texto deben contener el primer carácter en mayúsculas</div>
                             <div id="error" style="display: none; color: #FF7171; font-weight: bold; font-size: 16px;">Por favor, rellene correctamente los campos marcados</div>
                             <div class="form-group">
-                                <label for="nombreUsuario" class="col-lg-2 control-label">Nombre</label>
+                                <label for="nombreUsuario" class="col-lg-2 control-label">Nombre*</label>
                                 <div id="Nombre" class="col-lg-10">
                                     <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario" placeholder="Ejemplo: Pepe" oninput="activaCondiciones();">
                                 </div>
                             </div>
                             <div  class="form-group">
-                                <label for="apellido1" class="col-lg-2 control-label">1ºApellido</label>
+                                <label for="apellido1" class="col-lg-2 control-label">1ºApellido*</label>
                                 <div id="Apellido1" class="col-lg-10">
                                     <input type="text" class="form-control" id="apellido1" name="apellido1" placeholder="Ejemplo: Sánchez" oninput="activaCondiciones();">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="apellido2" class="col-lg-2 control-label">2ºApellido</label>
+                                <label for="apellido2" class="col-lg-2 control-label">2ºApellido*</label>
                                 <div id="Apellido2" class="col-lg-10">
                                     <input type="text" class="form-control" id="apellido2" name="apellido2" placeholder="Ejemplo: García" oninput="activaCondiciones();">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="emailUsuario" class="col-lg-2 control-label">Email</label>
+                                <label for="emailUsuario" class="col-lg-2 control-label">Email*</label>
                                 <div id="Email" class="col-lg-10">
                                     <input type="text" class="form-control" id="emailUsuario" name="emailUsuario" placeholder="Ejemplo: psanchezgar@email.com" oninput="activaCondiciones();">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="telfUsuario" class="col-lg-2 control-label">Teléfono</label>
+                                <label for="telfUsuario" class="col-lg-2 control-label">Teléfono*</label>
                                 <div id="Teléfono" class="col-lg-10">
                                     <input type="text" class="form-control" id="telfUsuario" name="telfUsuario" placeholder="Ejemplo: 916545343" oninput="activaCondiciones();">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="passUsuario" class="col-lg-2 control-label">Contraseña</label>
+                                <label for="passUsuario" class="col-lg-2 control-label">Contraseña*</label>
                                 <div id="Contraseña" class="col-lg-10">
                                     <input type="password" class="form-control" id="passUsuario" name="passUsuario" placeholder="Contraseña" oninput="activaCondiciones();">
                                     <small>Cadena de entre 6-12 caracteres con al menos una letra mayúscula, una minúscula y un número.</small>
