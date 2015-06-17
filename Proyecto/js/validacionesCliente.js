@@ -130,7 +130,7 @@ function validar()
 {
 
     var aux = true;
-    alert(url);
+    //alert(url);
     if (url === "/html/registroUsuario.html")
     {
         var listaValidaciones = new Array
@@ -284,7 +284,7 @@ function clickSubmit()
         {
             for (var i = 0; i < publicValEvento.length; i++)
             {
-                alert("no ok");
+                //alert("no ok");
                 if (publicValEvento[i] === false)
                 {
                     //alert("ENTRA, camposEMpresa[i]: " + camposEmpresa[i]);
@@ -297,14 +297,14 @@ function clickSubmit()
                 else
                 {
                     //alert("else");
-                    alert(auxSub + " 1");
+                    //alert(auxSub + " 1");
                     document.getElementById(camposEvento[i]).setAttribute("style", "");
                 }
             }
         }
 
     }
-    alert(auxSub);
+    //alert(auxSub);
     return auxSub;
 }
 ;
