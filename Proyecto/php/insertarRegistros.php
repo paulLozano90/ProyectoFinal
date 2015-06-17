@@ -60,6 +60,7 @@ if(isset($_POST['registroEmpresa'])){
 
 if(isset($_POST['registroEvento'])){
     
+    
     $idEmpresa = 2;
     $idTipo = $_POST["tipo"];
     $nombreEvento = utf8_decode($_POST['nomEvento']);
@@ -74,7 +75,7 @@ if(isset($_POST['registroEvento'])){
     
     if (isset($_FILES["fotoEvento"]) and $_FILES["fotoEvento"]["error"] == UPLOAD_ERR_OK) {
 
-        if (!move_uploaded_file($_FILES["fotoEvento"]["tmp_name"], "C:/wamp/www/imagenesEventos" . basename($_FILES["fotoEvento"]["name"]))) {
+        if (!move_uploaded_file($_FILES["fotoEvento"]["tmp_name"], "C:/wamp/www/imagenesEventos/" . basename($_FILES["fotoEvento"]["name"]))) {
         }
     }
     
@@ -85,14 +86,14 @@ if(isset($_POST['registroEvento'])){
     
     $insertarEvento .= $_FILES["fotoEvento"]["name"]."' )";
     
-    //echo $insertarEvento;
+    echo $insertarEvento;
     
     $datos = mysqli_query($conexion,$insertarEvento);
     
     if($datos){
         
-        //header("Location: ../html/principalEmpresa.html");
-        echo $insertarEvento;
+        header("Location: ../html/principalEmpresa.html");
+        //echo $insertarEvento;
     }
 }
 ?>

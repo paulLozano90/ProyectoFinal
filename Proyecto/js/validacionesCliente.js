@@ -496,7 +496,7 @@ function validaPrecio(precio)
 function validaFoto()
 {
     var archivo = $("#fotoEvento").val();
-    var extensiones = new Array(".jpg", ".png", ".jpge");
+    var extensiones = new Array(".jpg", ".png", ".jpeg");
     
     for(var i = 0 ; i< extensiones.length; i++)
     {
