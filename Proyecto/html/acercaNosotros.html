@@ -46,6 +46,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             <div class="jumbotron">
                 <a href="principalUsuario.html"><img id="logoCabecera" src="../images/logotipoUnete.png" alt="Logotipo Únete" style="margin-right:20px;"></a>
                 <h1 style="text-align:left;">Únete</h1>
+                <div style="float: right; margin-top: -40px;">
+                    <div style="float: left;">Bienvenido:</div>
+                    <span style="float: left; color: #FFFFFF;" id="usuarioLogeado"></span>
+                    <a style="float: left;" href="../php/logout.php" onclick="deleteAllCookies();">Cerrar sesión</a>
+                </div>
             </div>
             <nav class="navbar navbar-default">
                 <ul class="nav nav-justified nav-header">
@@ -69,7 +74,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 <div class="col-md-3" style="margin-top: 42px;">
                     <div id="dResumen">
                         <div class="panel panel-default" style="margin-top: -15px;">
-                            <div class="panel-heading" style="text-align:center; font-size:25px;">¿Quienes somos?</div>
+                            <div class="panel-heading" style="text-align:center; font-size:25px;">¿Quiénes somos?</div>
                             <div class="panel-body">
                                 <table class="table" style="background-color:white;">
                                     <tbody>
