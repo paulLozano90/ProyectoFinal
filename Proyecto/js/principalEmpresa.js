@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
 
-    var idEmpresa = $.urlParam("idEmpresa");
+    var idEmpresa = getCookie("idUsuario");
     muestraEventosEmpresa(idEmpresa, "idEvento#asc");
     
     if($('#usuarioLogeado')[0].innerHTML === ""){
@@ -9,7 +9,7 @@ $(document).ready(function() {
         var nombreUsuario = getCookie("usuarioLogeado");
         nombreUsuario = nombreUsuario.replace("%20", " ");
         $('#usuarioLogeado')[0].innerHTML = "&nbsp;" + nombreUsuario + "&nbsp;";
-    }    
+    }
 
     $("#selectOrder").change(function() {
         muestraEventosEmpresa(idEmpresa, $("#selectOrder").val());

@@ -36,4 +36,26 @@ $(document).ready(function() {
         $("#formulario").hide();
         $("#login").show();
     });
+    
+    $("#btn-entrar").click(function() {
+        comprobarUsuario();
+    });
 });
+
+function comprobarUsuario(){
+    
+    var email = $("#inputEmail1").val();
+    var pass = $("#inputPassword1").val();    
+    var url = "../php/index.php";
+    var jSonvar = {email: email, pass: pass};
+    
+    $.getJSON(url, jSonvar, function(idUsuario) {        
+        if (idUsuario === "False"){
+            $("#errorLogin").show();     
+        }else{
+            $("#errorLogin").hide();  
+            setCookie("idUsuario", idUsuario, 365);
+            window.location.href = "../html/principalUsuario.html";
+        }
+    });
+}
