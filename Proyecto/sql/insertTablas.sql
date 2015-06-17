@@ -12,14 +12,14 @@ insert into tipoEvento (nombre) values ('Salud y Belleza');
 
 /*Insertar empresas */
 
-insert into empresas (cif,nombre,descripcion,email,telefono,direccion,localidad,codPostal,ciudad) values 
-('78786743S','Restaurante Chistu','Restaurantes','chisturestaurante@hotmail.es',912325433,'Calle del hambre Nº21','Madrid',28700,'Madrid');
+insert into empresas (cif,nombre,descripcion,email,password,telefono,direccion,localidad,codPostal,ciudad) values 
+('78786743S','Restaurante Chistu','Restaurantes','chisturestaurante@hotmail.es',123456,912325433,'Calle del hambre Nº21','Madrid',28700,'Madrid');
 
-insert into empresas (cif,nombre,descripcion,email,telefono,direccion,localidad,codPostal,ciudad) values 
-('45434543S','Multiaventuras Moya','Deportes','deportesmoya@gmail.es',914125468,'Avenida de las Americas Nº3','San Sebastian de los Reyes',28702,'Madrid');
+insert into empresas (cif,nombre,descripcion,email,password,telefono,direccion,localidad,codPostal,ciudad) values 
+('45434543S','Multiaventuras Moya','Deportes','deportesmoya@gmail.es',987654,914125468,'Avenida de las Americas Nº3','San Sebastian de los Reyes',28702,'Madrid');
 
-insert into empresas (cif,nombre,descripcion,email,telefono,direccion,localidad,codPostal,ciudad) values 
-('23332332S','Spa Relax and Fun','Belleza y Salud','sparelax@gmail.es',914455468,'Calle del sueño Nº3','Alcobendas',28703,'Madrid');
+insert into empresas (cif,nombre,descripcion,email,password,telefono,direccion,localidad,codPostal,ciudad) values 
+('23332332S','Spa Relax and Fun','Belleza y Salud','sparelax@gmail.es',567890,914455468,'Calle del sueño Nº3','Alcobendas',28703,'Madrid');
 
 /*Insertar eventos */
 

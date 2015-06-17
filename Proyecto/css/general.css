@@ -5,6 +5,14 @@
     src: url(../css/MixCarpathia.ttf);
 }
 /*Cuerpo de la pagina*/
+
+#error {
+    
+    color: #FF5C5C; 
+    font-weight: bold; 
+    font-size: 14px;
+    
+}
 body{
     width: auto;
     height: auto;
