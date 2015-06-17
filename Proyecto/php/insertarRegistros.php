@@ -61,10 +61,10 @@ if(isset($_POST['registroEmpresa'])){
 if(isset($_POST['registroEvento'])){
     
     $idEmpresa = 2;
-    $idTipo = 2;
-    $nombreEvento = $_POST['nomEvento'];
-    $descripCorta = $_POST['descEvento'];
-    $descripcion = $_POST['descLargaEvento'];
+    $idTipo = $_POST["tipo"];
+    $nombreEvento = utf8_decode($_POST['nomEvento']);
+    $descripCorta = utf8_decode($_POST['descEvento']);
+    $descripcion = utf8_decode($_POST['descLargaEvento']);
     $precioNormal = $_POST['precioEvento'];
     $precioReducido = $_POST['precioDescEvento'];    
     $fechaCreacion = strftime( "%d/%m/%Y", time());
@@ -74,7 +74,7 @@ if(isset($_POST['registroEvento'])){
     
     if (isset($_FILES["fotoEvento"]) and $_FILES["fotoEvento"]["error"] == UPLOAD_ERR_OK) {
 
-        if (!move_uploaded_file($_FILES["fotoEvento"]["tmp_name"], "C:/wamp/www/Proyecto/images/" . basename($_FILES["fotoEvento"]["name"]))) {
+        if (!move_uploaded_file($_FILES["fotoEvento"]["tmp_name"], "C:/wamp/www/imagenesEventos" . basename($_FILES["fotoEvento"]["name"]))) {
         }
     }
     

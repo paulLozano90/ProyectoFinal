@@ -1,7 +1,12 @@
 
 $(document).ready(function() {
-
-    $('#usuarioLogeado')[0].innerHTML = "&nbsp;" + getCookie("usuarioLogeado") + "&nbsp;";
+    
+    if($('#usuarioLogeado')[0].innerHTML === ""){
+        
+        var nombreUsuario = getCookie("usuarioLogeado");
+        nombreUsuario = nombreUsuario.replace("%20", " ");
+        $('#usuarioLogeado')[0].innerHTML = "&nbsp;" + nombreUsuario + "&nbsp;&nbsp;";
+    }
   
     muestraTodos("idEvento#asc");
 
