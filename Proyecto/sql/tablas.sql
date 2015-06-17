@@ -25,7 +25,8 @@ telefono INT(10),
 direccion VARCHAR(40),
 localidad VARCHAR(30),
 codPostal INT(5),
-ciudad VARCHAR(20)
+ciudad VARCHAR(20),
+password VARCHAR(20)
 );
 
 CREATE TABLE tipoEvento(

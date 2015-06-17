@@ -16,8 +16,8 @@ var campos = new Array("nombreUsuario", "apellido1", "apellido2", "emailUsuario"
 
 //public Empresa
 var cif, nom_emp, em_emp, tel_emp, desc, dir, zip_code, loc, cit;
-var publicValEmpresa = new Array(cif, nom_emp, em_emp, tel_emp, desc, dir, zip_code, loc, cit);
-var camposEmpresa = new Array("CIF", "nombreEmpresa", "emailEmpresa", "telfEmpresa", "descripEmpresa", "dirEmpresa", "codEmpresa", "localEmpresa", "ciudadEmpresa");
+var publicValEmpresa = new Array(cif, nom_emp, em_emp, pasem,  tel_emp, desc, dir, zip_code, loc, cit);
+var camposEmpresa = new Array("CIF", "nombreEmpresa", "emailEmpresa","passEmpresa", "telfEmpresa", "descripEmpresa", "dirEmpresa", "codEmpresa", "localEmpresa", "ciudadEmpresa");
 
 //public Evento
 var tipo, nom_ev, desc_ev, cuent, pre, fpre, cad, fot;
@@ -67,8 +67,9 @@ function activaCondiciones()
         var cod = $("#codEmpresa").val();
         var loc = $("#localEmpresa").val();
         var ciu = $("#ciudadEmpresa").val();
+        var pass = $("#passEmpresa").val();
         
-        if (cif === "" || nom === "" || em === "" || telf === "" || desc === "" || dir === "" || cod === "" || loc === "" || ciu === "")
+        if (cif === "" || nom === "" || em === "" || telf === "" || desc === "" || dir === "" || cod === "" || loc === "" || ciu === "" || pass === "")
         {
            // alert("entra if");
             check.disabled = true;
@@ -150,6 +151,7 @@ function validar()
                         validaCIF(),
                         validaTexto("nombreEmpresa"),
                         validaEmail(),
+                        validaContraseña(),
                         validaTelefono(),
                         validaTexto("descripEmpresa"),
                         validaDir(),
@@ -496,7 +498,7 @@ function validaPrecio(precio)
 function validaFoto()
 {
     var archivo = $("#fotoEvento").val();
-    var extensiones = new Array(".jpg", ".png", ".jpge");
+    var extensiones = new Array(".jpg", ".png", ".jpeg");
     
     for(var i = 0 ; i< extensiones.length; i++)
     {
