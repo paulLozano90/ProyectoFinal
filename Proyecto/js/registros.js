@@ -1,11 +1,11 @@
 
 /*
-Autor=Paul Lozano Cruzado, Elias Sanchez Arroyo y Daniel Carrasco Barcena
-Fecha=09-jun-2015
-Licencia=gpl30
-Version=1.0
-Descripcion=
-*/     
+ Autor=Paul Lozano Cruzado, Elias Sanchez Arroyo y Daniel Carrasco Barcena
+ Fecha=09-jun-2015
+ Licencia=gpl30
+ Version=1.0
+ Descripcion=
+ */
 
 /* 
  * Copyright (C) 2015 Paul Lozano Cruzado 
@@ -31,29 +31,36 @@ $(document).ready(function() {
         $("#formulario").show();
         $("#login").hide();
     });
-    
+
     $(".volverRegistro").click(function() {
         $("#formulario").hide();
         $("#login").show();
     });
-    
+
     $("#btn-entrar").click(function() {
         comprobarUsuario();
     });
 });
 
-function comprobarUsuario(){
-    
+function comprobarUsuario() {
+
     var email = $("#inputEmail1").val();
-    var pass = $("#inputPassword1").val();    
+    var pass = $("#inputPassword1").val();
+    var tipoUsuario = $('#tipoUsuario')[0].innerHTML;
+    if (tipoUsuario === "Usuario") {
+        tipoUsuario = "Usuario";
+    } else if (tipoUsuario === "Empresa") {
+        tipoUsuario = "Empresa";
+    }
+
     var url = "../php/index.php";
-    var jSonvar = {email: email, pass: pass};
-    
-    $.getJSON(url, jSonvar, function(idUsuario) {        
-        if (idUsuario === "False"){
-            $("#errorLogin").show();     
-        }else{
-            $("#errorLogin").hide();  
+    var jSonvar = {email: email, pass: pass, tipoUsuario: tipoUsuario};
+
+    $.getJSON(url, jSonvar, function(idUsuario) {
+        if (idUsuario === "False") {
+            $("#errorLogin").show();
+        } else {
+            $("#errorLogin").hide();
             setCookie("idUsuario", idUsuario, 365);
             window.location.href = "../html/principalUsuario.html";
         }
