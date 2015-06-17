@@ -56,18 +56,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                         </div>
                     </div>
                     <div id="login" class="col-md-5">
+                        <div id="tipoUsuario" hidden="hidden">Empresa</div>
                         <h3 style="margin-top: 75px;">Identificate como empresa</h3>
                         <form class="form-horizontal" role="form">
                             <div class="form-group">
-                                <label for="CIF" class="col-lg-2 control-label">CIF</label>
+                                <label for="Email" class="col-lg-2 control-label">Email</label>
                                 <div class="col-lg-10">
-                                    <input type="text" class="form-control" id="loginCIF" placeholder="CIF">
+                                    <input type="text" class="form-control" id="inputEmail1" name="email" placeholder="Email">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="passEmpresa" class="col-lg-2 control-label">Contraseña</label>
                                 <div class="col-lg-10">
-                                    <input type="password" class="form-control" id="passEmpresa" placeholder="Contraseña">
+                                    <input type="password" class="form-control" id="inputPassword1" name="pass" placeholder="Contraseña">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -111,6 +112,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                 <label for="emailEmpresa" class="col-lg-2 control-label">Email*</label>
                                 <div class="col-lg-10">
                                     <input type="text" class="form-control" id="emailEmpresa" name="emailEmpresa" placeholder="Ejemplo: psanchezgar@email.com" oninput="activaCondiciones();">
+                                    <small>Solo caracteres alfanuméricos y caracteres especiales.</small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="passEmpresa" class="col-lg-2 control-label">Contraseña*</label>
+                                <div class="col-lg-10">
+                                    <input type="password" class="form-control" id="passEmpresa" name="passEmpresa" placeholder="Ejemplo: psanchezgar@email.com" oninput="activaCondiciones();">
                                     <small>Solo caracteres alfanuméricos y caracteres especiales.</small>
                                 </div>
                             </div>

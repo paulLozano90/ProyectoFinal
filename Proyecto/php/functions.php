@@ -7,7 +7,7 @@ $conexion = conectar();
 function verificar_login($email,$password){
         
         global $conexion;
-	$sql = "SELECT idUsuario, Nombre FROM usuarios WHERE email = '$email' and password = '$password'";
+	$sql = "SELECT idUsuario, Nombre FROM usuarios WHERE email = '$email' and password = '$password'";        
 	$rec = mysqli_query($conexion,$sql);
         $data = mysqli_num_rows($rec);
         $resultado = $rec->fetch_assoc(); 

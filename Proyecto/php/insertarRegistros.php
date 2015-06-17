@@ -41,6 +41,7 @@ if(isset($_POST['registroEmpresa'])){
     $CIF = $_POST['CIF'];
     $nombreEmpresa = $_POST['nombreEmpresa'];
     $emailEmpresa = $_POST['emailEmpresa'];
+    $passEmpresa = $_POST['passEmpresa'];
     $telfEmpresa = $_POST['telfEmpresa'];
     $descripEmpresa = $_POST['descripEmpresa'];
     $dirEmpresa = $_POST['dirEmpresa'];
@@ -48,8 +49,8 @@ if(isset($_POST['registroEmpresa'])){
     $localEmpresa = $_POST['localEmpresa'];
     $ciudadEmpresa = $_POST['ciudadEmpresa'];
     
-    $insertarEmpresa = "insert into empresas (cif,nombre,descripcion,email,telefono,direccion,localidad,codPostal,ciudad) values 
-                ('$CIF','$nombreEmpresa','$descripEmpresa','$emailEmpresa',$telfEmpresa,'$dirEmpresa','$localEmpresa',$codEmpresa,'$ciudadEmpresa')";
+    $insertarEmpresa = "insert into empresas (cif,nombre,descripcion,email,password,telefono,direccion,localidad,codPostal,ciudad) values 
+                ('$CIF','$nombreEmpresa','$descripEmpresa','$emailEmpresa','$passEmpresa','$telfEmpresa','$dirEmpresa','$localEmpresa',$codEmpresa,'$ciudadEmpresa')";
     
     $datos = mysqli_query($conexion,$insertarEmpresa);
     
