@@ -61,7 +61,7 @@ if(isset($_POST['registroEmpresa'])){
 if(isset($_POST['registroEvento'])){
     
     $idEmpresa = 2;
-    $idTipo = 2;
+    $idTipo = $_POST["tipo"];
     $nombreEvento = $_POST['nomEvento'];
     $descripCorta = $_POST['descEvento'];
     $descripcion = $_POST['descLargaEvento'];
