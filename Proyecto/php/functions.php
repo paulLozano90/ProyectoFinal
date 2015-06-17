@@ -4,10 +4,21 @@ include 'conexion.php';
 $conexion = conectar();
 //controlUserName();
 
-function verificar_login($email,$password){
+function verificar_login($email,$password,$tipoUsuario){
         
         global $conexion;
+<<<<<<< HEAD
 	$sql = "SELECT idUsuario, Nombre FROM usuarios WHERE email = '$email' and password = '$password'";        
+=======
+        
+        $sql="";        
+        if($tipoUsuario == "Usuario"){
+            $sql = "SELECT idUsuario, Nombre FROM usuarios WHERE email = '$email' and password = '$password'";
+        }else if ($tipoUsuario == "Empresa"){
+            $sql = "SELECT idEmpresa, Nombre FROM empresas WHERE email = '$email' and password = '$password'";
+        }
+        
+>>>>>>> origin/master
 	$rec = mysqli_query($conexion,$sql);
         $data = mysqli_num_rows($rec);
         $resultado = $rec->fetch_assoc(); 
@@ -15,7 +26,8 @@ function verificar_login($email,$password){
         if($data == 1)
         {
             session_start();
-            $_SESSION["userId"] = $resultado["idUsuario"];
+            $idTest = ($tipoUsuario == "Usuario")? "idUsuario": "idEmpresa";
+            $_SESSION["userId"] = $resultado[$idTest];
             $_SESSION["userName"] = $resultado["Nombre"];       
             return true;
         }

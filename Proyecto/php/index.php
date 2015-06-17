@@ -6,7 +6,7 @@ include 'functions.php';
 
 if (!isset($_SESSION["userId"])) {
     
-    if (verificar_login($_GET["email"], $_GET["pass"])) {
+    if (verificar_login($_GET["email"], $_GET["pass"], $GET["tipoUsuario"])) {
         
         $idUsuario = $_SESSION["userId"];        
     } else {        
