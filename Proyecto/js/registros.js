@@ -37,7 +37,7 @@ $(document).ready(function() {
         $("#login").show();
     });
 
-    $("#btn-entrar").click(function() {
+    $("#btn-usuario").click(function() {
         comprobarUsuario();
     });
 });
@@ -46,23 +46,23 @@ function comprobarUsuario() {
 
     var email = $("#inputEmail1").val();
     var pass = $("#inputPassword1").val();
-    var tipoUsuario = $('#tipoUsuario')[0].innerHTML;
-    if (tipoUsuario === "Usuario") {
-        tipoUsuario = "Usuario";
-    } else if (tipoUsuario === "Empresa") {
-        tipoUsuario = "Empresa";
-    }
-
+    var tipo = $("#tipoUsuario").val();    
     var url = "../php/index.php";
-    var jSonvar = {email: email, pass: pass, tipoUsuario: tipoUsuario};
-
+    var jSonvar = {email: email, pass: pass, tipo:tipo};
+    
     $.getJSON(url, jSonvar, function(idUsuario) {
-        if (idUsuario === "False") {
+        alert(idUsuario);
+        if (idUsuario == "False") {;
             $("#errorLogin").show();
         } else {
             $("#errorLogin").hide();
             setCookie("idUsuario", idUsuario, 365);
-            window.location.href = "../html/principalUsuario.html";
+            
+            if(tipo == "Usuario"){
+                window.location.href = "../html/principalUsuario.html";
+            }else {
+                window.location.href = "../html/principalEmpresa.html";
+            }           
         }
     });
 }

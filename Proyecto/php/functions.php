@@ -6,18 +6,13 @@ $conexion = conectar();
 
 function verificar_login($email,$password,$tipoUsuario){
         
-        global $conexion;
-
-	$sql = "SELECT idUsuario, Nombre FROM usuarios WHERE email = '$email' and password = '$password'";        
-
-        
-        $sql="";        
+        global $conexion;      
+      
         if($tipoUsuario == "Usuario"){
             $sql = "SELECT idUsuario, Nombre FROM usuarios WHERE email = '$email' and password = '$password'";
         }else if ($tipoUsuario == "Empresa"){
             $sql = "SELECT idEmpresa, Nombre FROM empresas WHERE email = '$email' and password = '$password'";
         }
-        
 
 	$rec = mysqli_query($conexion,$sql);
         $data = mysqli_num_rows($rec);
@@ -26,7 +21,11 @@ function verificar_login($email,$password,$tipoUsuario){
         if($data == 1)
         {
             session_start();
-            $idTest = ($tipoUsuario == "Usuario")? "idUsuario": "idEmpresa";
+            if($tipoUsuario == "Usuario"){
+                $idTest = "idUsuario";
+            }else{
+                $idTest = "idEmpresa";
+            }
             $_SESSION["userId"] = $resultado[$idTest];
             $_SESSION["userName"] = $resultado["Nombre"];       
             return true;
