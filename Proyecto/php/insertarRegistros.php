@@ -83,7 +83,7 @@ if(isset($_POST['registroEvento'])){
                        ('$idEmpresa','$idTipo','$nombreEvento','$descripCorta','$descripcion',"
             . "         '$precioNormal','$precioReducido','$fechaCreacion','$newCaducidad','";
     
-    $insertarEvento .= $_FILES['fotoEvento']['name']."' )";
+    $insertarEvento .= $_FILES["fotoEvento"]["name"]."' )";
     
     //echo $insertarEvento;
     
@@ -91,8 +91,8 @@ if(isset($_POST['registroEvento'])){
     
     if($datos){
         
-        header("Location: ../html/principalEmpresa.html");
-        //echo $insertarEvento;
+        //header("Location: ../html/principalEmpresa.html");
+        echo $insertarEvento;
     }
 }
 ?>
