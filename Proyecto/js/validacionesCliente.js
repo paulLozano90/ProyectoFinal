@@ -20,9 +20,9 @@ var publicValEmpresa = new Array(cif, nom_emp, em_emp, tel_emp, desc, dir, zip_c
 var camposEmpresa = new Array("CIF", "nombreEmpresa", "emailEmpresa", "telfEmpresa", "descripEmpresa", "dirEmpresa", "codEmpresa", "localEmpresa", "ciudadEmpresa");
 
 //public Evento
-var tipo, nom_ev, desc_ev, cuent, pre, fpre, fech, cad, fot;
-var publicValEvento = new Array(tipo, nom_ev, desc_ev, cuent, pre, fpre, fech, cad, fot);
-var camposEvento = new Array("cantidad", "nomEvento", "descEvento", "descLargaEvento", "precioEvento", "precioDescEvento", "fechaEvento", "caducidadEvento", "fotoEvento");
+var tipo, nom_ev, desc_ev, cuent, pre, fpre, cad, fot;
+var publicValEvento = new Array(tipo, nom_ev, pre, fpre, cad, fot, desc_ev, cuent);
+var camposEvento = new Array("cantidad", "nomEvento", "precioEvento", "precioDescEvento", "caducidadEvento", "fotoEvento", "descEvento", "descLargaEvento");
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -81,6 +81,31 @@ function activaCondiciones()
             check.disabled = false;
         }
     }
+    if(url === "/html/creaEvento.html")
+    {
+        var check = document.getElementById("condiciones");
+        var submit = document.getElementById("registro");
+        var sel = $("#cantidad").val().trim();
+        var nom = $("#nomEvento").val();
+        var desc = $("#descEvento").val();
+        var descL = $("#descLargaEvento").val();
+        var preE = $("#precioEvento").val();
+        var preD = $("#precioDescEvento").val();
+        var cad = $("#caducidadEvento").val();
+        var fot = $("#fotoEvento").val();
+        
+        if(sel === "" || nom === "" || desc === "" || descL === "" || preE === "" || preD === "")
+        {   
+            check.disabled = true;
+            check.checked = false;
+            submit.disabled = true;
+        }
+        else
+        {
+            //alert("entra else");
+            check.disabled = false;
+        }
+    }
 
 }
 ;
@@ -117,7 +142,7 @@ function validar()
                         validaContraseña()
                         );
     }
-    if (url === "/html/registroEmpresa.html")
+    else if (url === "/html/registroEmpresa.html")
     {
         // alert("entra en if validar");
         var listaValidaciones = new Array
@@ -132,6 +157,20 @@ function validar()
                         validaTexto("localEmpresa"),
                         validaTexto("ciudadEmpresa")
                         );
+    }
+    else
+    {
+        var listaValidaciones = new Array
+                (
+                        validaTipo(),
+                        validaTexto("nomEvento"),
+                        validaPrecio("precioEvento"),
+                        validaPrecio("precioDescEvento"),
+                        validaCad(),
+                        validaFoto(),
+                        validaTexto("descEvento"),
+                        validaTexto("descLargaEvento")
+                );
     }
 
     //alert("sale if validar");
@@ -148,9 +187,13 @@ function validar()
                 publicValidaciones[i] = false;
 
             }
-            if (url === "/html/registroEmpresa.html")
+            else if (url === "/html/registroEmpresa.html")
             {
                 publicValEmpresa[i] = false;
+            }
+            else
+            {
+                publicValEvento[i] = false;
             }
             aux = false;
         }
@@ -162,9 +205,13 @@ function validar()
                 publicValidaciones[i] = true;
 
             }
-            if (url === "/html/registroEmpresa.html")
+            else if (url === "/html/registroEmpresa.html")
             {
                 publicValEmpresa[i] = true;
+            }
+            else
+            {
+                publicValEvento[i] = true;
             }
         }
     }
@@ -209,7 +256,7 @@ function clickSubmit()
                 }
             }
         }
-        if (url === "/html/registroEmpresa.html")
+        else if (url === "/html/registroEmpresa.html")
         {
             for (var i = 0; i < publicValEmpresa.length; i++)
             {
@@ -231,9 +278,31 @@ function clickSubmit()
                 }
             }
         }
+        else//enctype="multipart/form-data"
+        {
+            for (var i = 0; i < publicValEvento.length; i++)
+            {
+                alert("no ok");
+                if (publicValEvento[i] === false)
+                {
+                    //alert("ENTRA, camposEMpresa[i]: " + camposEmpresa[i]);
+                    document.getElementById(camposEvento[i]).setAttribute("style", "border-color: red; border-width: 2px;");
+                    document.getElementById("condiciones").checked = false;
+                    document.getElementById("condiciones").disabled = true;
+                    document.getElementById("registro").disabled = true;
+                    auxSub = false;
+                }
+                else
+                {
+                    //alert("else");
+                    alert(auxSub + " 1");
+                    document.getElementById(camposEvento[i]).setAttribute("style", "");
+                }
+            }
+        }
 
     }
-    //alert(auxSub);
+    alert(auxSub);
     return auxSub;
 }
 ;
@@ -252,7 +321,7 @@ function validaTexto(input)
 {
     var elemento = $('#' + input).val();
     var exp;
-    if (input !== "descripEmpresa") {
+    if (input !== "descripEmpresa" || input !== "descEvento" || input !== "descLargaEvento") {
         exp = /^([A-Z]{1}[a-zñáéíóú]{2,40})+$/;
     }
     else {
@@ -387,7 +456,54 @@ function validaZip()
     return false;
 }
 
+function validaTipo()
+{
+    var tipo = $("#cantidad").val().trim();
+    
+    if(tipo !== '')
+    {
+        return true;
+    }
+    return false;
+}
 
+function validaCad()
+{
+    var cad = $("#caducidadEvento").val();
+    
+    if(cad !== '' && tipo !== null)
+    {
+        return true;
+    }
+    return false;
+}
+
+function validaPrecio(precio)
+{
+    var pre = $('#'+precio).val();
+    var exp = /^([1-9]{1}[0-9]{2})+$/;
+    
+    if(pre !== '' && pre !== null)
+    {
+        if(exp.test(pre))
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+function validaFoto()
+{
+    var archivo = $("#fotoEvento").name;
+    var exp = /\.(jpg\png\gif)$/i;
+    
+    if(exp.test(archivo))
+    {
+        return true;
+    }
+    return false;
+}
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////

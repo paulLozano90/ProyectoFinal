@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
 
-    var idEmpresa = 2;
+    var idEmpresa = $.urlParam("idEmpresa");
     muestraEventosEmpresa(idEmpresa, "idEvento#asc");
     
     if($('#usuarioLogeado')[0].innerHTML === ""){

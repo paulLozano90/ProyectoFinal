@@ -14,6 +14,7 @@ $(document).ready(function () {
 
 function idUsuario() {
 
+    
     var url = "../php/principalUsuario.php";
     var idUsuario = $.urlParam("idUsuario");
     var jSonvar = {idUsuario: idUsuario};
@@ -24,6 +25,11 @@ function idUsuario() {
             setCookie("usuarioLogeado", user.nombre, 365);
         });
     });
+}
+
+function login()
+{
+    
 }
 
 function muestraEventos(tipoEvento) {

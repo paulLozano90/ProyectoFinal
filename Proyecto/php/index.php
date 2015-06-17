@@ -10,7 +10,7 @@ if(!isset($_SESSION["userId"]))
     {
         if(verificar_login($_POST["email"], $_POST["pass"]))
         {          
-            header("location: ../html/principalUsuario.html ?idUsuario=".$_SESSION["userId"]);
+            header("location: ../html/principalUsuario.html?idUsuario=".$_SESSION["userId"]);
         }
         else
         {
