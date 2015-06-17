@@ -26,16 +26,6 @@ function idUsuario() {
     });
 }
 
-function GetUrlValue(VarSearch) {
-    var Url = location.href;
-    Url = Url.replace(/.*\?(.*?)/, "$1");
-    Variables = Url.split("&");
-    for (i = 0; i < Variables.length; i++) {
-        Separ = Variables[i].split("=");
-        eval('var ' + Separ[0] + '="' + Separ[1] + '"');
-    }
-}
-
 function muestraEventos(tipoEvento) {
 
     var url = "../php/muestraEventos.php";

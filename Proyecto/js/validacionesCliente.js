@@ -87,14 +87,14 @@ function activaCondiciones()
         
         if (cif === "" || nom === "" || em === "" || telf === "" || desc === "" || dir === "" || cod === "" || loc === "" || ciu === "")
         {
-            alert("entra if");
+           // alert("entra if");
             check.disabled = true;
             check.checked = false;
             submit.disabled = true;
         }
         else
         {
-            alert("entra else");
+           // alert("entra else");
             check.disabled = false;
         }
     }
@@ -192,7 +192,7 @@ function validar()
 function clickSubmit()
 {
     var auxSub;
-    alert('entra en click');
+    //alert('entra en click');
     if (validar() === true)
     {
         document.getElementById("error").style.display = 'none';
@@ -200,17 +200,17 @@ function clickSubmit()
     }
     else
     {
-        alert("else click");
+       // alert("else click");
         document.getElementById("error").style.display = 'inline';
         if (url === "/html/registroUsuario.html")
         {
             for (var i = 0; i < publicValidaciones.length; i++)
             {
-                alert("no ok");
+                //alert("no ok");
                 if (publicValidaciones[i] === false)
                 {
-                    alert("ENTRA, campos[i]: " + campos[i]);
-                    document.getElementById(campos[i]).setAttribute("style", "border-color: red; border-width: 2px;");
+                    //alert("ENTRA, campos[i]: " + campos[i]);
+                    document.getElementById(campos[i]).setAttribute("style", "border-color: #FF7171; border-width: 2px;");
                     //document.getElementById(camposEmpresa[i]).setAttribute("style", "border-color: red; border-width: 2px;");
                     document.getElementById("condiciones").checked = false;
                     document.getElementById("condiciones").disabled = true;
