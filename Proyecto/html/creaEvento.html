@@ -71,7 +71,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                     <div class="form-group">
                         <label for="tipoEvento" class="col-lg-2 control-label" style="padding-left: 0px;">Tipo de evento</label>
                         <div id="tipoEvento" class="col-lg-10">
-                            <select name="tipo" id="cantidad" class="form-control" required onchange="activaCondiciones();">
+                            <select id="cantidad" class="form-control" required  onchange="activaCondiciones();">
                                 <option value="" selected> -- Selecciona tu tipo de evento</option>
                                 <option value="1">Restaurantes</option>
                                 <option value="2">Ocio</option>                   
@@ -122,6 +122,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
                     <div class="form-group">
                         <label for="descLargaEvento" class="col-lg-2 control-label" style="padding-left: 0px;">Cuentanos más...</label>
+                        <div class="col-lg-10">
+                            <textarea class="form-control" id="descLargaEvento" name="descLargaEvento" placeholder="Explicanos tu evento..." maxlength="300" rows="6"  oninput="activaCondiciones();"></textarea>
+                            <small>Minimo 250 caracteres</small>
                         </div>
                     </div>
                     <div class="checkbox" style="padding-left:82px">
@@ -162,6 +165,3 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     </body>
     
 </html>
-                        <div class="col-lg-10">
-                            <textarea class="form-control" id="descLargaEvento" name="descLargaEvento" placeholder="Explicanos tu evento..." maxlength="300" rows="6"  oninput="activaCondiciones();"></textarea>
-                            <small>Minimo 250 caracteres</small>
