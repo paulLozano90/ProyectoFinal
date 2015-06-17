@@ -50,7 +50,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 <div style="float: right; margin-top: -40px;">
                     <div style="float: left;">Bienvenido:</div>
                     <span style="float: left; color: #FFFFFF;" id="usuarioLogeado"></span>
-                    <a style="float: left;" href="../php/logout.php">Cerrar sesión</a>
+                    <a style="float: left;" href="../php/logout.php" onclick="deleteAllCookies();">Cerrar sesión</a>
                 </div>
             </div>
             <nav class="navbar navbar-default">
@@ -74,7 +74,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                 <th>
                                     <select id="selectOrder" class="form-control">
                                         <option value="idEvento#asc" selected="selected">Por defecto</option>
-                                        <option value="idEvento#desc">Ultimos eventos añadidos</option>
+                                        <option value="idEvento#desc">Últimos eventos añadidos</option>
                                         <option value="ev.nombre#asc">Nombre de la A la Z</option>
                                         <option value="ev.nombre#desc">Nombre de la Z la A</option>                                
                                     </select>
@@ -88,7 +88,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                 <th>Nombre del evento</th>
                                 <th>Precio Normal</th>
                                 <th>Precio Reducido</th>
-                                <th>Fecha de creacion</th>
+                                <th>Fecha de creación</th>
                                 <th>Fecha de caducidad</th>
                                 <th></th>
                             </tr>
@@ -104,9 +104,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 <hr>
                 <div class="navbar center-block">
                     <ul class="nav-justified nav-footer" style="margin-left:-80px;">
-                        <li><a href="acercaNosotros.html">Acerca de nosotros</a></li>
+                        <li><a href="acercaNosotrosEmpresa.html">Acerca de nosotros</a></li>
                         <li><a href="javascript:void(0)" onclick="nVentana('politicaCookies.html')">Política de cookies</a></li>
-                        <li><a href="javascript:void(0)" onclick="nVentana('terminosGenerales.html')">Terminos Generales</a></li>
+                        <li><a href="javascript:void(0)" onclick="nVentana('terminosGenerales.html')">Términos Generales</a></li>
                         <li>
                             Redes Sociales
                             <a href="https://es-es.facebook.com"><i style="width: 15px; height: 15px; color: #FFFFFF;" class="fa fa-facebook-square"></i></a>
