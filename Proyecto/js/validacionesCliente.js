@@ -324,10 +324,10 @@ function validaTexto(input)
     var elemento = $('#' + input).val();
     var exp;
     if (input !== "descripEmpresa" || input !== "descEvento" || input !== "descLargaEvento") {
-        exp = /^([A-Z]{1}[a-zñáéíóú ]{2,40})+$/;
+        exp = /^([A-Z]{1}[A-Za-zñáéíóú. ]{2,40})+$/;
     }
     else {
-        exp = /^([A-Z]{1}[a-zñáéíóú ]{200,1000})+$/;
+        exp = /^([A-Z]{1}[A-Za-zñáéíóú. ]{200,1000})+$/;
     }
 
     if (elemento !== '' && elemento !== null)
