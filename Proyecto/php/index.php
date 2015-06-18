@@ -8,12 +8,15 @@ include 'functions.php';
 if (verificar_login($_GET["email"], $_GET["pass"],$_GET["tipo"])) {
 
     $idUsuario = $_SESSION["userId"];
+    $nombre = $_SESSION["userName"];
+    
+    $datosUsuario = $idUsuario."#".$nombre;
 } else {
-    $idUsuario = "False";
+    $datosUsuario = "False";
 }
 
 
-$json_string = json_encode($idUsuario);
+$json_string = json_encode($datosUsuario);
 echo $json_string;
 //}
 

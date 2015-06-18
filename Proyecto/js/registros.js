@@ -55,14 +55,15 @@ function comprobarUsuario() {
     var url = "../php/index.php";
     var jSonvar = {email: email, pass: pass, tipo:tipo};
     
-    $.getJSON(url, jSonvar, function(idUsuario) {
+    $.getJSON(url, jSonvar, function(datosUsuario) {
         
-        if (idUsuario == "False") {;
+        if (datosUsuario == "False") {;
             $("#errorLogin").show();
         } else {
             $("#errorLogin").hide();
-            setCookie("idUsuario", idUsuario, 365);
-            
+            var datos = datosUsuario.split('#');
+            setCookie("idUsuario", datos[0], 365);
+            setCookie("usuarioLogeado", datos[1], 365);
             if(tipo == "Usuario"){
                 window.location.href = "../html/principalUsuario.html";
             }else {

@@ -20,9 +20,6 @@ function controlUserName() {
     print $json_string;
 }
 
-//Te he modificado esto para hacer una prueba 
-//usando cookies en el usuario...
-
 include ("conexion.php");
 $conexion = conectar();
 
