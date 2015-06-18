@@ -11,8 +11,8 @@ $(document).ready(function() {
         $('#usuarioLogeado')[0].innerHTML = "&nbsp;" + nombreUsuario + "&nbsp;";        
     }
     document.getElementById("idEmpresa").setAttribute("value",getCookie("idUsuario"));
-
-    $("#selectOrder").change(function() {
+    
+    $("#selectOrder").change(function() {        
         muestraEventosEmpresa(idEmpresa, $("#selectOrder").val());
     });
 });
