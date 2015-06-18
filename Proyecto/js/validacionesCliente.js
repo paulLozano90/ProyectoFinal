@@ -438,7 +438,7 @@ function validaCIF() //EN PRUEBAS
 function validaDir()
 {
     var dir = $("#dirEmpresa").val();
-    var exp = /^([A-Za-z0-9ñáéíóú ]{5,40})+$/;
+    var exp = /^([A-Z]{1}[A-Za-z0-9ñáéíóú ]{5,40})+$/;
 
     if (dir !== '' && dir !== null)
     {
